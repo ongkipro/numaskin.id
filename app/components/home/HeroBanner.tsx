@@ -5,7 +5,7 @@ export function HeroBanner() {
   return (
     <section
       aria-label="Numa Skin Deep Sea Water Hero"
-      className="relative w-full h-screen h-[100svh] sm:h-[100dvh] min-h-[520px] sm:min-h-[600px] max-h-[1080px] overflow-hidden flex flex-col justify-between select-none touch-pan-y touch-manipulation bg-[#EBF5F8]"
+      className="relative w-full h-[calc(100svh-100px)] sm:h-[calc(100dvh-116px)] min-h-[500px] sm:min-h-[560px] max-h-[960px] overflow-hidden flex flex-col justify-between select-none touch-pan-y touch-manipulation bg-[#EBF5F8]"
     >
       {/* ========================================================= */}
       {/* 1. BACKGROUND VIDEO (Numa Skin Water Splash - Optimized)  */}
@@ -53,7 +53,7 @@ export function HeroBanner() {
       {/* ========================================================= */}
       {/* 2. NATURAL EDITORIAL HERO (No Card, Pure Skincare Elegance)*/}
       {/* ========================================================= */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-between pt-20 sm:pt-28 lg:pt-36 pb-3 sm:pb-8 z-20">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-between pt-6 sm:pt-10 lg:pt-14 pb-3 sm:pb-8 z-20">
         
         {/* Content Column: Anchored to Bottom on Mobile, Centered on Desktop */}
         <div className="mt-auto sm:my-auto pb-3 pt-2 sm:py-4 max-w-xl lg:max-w-2xl text-left">

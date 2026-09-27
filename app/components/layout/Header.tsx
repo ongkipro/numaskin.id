@@ -114,7 +114,6 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
   const [mobileCategoryAccordionOpen, setMobileCategoryAccordionOpen] = useState(true);
   const [collectionsDropdownOpen, setCollectionsDropdownOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isHeaderHovered, setIsHeaderHovered] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
@@ -133,12 +132,12 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
     };
   }, []);
 
-  // Track scroll position for subtle elevation shadow and auto-close mega menu on scroll
+  // Auto-close mega menu on page scroll
   useEffect(() => {
     const handleScroll = () => {
       const scrolled = window.scrollY > 20;
       setIsScrolled(scrolled);
-      if (window.scrollY > 60) {
+      if (window.scrollY > 50) {
         setCollectionsDropdownOpen(false);
       }
     };
@@ -181,7 +180,7 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
     };
   }, [mobileMenuOpen]);
 
-  // Mega menu hover grace handling (180ms threshold prevents diagonal mouse drop)
+  // Mega menu hover grace handling (200ms threshold prevents diagonal mouse drop)
   const handleMouseEnterKategori = () => {
     if (closeTimeoutRef.current) {
       clearTimeout(closeTimeoutRef.current);
@@ -194,7 +193,7 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
     if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
     closeTimeoutRef.current = setTimeout(() => {
       setCollectionsDropdownOpen(false);
-    }, 180);
+    }, 200);
   };
 
   const handleMouseEnterDropdown = () => {
@@ -208,35 +207,19 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
     if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
     closeTimeoutRef.current = setTimeout(() => {
       setCollectionsDropdownOpen(false);
-    }, 180);
+    }, 200);
   };
 
-  const isHome = location.pathname === '/';
   const isKategoriActive =
     collectionsDropdownOpen ||
     (location.pathname.startsWith('/collections') && location.pathname !== '/collections/paket-hemat-bundling');
   const isBundlingActive = location.pathname === '/collections/paket-hemat-bundling';
   const isBlogActive = location.pathname.startsWith('/blogs');
 
-  // Trigger sticky aqua-glass effect when scrolled, hovered, or dropdown is open
-  const showAquaGlass = isScrolled || isHeaderHovered || collectionsDropdownOpen;
-
   return (
     <header
       ref={headerRef}
-      onMouseEnter={() => setIsHeaderHovered(true)}
-      onMouseLeave={() => {
-        setIsHeaderHovered(false);
-        if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
-        setCollectionsDropdownOpen(false);
-      }}
-      className={`fixed top-0 left-0 right-0 z-40 w-full transition-all duration-300 border-none ${
-        isHome
-          ? showAquaGlass
-            ? 'aqua-glass-panel text-slate-800 shadow-[0_4px_30px_rgba(0,43,73,0.06)]'
-            : 'bg-transparent text-[#002B49]'
-          : 'aqua-glass-panel text-slate-800 shadow-[0_2px_16px_rgba(0,43,73,0.04)]'
-      }`}
+      className="w-full bg-white/95 backdrop-blur-md text-slate-800 border-b border-[#E2EDF0] relative"
     >
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -258,15 +241,15 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
             </button>
 
             {/* Desktop Navigation Links (Zero Layout Shift on Click/Hover) */}
-            <nav className="hidden lg:flex items-center gap-1.5 sm:gap-2">
+            <nav className="hidden lg:flex items-center gap-1.5 sm:gap-2 shrink-0">
               {/* Kategori Trigger */}
               <button
                 type="button"
                 onMouseEnter={handleMouseEnterKategori}
                 onMouseLeave={handleMouseLeaveKategori}
-                onClick={() => setCollectionsDropdownOpen(!collectionsDropdownOpen)}
-                className={`group text-xs uppercase tracking-[0.08em] font-medium flex items-center gap-1.5 px-3.5 py-1.5 rounded-full transition-colors duration-150 cursor-pointer ${
-                  isKategoriActive
+                onClick={() => setCollectionsDropdownOpen((prev) => !prev)}
+                className={`group text-xs uppercase tracking-[0.08em] font-medium flex items-center gap-1.5 px-3.5 py-1.5 rounded-full transition-colors duration-150 cursor-pointer shrink-0 whitespace-nowrap ${
+                  collectionsDropdownOpen
                     ? 'bg-[#002B49]/8 text-[#002B49]'
                     : 'text-slate-700 hover:text-[#002B49] hover:bg-[#002B49]/5'
                 }`}
@@ -275,7 +258,7 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
               >
                 <span>Kategori</span>
                 <ChevronDown
-                  className={`w-3.5 h-3.5 transition-transform duration-200 ease-out ${
+                  className={`w-3.5 h-3.5 shrink-0 transform-gpu origin-center transition-transform duration-200 ease-out ${
                     collectionsDropdownOpen
                       ? 'rotate-180 text-[#269BA8]'
                       : 'text-slate-400 group-hover:text-[#002B49]'
@@ -290,7 +273,7 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
                   if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
                   setCollectionsDropdownOpen(false);
                 }}
-                className={`text-xs uppercase tracking-[0.08em] font-medium flex items-center gap-1.5 px-3.5 py-1.5 rounded-full transition-colors duration-150 ${
+                className={`text-xs uppercase tracking-[0.08em] font-medium flex items-center gap-1.5 px-3.5 py-1.5 rounded-full transition-colors duration-150 shrink-0 whitespace-nowrap ${
                   isBundlingActive
                     ? 'bg-[#002B49]/8 text-[#002B49]'
                     : 'text-slate-700 hover:text-[#002B49] hover:bg-[#002B49]/5'
@@ -306,7 +289,7 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
                   if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
                   setCollectionsDropdownOpen(false);
                 }}
-                className={`text-xs uppercase tracking-[0.08em] font-medium flex items-center gap-1.5 px-3.5 py-1.5 rounded-full transition-colors duration-150 ${
+                className={`text-xs uppercase tracking-[0.08em] font-medium flex items-center gap-1.5 px-3.5 py-1.5 rounded-full transition-colors duration-150 shrink-0 whitespace-nowrap ${
                   isBlogActive
                     ? 'bg-[#002B49]/8 text-[#002B49]'
                     : 'text-slate-700 hover:text-[#002B49] hover:bg-[#002B49]/5'
@@ -384,7 +367,7 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
         </div>
 
         {/* ========================================================= */}
-        {/* MEGA MENU: Matches Sticky Background (aqua-glass-panel)   */}
+        {/* MEGA MENU: Stable Pinned Dropdown                         */}
         {/* ========================================================= */}
         {collectionsDropdownOpen && (
           <div
@@ -392,7 +375,7 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
             onMouseEnter={handleMouseEnterDropdown}
             onMouseLeave={handleMouseLeaveDropdown}
           >
-            <div className="w-full aqua-glass-panel rounded-2xl shadow-[0_24px_50px_-12px_rgba(0,43,73,0.18)] p-5 lg:p-6 relative overflow-hidden border border-white/90">
+            <div className="w-full bg-white/98 backdrop-blur-xl rounded-2xl shadow-[0_24px_50px_-12px_rgba(0,43,73,0.18)] p-5 lg:p-6 relative overflow-hidden border border-[#E2EDF0]">
               
               {/* Shimmer Accent Line */}
               <div className="absolute top-0 inset-x-8 h-px bg-gradient-to-r from-transparent via-[#269BA8]/40 to-transparent" />
@@ -584,62 +567,20 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
                 <span>Cari produk atau bahan aktif...</span>
               </button>
 
-              {/* Group 1: Kategori Produk (Collapsible Accordion with 3:2 Banners) */}
+              {/* Group 1: Menu Utama (Fixed at Top, Never Shifts) */}
               <div>
-                <button
-                  type="button"
-                  onClick={() => setMobileCategoryAccordionOpen(!mobileCategoryAccordionOpen)}
-                  className="w-full flex items-center justify-between mb-2 focus:outline-hidden"
-                >
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-[#269BA8] font-bold">
-                    Kategori Produk
-                  </span>
-                  <ChevronDown
-                    className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${
-                      mobileCategoryAccordionOpen ? 'rotate-180' : ''
-                    }`}
-                  />
-                </button>
-
-                {mobileCategoryAccordionOpen && (
-                  <nav className="flex flex-col space-y-2 text-sm animate-in fade-in duration-200">
-                    {MAIN_CATEGORIES.map((cat) => (
-                      <Link
-                        key={cat.handle}
-                        to={cat.to}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="group/mcat relative aspect-[3/2] w-full overflow-hidden rounded-xl border border-slate-200 flex flex-col justify-end p-3"
-                      >
-                        <img
-                          src={cat.image}
-                          alt={cat.title}
-                          className="absolute inset-0 w-full h-full object-cover group-hover/mcat:scale-105 transition-transform"
-                          loading="lazy"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#002B49]/90 via-[#002B49]/30 to-transparent" />
-                        <div className="relative z-10 flex items-end justify-between">
-                          <div>
-                            <span className="font-mono text-[8px] uppercase tracking-wider text-[#38B6CD] font-bold block">
-                              {cat.badge}
-                            </span>
-                            <span className="text-xs font-semibold text-white block mt-0.5">
-                              {cat.title}
-                            </span>
-                          </div>
-                          <ArrowRight className="w-3.5 h-3.5 text-white/80" />
-                        </div>
-                      </Link>
-                    ))}
-                  </nav>
-                )}
-              </div>
-
-              {/* Group 2: Menu Utama & Program */}
-              <div className="pt-4 border-t border-[#E2EDF0]">
                 <span className="font-mono text-[10px] uppercase tracking-widest text-[#269BA8] font-bold block mb-2.5">
                   Menu Utama
                 </span>
                 <nav className="flex flex-col space-y-1 text-sm">
+                  <Link
+                    to="/collections/all"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="py-2 px-2.5 rounded-lg hover:bg-white text-slate-800 hover:text-[#002B49] font-medium flex items-center justify-between transition-colors"
+                  >
+                    <span>Semua Produk</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
+                  </Link>
                   <Link
                     to="/collections/paket-hemat-bundling"
                     onClick={() => setMobileMenuOpen(false)}
@@ -680,6 +621,56 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
                     <User className="w-4 h-4 text-slate-400" />
                   </Link>
                 </nav>
+              </div>
+
+              {/* Group 2: Kategori Koleksi (Collapsible Below Menu Utama) */}
+              <div className="pt-4 border-t border-[#E2EDF0]">
+                <button
+                  type="button"
+                  onClick={() => setMobileCategoryAccordionOpen(!mobileCategoryAccordionOpen)}
+                  className="w-full flex items-center justify-between mb-2 focus:outline-hidden"
+                >
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-[#269BA8] font-bold">
+                    Kategori Koleksi
+                  </span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 text-slate-400 transition-transform duration-200 ${
+                      mobileCategoryAccordionOpen ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+
+                {mobileCategoryAccordionOpen && (
+                  <nav className="flex flex-col space-y-2 text-sm animate-in fade-in duration-200">
+                    {MAIN_CATEGORIES.map((cat) => (
+                      <Link
+                        key={cat.handle}
+                        to={cat.to}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="group/mcat relative aspect-[3/2] w-full overflow-hidden rounded-xl border border-slate-200 flex flex-col justify-end p-3"
+                      >
+                        <img
+                          src={cat.image}
+                          alt={cat.title}
+                          className="absolute inset-0 w-full h-full object-cover group-hover/mcat:scale-105 transition-transform"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#002B49]/90 via-[#002B49]/30 to-transparent" />
+                        <div className="relative z-10 flex items-end justify-between">
+                          <div>
+                            <span className="font-mono text-[8px] uppercase tracking-wider text-[#38B6CD] font-bold block">
+                              {cat.badge}
+                            </span>
+                            <span className="text-xs font-semibold text-white block mt-0.5">
+                              {cat.title}
+                            </span>
+                          </div>
+                          <ArrowRight className="w-3.5 h-3.5 text-white/80" />
+                        </div>
+                      </Link>
+                    ))}
+                  </nav>
+                )}
               </div>
             </div>
 

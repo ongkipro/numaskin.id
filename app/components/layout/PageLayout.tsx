@@ -86,17 +86,17 @@ export function PageLayout({ children }: PageLayoutProps) {
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
-      <div className={isHome ? 'hidden sm:block absolute top-0 left-0 right-0 z-50' : 'relative z-50'}>
+      {/* Pinned Sticky Header Bar: AnnouncementBar + Header (Never Overlap) */}
+      <div className="sticky top-0 z-40 w-full bg-white shadow-[0_2px_12px_rgba(0,43,73,0.04)]">
         <AnnouncementBar />
+        <Header
+          cartItemCount={cartItems.reduce((acc, i) => acc + i.quantity, 0)}
+          onOpenCart={() => setIsCartOpen(true)}
+          onOpenSearch={() => setIsSearchOpen(true)}
+        />
       </div>
-      
-      <Header
-        cartItemCount={cartItems.reduce((acc, i) => acc + i.quantity, 0)}
-        onOpenCart={() => setIsCartOpen(true)}
-        onOpenSearch={() => setIsSearchOpen(true)}
-      />
 
-      <main className={`flex-1 ${isHome ? '' : 'pt-16 sm:pt-20'}`}>
+      <main className="flex-1">
         {children}
       </main>
 
