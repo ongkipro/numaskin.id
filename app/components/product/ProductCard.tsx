@@ -15,107 +15,84 @@ export function ProductCard({ product, onAddToCart }: ProductCardProps) {
     : null;
   const discountPercent = compareAtPrice ? calculateDiscount(currentPrice, compareAtPrice) : 0;
   const imageUrl = product.featuredImage?.url || '/images/banners/02-shop-avatar-shopee-shop-profile-avatar.jpg';
-  const secondaryImageUrl = product.secondaryImage?.url && product.secondaryImage.url !== imageUrl
-    ? product.secondaryImage.url
-    : null;
 
   return (
-    <article className="group flex flex-col justify-between relative p-3 sm:p-4 rounded-xl bg-white hover:bg-[#F8FCFD] transition-all duration-200 border border-slate-100/90 hover:border-[#38B6CD]/30">
+    <article className="group flex flex-col justify-between h-full bg-transparent">
       
-      {/* Badges Bar */}
-      <div className="flex items-center justify-between gap-1 mb-2 z-10">
-        {discountPercent > 0 ? (
-          <span className="bg-[#002B49] text-white font-mono text-[10px] font-medium px-2 py-0.5 rounded-full tracking-wider">
-            HEMAT {discountPercent}%
-          </span>
-        ) : (
-          <span className="font-mono text-[10px] text-[#0B6E7D] font-medium uppercase tracking-wider">
-            OFFICIAL
-          </span>
-        )}
-
-        {product.bpom && (
-          <span className="font-mono text-[9px] text-slate-400">
-            {product.bpom}
-          </span>
-        )}
-      </div>
-
-      {/* Product Image Viewport (Frameless, Clean) */}
+      {/* 100% Frameless & Borderless Product Image with Ethereal Glass Hover */}
       <Link
         to={`/products/${product.handle}`}
-        className="block relative aspect-square w-full overflow-hidden rounded-sm mb-3"
+        className="relative aspect-square w-full overflow-hidden rounded-xl bg-slate-50 mb-3 block"
       >
+        {/* Minimal Floating Discount Tag */}
+        {discountPercent > 0 && (
+          <span className="absolute top-2.5 left-2.5 z-10 font-mono text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#002B49] text-white shadow-xs">
+            -{discountPercent}%
+          </span>
+        )}
+
+        {/* Primary Product Image (No Second Image Swap) */}
         <img
           src={imageUrl}
           alt={product.title}
           loading="lazy"
-          className={`w-full h-full object-contain rounded-sm p-1 transition-all duration-300 ${
-            secondaryImageUrl ? 'group-hover:opacity-0 group-hover:scale-102' : 'group-hover:scale-103'
-          }`}
+          className="w-full h-full object-cover transform-gpu transition-transform duration-500 ease-out will-change-transform group-hover:scale-105"
         />
-        {secondaryImageUrl && (
-          <img
-            src={secondaryImageUrl}
-            alt={`${product.title} - Tampilan Sudut`}
-            loading="lazy"
-            className="absolute inset-0 w-full h-full object-contain rounded-sm p-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-102"
-          />
-        )}
+
+        {/* Ethereal Aqua Glass Sheen Overlay on Hover */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#002B49]/15 via-white/10 to-transparent backdrop-blur-[1.5px] opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none" />
+
+        {/* Floating Aqua Glass Pill Action on Hover */}
+        <div className="absolute inset-x-3 bottom-3 z-10 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 ease-out hidden sm:flex items-center justify-center pointer-events-none">
+          <span className="w-full py-2 px-3 rounded-lg text-xs font-semibold text-[#002B49] flex items-center justify-center gap-1.5 aqua-glass-pill shadow-xs">
+            <Eye className="w-3.5 h-3.5 text-[#269BA8]" />
+            <span>Lihat Detail</span>
+          </span>
+        </div>
       </Link>
 
-      {/* Product Info Block */}
+      {/* Product Information (Frameless, Clean Typography) */}
       <div className="flex-1 flex flex-col justify-between">
         <div>
-          {/* Category / Netto Kicker */}
-          <div className="flex items-center justify-between text-[10px] font-mono text-slate-400 mb-1">
-            <span className="uppercase text-[#0B6E7D] font-medium tracking-wider">
+          {/* Category / Netto */}
+          <div className="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-1">
+            <span className="uppercase text-[#0B6E7D] font-medium tracking-wider text-[10px]">
               {product.productType || 'SKINCARE'}
             </span>
             {product.netto && <span>{product.netto}</span>}
           </div>
 
-          {/* Title */}
-          <h3 className="font-medium text-xs sm:text-sm text-slate-800 leading-snug line-clamp-2 group-hover:text-[#002B49] transition-colors mb-2">
+          {/* Product Title */}
+          <h3 className="font-normal sm:font-medium text-xs sm:text-sm text-slate-800 leading-snug line-clamp-2 group-hover:text-[#002B49] transition-colors min-h-[2.5rem] mb-2">
             <Link to={`/products/${product.handle}`}>
               {product.title}
             </Link>
           </h3>
         </div>
 
-        {/* Pricing Block & Quick ATC Button (Clean, Borderless) */}
-        <div className="pt-1.5 flex items-center justify-between gap-2 mt-auto">
-          <div className="flex flex-col">
-            <span className="font-bold text-sm sm:text-base text-[#002B49] font-sans">
+        {/* Price & Quick Action */}
+        <div className="pt-1 flex items-center justify-between gap-2 mt-auto">
+          <div className="flex items-baseline gap-1.5 flex-wrap">
+            <span className="font-semibold text-sm sm:text-base text-[#002B49] font-sans tracking-tight">
               {formatRupiah(currentPrice)}
             </span>
             {compareAtPrice && compareAtPrice > currentPrice && (
-              <span className="text-[11px] text-slate-400 line-through">
+              <span className="text-[11px] text-slate-400 line-through font-mono">
                 {formatRupiah(compareAtPrice)}
               </span>
             )}
           </div>
 
-          <div className="flex items-center gap-1.5">
-            {onAddToCart ? (
-              <button
-                type="button"
-                onClick={() => onAddToCart(product)}
-                className="w-8 h-8 rounded-full bg-[#F4F9FA] hover:bg-[#002B49] text-[#002B49] hover:text-white transition-colors flex items-center justify-center"
-                aria-label={`Tambah ${product.title} ke keranjang`}
-              >
-                <ShoppingBag className="w-3.5 h-3.5" />
-              </button>
-            ) : (
-              <Link
-                to={`/products/${product.handle}`}
-                className="w-8 h-8 rounded-full bg-[#F4F9FA] hover:bg-[#002B49] text-[#002B49] hover:text-white transition-colors flex items-center justify-center"
-                aria-label={`Lihat ${product.title}`}
-              >
-                <Eye className="w-3.5 h-3.5" />
-              </Link>
-            )}
-          </div>
+          {onAddToCart && (
+            <button
+              type="button"
+              onClick={() => onAddToCart(product)}
+              className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-100/80 hover:bg-[#002B49] text-slate-600 hover:text-white transition-colors flex items-center justify-center shrink-0"
+              aria-label={`Tambah ${product.title} ke keranjang`}
+            >
+              <ShoppingBag className="w-3.5 h-3.5" />
+            </button>
+          )}
         </div>
 
       </div>

@@ -96,7 +96,7 @@ export function PageLayout({ children }: PageLayoutProps) {
         onOpenSearch={() => setIsSearchOpen(true)}
       />
 
-      <main className="flex-1">
+      <main className={`flex-1 ${isHome ? '' : 'pt-16 sm:pt-20'}`}>
         {children}
       </main>
 

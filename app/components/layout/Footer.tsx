@@ -1,69 +1,11 @@
 import { Link } from 'react-router';
-import { MessageCircle, ShieldCheck, Truck, Sparkles, ArrowRight, Award, CheckCircle2 } from 'lucide-react';
+import { MessageCircle, ShieldCheck, Truck, Sparkles, Award } from 'lucide-react';
 
 export function Footer() {
   return (
     <footer className="w-full bg-[#081B2B] text-slate-300 pt-16 pb-12 border-t border-white/10 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* ========================================================= */}
-        {/* PRE-FOOTER: Dedicated Luxury WhatsApp Consultation Banner */}
-        {/* ========================================================= */}
-        <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#0B2540] via-[#002B49] to-[#0A2035] border border-white/15 p-8 sm:p-10 mb-16 shadow-2xl">
-          {/* Subtle Ambient Refraction Glow */}
-          <div className="absolute top-0 right-0 -mt-16 -mr-16 w-80 h-80 rounded-full bg-[#269BA8]/15 blur-3xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 -mb-16 -ml-16 w-64 h-64 rounded-full bg-[#38B6CD]/10 blur-3xl pointer-events-none" />
-
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            {/* Left 8 Cols: Value Proposition */}
-            <div className="lg:col-span-8">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-medium mb-3">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>SKIN ADVISOR ONLINE · RESPON CEPAT &lt; 5 MENIT</span>
-              </div>
-              <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-white font-normal leading-snug mb-3">
-                Butuh Rekomendasi Rutinitas yang Tepat untuk Kulit Anda?
-              </h3>
-              <p className="text-slate-300 text-xs sm:text-sm leading-relaxed max-w-2xl mb-6">
-                Bingung memilih toner mineral laut dalam, konsentrat serum 2% NAD+, atau paket rutinitas yang paling sesuai dengan kondisi kulit Anda? Diskusikan langsung dengan Skin Advisor resmi Numa Skin tanpa biaya.
-              </p>
-
-              {/* Consultation Benefits */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-slate-300">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#38B6CD] shrink-0" />
-                  <span>Analisis Tipe Kulit Gratis</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#38B6CD] shrink-0" />
-                  <span>Rekomendasi Paket Tepat Sasaran</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-[#38B6CD] shrink-0" />
-                  <span>Panduan Pemakaian Pagi & Malam</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Right 4 Cols: High-Contrast WhatsApp CTA */}
-            <div className="lg:col-span-4 flex flex-col items-center lg:items-end justify-center">
-              <a
-                href="https://wa.me/6281234567890?text=Halo%20Numa%20Skin,%20saya%20mau%20konsultasi%20kulit"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white text-sm font-semibold shadow-[0_10px_25px_rgba(37,211,102,0.3)] hover:shadow-[0_15px_35px_rgba(37,211,102,0.4)] hover:-translate-y-0.5 transition-all duration-300"
-              >
-                <MessageCircle className="w-5 h-5 fill-current" />
-                <span className="tracking-wide">Chat WhatsApp Sekarang</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-              <span className="text-[11px] text-slate-400 mt-2.5 block text-center font-mono">
-                Layanan Resmi · 09.00 - 21.00 WIB
-              </span>
-            </div>
-          </div>
-        </div>
-
         {/* ========================================================= */}
         {/* 4-COLUMN ARCHITECTURAL DIRECTORY                          */}
         {/* ========================================================= */}
@@ -180,6 +122,18 @@ export function Footer() {
               Jaminan & Layanan
             </h4>
             <div className="space-y-3.5 text-xs">
+              <a
+                href="https://wa.me/6281234567890?text=Halo%20Numa%20Skin,%20saya%20mau%20konsultasi%20kulit"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-2.5 hover:text-white transition-colors group"
+              >
+                <MessageCircle className="w-4 h-4 text-[#25D366] shrink-0 mt-0.5" />
+                <div>
+                  <span className="font-semibold text-white block group-hover:text-[#25D366] transition-colors">Chat WhatsApp Resmi</span>
+                  <span className="text-slate-400 text-[11px]">Respon cepat 09.00 - 21.00 WIB</span>
+                </div>
+              </a>
               <div className="flex items-start gap-2.5">
                 <ShieldCheck className="w-4 h-4 text-[#38B6CD] shrink-0 mt-0.5" />
                 <div>

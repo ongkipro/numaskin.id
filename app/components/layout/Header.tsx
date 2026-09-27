@@ -116,13 +116,22 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHeaderHovered, setIsHeaderHovered] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const location = useLocation();
 
   // Close mobile drawer and dropdown on route change
   useEffect(() => {
     setMobileMenuOpen(false);
     setCollectionsDropdownOpen(false);
+    if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
   }, [location.pathname]);
+
+  // Clean up timer on unmount
+  useEffect(() => {
+    return () => {
+      if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+    };
+  }, []);
 
   // Track scroll position for subtle elevation shadow and auto-close mega menu on scroll
   useEffect(() => {
@@ -172,6 +181,36 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
     };
   }, [mobileMenuOpen]);
 
+  // Mega menu hover grace handling (180ms threshold prevents diagonal mouse drop)
+  const handleMouseEnterKategori = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+    setCollectionsDropdownOpen(true);
+  };
+
+  const handleMouseLeaveKategori = () => {
+    if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+    closeTimeoutRef.current = setTimeout(() => {
+      setCollectionsDropdownOpen(false);
+    }, 180);
+  };
+
+  const handleMouseEnterDropdown = () => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current);
+      closeTimeoutRef.current = null;
+    }
+  };
+
+  const handleMouseLeaveDropdown = () => {
+    if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+    closeTimeoutRef.current = setTimeout(() => {
+      setCollectionsDropdownOpen(false);
+    }, 180);
+  };
+
   const isHome = location.pathname === '/';
   const isKategoriActive =
     collectionsDropdownOpen ||
@@ -188,15 +227,15 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
       onMouseEnter={() => setIsHeaderHovered(true)}
       onMouseLeave={() => {
         setIsHeaderHovered(false);
+        if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
         setCollectionsDropdownOpen(false);
       }}
-      className={`z-40 w-full transition-all duration-300 border-none ${
+      className={`fixed top-0 left-0 right-0 z-40 w-full transition-all duration-300 border-none ${
         isHome
-          ? isScrolled
-            ? 'fixed top-0 left-0 right-0 aqua-glass-panel text-slate-800 shadow-[0_4px_30px_rgba(0,43,73,0.06)]'
-            : 'absolute top-0 sm:top-9 left-0 right-0 bg-transparent text-[#002B49] ' +
-              (showAquaGlass ? 'lg:aqua-glass-panel lg:text-slate-800 lg:shadow-[0_4px_30px_rgba(0,43,73,0.06)]' : '')
-          : 'sticky top-0 aqua-glass-panel text-slate-800 shadow-[0_2px_16px_rgba(0,43,73,0.04)]'
+          ? showAquaGlass
+            ? 'aqua-glass-panel text-slate-800 shadow-[0_4px_30px_rgba(0,43,73,0.06)]'
+            : 'bg-transparent text-[#002B49]'
+          : 'aqua-glass-panel text-slate-800 shadow-[0_2px_16px_rgba(0,43,73,0.04)]'
       }`}
     >
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -218,16 +257,17 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
               <Menu className="w-5 h-5" />
             </button>
 
-            {/* Desktop Navigation Links: Kategori (Mega Menu) -> Paket Bundling -> Blog */}
-            <nav className="hidden lg:flex items-center gap-3">
+            {/* Desktop Navigation Links (Zero Layout Shift on Click/Hover) */}
+            <nav className="hidden lg:flex items-center gap-1.5 sm:gap-2">
               {/* Kategori Trigger */}
               <button
                 type="button"
-                onMouseEnter={() => setCollectionsDropdownOpen(true)}
+                onMouseEnter={handleMouseEnterKategori}
+                onMouseLeave={handleMouseLeaveKategori}
                 onClick={() => setCollectionsDropdownOpen(!collectionsDropdownOpen)}
-                className={`text-xs uppercase tracking-wider font-medium flex items-center gap-1.5 px-3.5 py-1.5 rounded-full transition-all duration-200 ${
+                className={`group text-xs uppercase tracking-[0.08em] font-medium flex items-center gap-1.5 px-3.5 py-1.5 rounded-full transition-colors duration-150 cursor-pointer ${
                   isKategoriActive
-                    ? 'bg-[#002B49]/10 text-[#002B49] font-semibold shadow-2xs'
+                    ? 'bg-[#002B49]/8 text-[#002B49]'
                     : 'text-slate-700 hover:text-[#002B49] hover:bg-[#002B49]/5'
                 }`}
                 aria-expanded={collectionsDropdownOpen}
@@ -235,8 +275,10 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
               >
                 <span>Kategori</span>
                 <ChevronDown
-                  className={`w-3.5 h-3.5 transition-transform duration-300 ${
-                    collectionsDropdownOpen ? 'rotate-180 text-[#269BA8]' : 'text-slate-400 group-hover:text-slate-600'
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ease-out ${
+                    collectionsDropdownOpen
+                      ? 'rotate-180 text-[#269BA8]'
+                      : 'text-slate-400 group-hover:text-[#002B49]'
                   }`}
                 />
               </button>
@@ -244,10 +286,13 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
               {/* Direct Link: Paket Bundling */}
               <Link
                 to="/collections/paket-hemat-bundling"
-                onMouseEnter={() => setCollectionsDropdownOpen(false)}
-                className={`text-xs uppercase tracking-wider font-medium flex items-center gap-1.5 px-3.5 py-1.5 rounded-full transition-all duration-200 ${
+                onMouseEnter={() => {
+                  if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+                  setCollectionsDropdownOpen(false);
+                }}
+                className={`text-xs uppercase tracking-[0.08em] font-medium flex items-center gap-1.5 px-3.5 py-1.5 rounded-full transition-colors duration-150 ${
                   isBundlingActive
-                    ? 'bg-[#002B49]/10 text-[#002B49] font-semibold shadow-2xs'
+                    ? 'bg-[#002B49]/8 text-[#002B49]'
                     : 'text-slate-700 hover:text-[#002B49] hover:bg-[#002B49]/5'
                 }`}
               >
@@ -257,10 +302,13 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
               {/* Direct Link: Blog */}
               <Link
                 to="/blogs"
-                onMouseEnter={() => setCollectionsDropdownOpen(false)}
-                className={`text-xs uppercase tracking-wider font-medium flex items-center gap-1.5 px-3.5 py-1.5 rounded-full transition-all duration-200 ${
+                onMouseEnter={() => {
+                  if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+                  setCollectionsDropdownOpen(false);
+                }}
+                className={`text-xs uppercase tracking-[0.08em] font-medium flex items-center gap-1.5 px-3.5 py-1.5 rounded-full transition-colors duration-150 ${
                   isBlogActive
-                    ? 'bg-[#002B49]/10 text-[#002B49] font-semibold shadow-2xs'
+                    ? 'bg-[#002B49]/8 text-[#002B49]'
                     : 'text-slate-700 hover:text-[#002B49] hover:bg-[#002B49]/5'
                 }`}
               >
@@ -272,7 +320,13 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
           {/* ========================================================= */}
           {/* CENTER COLUMN: Pristine Brand Identity (Dead Centered)   */}
           {/* ========================================================= */}
-          <div className="flex flex-col items-center justify-center shrink-0 px-2">
+          <div
+            onMouseEnter={() => {
+              if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+              setCollectionsDropdownOpen(false);
+            }}
+            className="flex flex-col items-center justify-center shrink-0 px-2"
+          >
             <Link to="/" className="group flex flex-col items-center text-center">
               <span className="font-sans font-medium text-lg sm:text-xl tracking-[0.22em] uppercase transition-colors text-[#002B49] group-hover:text-[#269BA8]">
                 NUMA · SKIN
@@ -286,36 +340,42 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
           {/* ========================================================= */}
           {/* RIGHT COLUMN: Search Icon, Account Icon, Shopping Bag     */}
           {/* ========================================================= */}
-          <div className="flex items-center justify-end gap-1 sm:gap-2 flex-1">
+          <div
+            onMouseEnter={() => {
+              if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+              setCollectionsDropdownOpen(false);
+            }}
+            className="flex items-center justify-end gap-1 sm:gap-2 flex-1"
+          >
             {/* Search Trigger Icon */}
             <button
               type="button"
               onClick={onOpenSearch}
-              className="p-2 transition-colors focus:outline-hidden text-[#002B49] hover:text-[#269BA8]"
+              className="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 focus:outline-hidden text-[#002B49] hover:text-[#269BA8] hover:bg-[#002B49]/5 cursor-pointer"
               aria-label="Pencarian katalog produk"
             >
-              <Search className="w-5 h-5" strokeWidth={1.8} />
+              <Search className="w-4.5 h-4.5" strokeWidth={1.8} />
             </button>
 
             {/* Customer Account Trigger Icon */}
             <Link
               to="/account"
-              className="p-2 transition-colors focus:outline-hidden text-[#002B49] hover:text-[#269BA8]"
+              className="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 focus:outline-hidden text-[#002B49] hover:text-[#269BA8] hover:bg-[#002B49]/5"
               aria-label="Akun Saya"
             >
-              <User className="w-5 h-5" strokeWidth={1.8} />
+              <User className="w-4.5 h-4.5" strokeWidth={1.8} />
             </Link>
 
             {/* Shopping Bag Trigger Icon */}
             <button
               type="button"
               onClick={onOpenCart}
-              className="relative p-2 transition-colors focus:outline-hidden flex items-center text-[#002B49] hover:text-[#269BA8]"
+              className="relative w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 focus:outline-hidden text-[#002B49] hover:text-[#269BA8] hover:bg-[#002B49]/5 cursor-pointer"
               aria-label={`Buka keranjang belanja (${cartItemCount} produk)`}
             >
-              <ShoppingBag className="w-5 h-5" strokeWidth={1.8} />
+              <ShoppingBag className="w-4.5 h-4.5" strokeWidth={1.8} />
               {cartItemCount > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 text-[10px] font-mono font-bold h-4 min-w-4 px-1 rounded-full flex items-center justify-center bg-[#002B49] text-white">
+                <span className="absolute -top-0.5 -right-0.5 text-[10px] font-mono font-bold h-4 min-w-4 px-1 rounded-full flex items-center justify-center bg-[#002B49] text-white shadow-xs">
                   {cartItemCount}
                 </span>
               )}
@@ -328,8 +388,9 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
         {/* ========================================================= */}
         {collectionsDropdownOpen && (
           <div
-            className="hidden lg:block absolute top-full inset-x-4 sm:inset-x-6 lg:inset-x-8 pt-1.5 pb-4 z-50 animate-in fade-in-50 slide-in-from-top-1.5 duration-200"
-            onMouseEnter={() => setCollectionsDropdownOpen(true)}
+            className="hidden lg:block absolute top-full inset-x-4 sm:inset-x-6 lg:inset-x-8 pt-2 pb-4 z-50 animate-in fade-in-50 slide-in-from-top-1.5 duration-200"
+            onMouseEnter={handleMouseEnterDropdown}
+            onMouseLeave={handleMouseLeaveDropdown}
           >
             <div className="w-full aqua-glass-panel rounded-2xl shadow-[0_24px_50px_-12px_rgba(0,43,73,0.18)] p-5 lg:p-6 relative overflow-hidden border border-white/90">
               
@@ -451,7 +512,7 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
                 </div>
               </div>
 
-              {/* Bottom Reassurance Bar (No WhatsApp) */}
+              {/* Bottom Reassurance Bar */}
               <div className="mt-4 pt-3 border-t border-[#E2EDF0] flex items-center justify-between text-xs text-slate-600">
                 <div className="flex items-center gap-4">
                   <span className="inline-flex items-center gap-1.5 text-[#002B49] font-medium">
@@ -489,7 +550,7 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
           {/* Slide-in Drawer Container */}
           <div className="fixed inset-y-0 left-0 w-full max-w-xs sm:max-w-sm aqua-glass-panel border-r border-white/80 shadow-2xl flex flex-col z-50 animate-in slide-in-from-left duration-300">
             {/* Drawer Header */}
-            <div className="h-20 px-6 border-b border-[#E2EDF0] flex items-center justify-between shrink-0">
+            <div className="h-16 sm:h-20 px-6 border-b border-[#E2EDF0] flex items-center justify-between shrink-0">
               <div className="flex flex-col">
                 <span className="font-sans font-medium text-base tracking-[0.22em] text-[#002B49] uppercase">
                   NUMA · SKIN
