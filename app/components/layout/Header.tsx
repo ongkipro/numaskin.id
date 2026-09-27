@@ -210,16 +210,28 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
     }, 200);
   };
 
+  const isHome = location.pathname === '/';
   const isKategoriActive =
     collectionsDropdownOpen ||
     (location.pathname.startsWith('/collections') && location.pathname !== '/collections/paket-hemat-bundling');
   const isBundlingActive = location.pathname === '/collections/paket-hemat-bundling';
   const isBlogActive = location.pathname.startsWith('/blogs');
 
+  // Trigger aqua glass when scrolled down or when mega menu is open
+  const isGlassActive = isScrolled || collectionsDropdownOpen;
+
   return (
     <header
       ref={headerRef}
-      className="w-full bg-white/95 backdrop-blur-md text-slate-800 border-b border-[#E2EDF0] relative"
+      className={`z-40 w-full transition-all duration-300 border-none ${
+        isHome
+          ? isScrolled
+            ? 'fixed top-0 left-0 right-0 aqua-glass-panel text-slate-800 shadow-[0_4px_30px_rgba(0,43,73,0.06)]'
+            : isGlassActive
+            ? 'absolute top-0 sm:top-9 left-0 right-0 aqua-glass-panel text-slate-800 shadow-[0_4px_30px_rgba(0,43,73,0.06)]'
+            : 'absolute top-0 sm:top-9 left-0 right-0 bg-transparent text-[#002B49]'
+          : 'sticky top-0 aqua-glass-panel text-slate-800 shadow-[0_2px_16px_rgba(0,43,73,0.04)]'
+      }`}
     >
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
