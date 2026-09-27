@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "checkJs": false,
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "allowJs": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "rootDirs": [".", "./.react-router/types"],
+    "paths": {
+      "~/*": ["app/*"]
+    }
+  },
+  "include": [
+    "env.d.ts",
+    ".react-router/types/**/*",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "app/**/*.js",
+    "app/**/*.jsx",
+    "app/**/*.d.ts",
+    "*.js",
+    "*.jsx",
+    "*.ts",
+    "*.tsx",
+    "*.d.ts"
+  ]
+}

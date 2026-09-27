@@ -1,0 +1,46 @@
+{
+  "name": "numaskin.id",
+  "private": true,
+  "sideEffects": false,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "shopify hydrogen build",
+    "dev": "shopify hydrogen dev",
+    "preview": "shopify hydrogen preview --build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@shopify/hydrogen": "^2026.4.5",
+    "graphql": "^16.10.0",
+    "graphql-tag": "^2.12.6",
+    "isbot": "^5.1.22",
+    "lucide-react": "^1.16.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router": "7.16.0",
+    "react-router-dom": "7.16.0"
+  },
+  "devDependencies": {
+    "@react-router/dev": "7.16.0",
+    "@react-router/fs-routes": "7.16.0",
+    "@shopify/cli": "3.93.2",
+    "@shopify/mini-oxygen": "^4.2.2",
+    "@shopify/oxygen-workers-types": "^4.1.6",
+    "@tailwindcss/vite": "^4.0.9",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "tailwindcss": "^4.0.9",
+    "typescript": "^5.9.2",
+    "vite": "^8.0.1"
+  },
+  "engines": {
+    "node": "^22 || ^24"
+  },
+  "allowScripts": {
+    "esbuild@0.27.4": true,
+    "workerd@1.20250310.0": true,
+    "unrs-resolver@1.12.2": true,
+    "fsevents@2.3.3": true
+  }
+}
