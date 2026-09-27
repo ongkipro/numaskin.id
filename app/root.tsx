@@ -29,7 +29,7 @@ export const meta: Route.MetaFunction = () => [
     name: 'description',
     content: 'Toko resmi Numa Skin Indonesia. Perawatan kulit alami berbahan air laut dalam untuk menjaga hidrasi dan keremajaan kulit Anda. Terdaftar resmi BPOM.',
   },
-  { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+  { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
   { property: 'og:site_name', content: 'Numa Skin Official' },
   { property: 'og:locale', content: 'id_ID' },
 ];
@@ -39,7 +39,7 @@ export default function App() {
     <html lang="id">
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <Meta />
         <Links />
       </head>

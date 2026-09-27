@@ -5,12 +5,12 @@ export function HeroBanner() {
   return (
     <section
       aria-label="Numa Skin Deep Sea Water Hero"
-      className="relative w-full h-[100dvh] min-h-[600px] max-h-[1080px] overflow-hidden flex flex-col justify-between select-none bg-[#EBF5F8]"
+      className="relative w-full h-screen h-[100svh] sm:h-[100dvh] min-h-[520px] sm:min-h-[600px] max-h-[1080px] overflow-hidden flex flex-col justify-between select-none touch-pan-y touch-manipulation bg-[#EBF5F8]"
     >
       {/* ========================================================= */}
       {/* 1. BACKGROUND VIDEO (Numa Skin Water Splash - Optimized)  */}
       {/* ========================================================= */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none overflow-hidden transform-gpu">
         {/* Mobile Portrait Video (9:16 - Optimized for Mobile Screen) */}
         <video
           autoPlay
@@ -18,7 +18,7 @@ export function HeroBanner() {
           muted
           playsInline
           poster="/videos/numa-skin-water-splash-mobile-poster.jpg"
-          className="w-full h-full object-cover object-center sm:hidden"
+          className="w-full h-full object-cover object-center sm:hidden transform-gpu will-change-transform"
         >
           <source src="/videos/numa-skin-water-splash-mobile.webm" type="video/webm" />
           <source src="/videos/numa-skin-water-splash-mobile.mp4" type="video/mp4" />
