@@ -140,10 +140,10 @@ export default function CollectionDetailPage() {
                   key={f.id}
                   type="button"
                   onClick={() => setActiveConcern(f.id)}
-                  className={`px-3 py-1.5 rounded-full text-xs font-medium whitespace-nowrap transition-all ${
+                  className={`px-3.5 py-1.5 !rounded-full text-xs font-medium whitespace-nowrap transition-all ${
                     activeConcern === f.id
-                      ? 'bg-[#002B49] text-white shadow-sm'
-                      : 'bg-white/80 backdrop-blur-xs text-slate-700 border border-white/80 hover:bg-white hover:border-[#002B49]/30'
+                      ? 'btn-glass-primary'
+                      : 'btn-glass-outline text-slate-700'
                   }`}
                 >
                   {f.label}

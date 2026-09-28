@@ -45,6 +45,31 @@ export function PageLayout({ children }: PageLayoutProps) {
     },
   ]);
 
+  // Global event listener for Add to Cart
+  useEffect(() => {
+    const handleAddToCartEvent = (e: Event) => {
+      const customEvent = e as CustomEvent<{ item: CartItem }>;
+      if (customEvent.detail?.item) {
+        const newItem = customEvent.detail.item;
+        setCartItems((prev) => {
+          const existing = prev.find((i) => i.variantId === newItem.variantId);
+          if (existing) {
+            return prev.map((i) =>
+              i.variantId === newItem.variantId
+                ? { ...i, quantity: i.quantity + newItem.quantity }
+                : i
+            );
+          }
+          return [...prev, newItem];
+        });
+        setIsCartOpen(true);
+      }
+    };
+
+    window.addEventListener('numa:add-to-cart', handleAddToCartEvent);
+    return () => window.removeEventListener('numa:add-to-cart', handleAddToCartEvent);
+  }, []);
+
   const handleUpdateQuantity = (id: string, delta: number) => {
     setCartItems((prev) =>
       prev
@@ -83,11 +108,13 @@ export function PageLayout({ children }: PageLayoutProps) {
 
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const isProduct = location.pathname.startsWith('/products/');
+  const isTransparentHeroPage = isHome || isProduct;
 
   return (
     <div className="min-h-screen flex flex-col bg-white">
       {/* Announcement Bar: Scrolls away with page (NOT sticky) */}
-      <div className={isHome ? 'hidden sm:block absolute top-0 left-0 right-0 z-50' : 'relative z-50'}>
+      <div className={isTransparentHeroPage ? 'hidden sm:block absolute top-0 left-0 right-0 z-50' : 'relative z-50'}>
         <AnnouncementBar />
       </div>
       
@@ -98,7 +125,7 @@ export function PageLayout({ children }: PageLayoutProps) {
         onOpenSearch={() => setIsSearchOpen(true)}
       />
 
-      <main className="flex-1">
+      <main className="flex-1 relative">
         {children}
       </main>
 

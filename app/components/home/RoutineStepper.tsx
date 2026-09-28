@@ -233,10 +233,10 @@ export function RoutineStepper({ products }: RoutineStepperProps) {
 
             <Link
               to="/products/numa-skin-paket-complete-routine-4-in-1-150ml"
-              className="px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-gradient-to-r from-[#002B49] via-[#083D56] to-[#0B6E7D] hover:from-[#0B6E7D] hover:to-[#269BA8] text-white font-mono text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold transition-all flex items-center justify-center gap-1.5 group shrink-0 cursor-pointer"
+              className="btn-glass-cyan px-4 py-2.5 sm:px-5 sm:py-3 text-[10px] sm:text-[11px] font-mono group shrink-0"
             >
               <span>Beli Paket 4-in-1</span>
-              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#38B6CD]" />
+              <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-white/90" />
             </Link>
           </div>
         </div>

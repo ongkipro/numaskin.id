@@ -211,6 +211,8 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
   };
 
   const isHome = location.pathname === '/';
+  const isProduct = location.pathname.startsWith('/products/');
+  const isTransparentHeroPage = isHome || isProduct;
   const isKategoriActive =
     collectionsDropdownOpen ||
     (location.pathname.startsWith('/collections') && location.pathname !== '/collections/paket-hemat-bundling');
@@ -224,7 +226,7 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
     <header
       ref={headerRef}
       className={`z-40 w-full transition-all duration-300 border-none ${
-        isHome
+        isTransparentHeroPage
           ? isScrolled
             ? 'fixed top-0 left-0 right-0 aqua-glass-panel text-slate-800 shadow-[0_4px_30px_rgba(0,43,73,0.06)]'
             : isGlassActive

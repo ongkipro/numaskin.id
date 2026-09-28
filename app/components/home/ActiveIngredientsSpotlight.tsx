@@ -53,37 +53,38 @@ export function ActiveIngredientsSpotlight() {
           </p>
         </div>
 
-        {/* 4 Actives Grid (Clean 4-Col Desktop / 2-Col Mobile, Rounded Tipis) */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 lg:gap-4">
+        {/* 4 Actives Grid (Frameless Frosted Glass, Center Aligned, Pure Minimalist Elegance) */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
           {ACTIVES.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="p-3.5 sm:p-5 rounded-sm bg-white border border-slate-200/80 hover:border-[#269BA8]/40 shadow-[0_4px_16px_rgba(0,43,73,0.04)] hover:shadow-[0_12px_28px_-6px_rgba(0,43,73,0.08)] transition-all duration-300 flex flex-col justify-between"
+                className="p-4 sm:p-6 rounded-2xl bg-white/65 hover:bg-white/95 backdrop-blur-md border border-white/80 hover:border-white transition-all duration-300 flex flex-col items-center text-center justify-between group shadow-none"
               >
-                <div>
-                  <div className="w-8 h-8 rounded-xs bg-[#EBF5F8] text-[#0B6E7D] flex items-center justify-center mb-3">
-                    <Icon className="w-4 h-4 text-[#0B6E7D]" />
+                <div className="flex flex-col items-center w-full">
+                  <div className="w-10 h-10 rounded-full bg-[#EBF5F8] text-[#0B6E7D] flex items-center justify-center mb-3.5 group-hover:scale-105 transition-transform duration-300">
+                    <Icon className="w-5 h-5 text-[#0B6E7D]" />
                   </div>
 
-                  <span className="font-mono text-[8px] sm:text-[9px] font-semibold uppercase tracking-wider text-[#0B6E7D] block mb-1">
+                  <span className="font-mono text-[8.5px] sm:text-[9.5px] font-semibold uppercase tracking-wider text-[#0B6E7D] block mb-1.5">
                     {item.tag}
                   </span>
 
-                  <div className="h-8 sm:h-9 flex items-center mb-1.5">
+                  <div className="h-9 sm:h-10 flex items-center justify-center mb-2 w-full">
                     <h3 className="font-sans font-semibold text-xs sm:text-sm text-[#002B49] leading-snug line-clamp-2">
                       {item.name}
                     </h3>
                   </div>
 
-                  <p className="text-[10px] sm:text-[11.5px] text-slate-500 leading-relaxed font-sans">
+                  <p className="text-[10.5px] sm:text-[12px] text-slate-500 leading-relaxed font-sans max-w-[240px]">
                     {item.description}
                   </p>
                 </div>
 
-                <div className="pt-2.5 mt-3 border-t border-slate-100 flex items-center justify-between text-[8px] sm:text-[9px] font-mono text-slate-400 uppercase tracking-wider">
+                <div className="pt-3 mt-4 border-t border-slate-200/50 w-full flex items-center justify-center gap-2 text-[8.5px] sm:text-[9.5px] font-mono text-slate-400 uppercase tracking-wider">
                   <span>BPOM RI</span>
+                  <span className="text-slate-300">•</span>
                   <span className="text-[#0B6E7D] font-medium">Teruji Klinis</span>
                 </div>
               </div>

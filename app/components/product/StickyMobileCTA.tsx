@@ -36,9 +36,9 @@ export function StickyMobileCTA({ product, selectedPrice, onAddToCart }: StickyM
         <button
           type="button"
           onClick={onAddToCart}
-          className="px-5 py-2.5 rounded-xs bg-[#002B49] hover:bg-[#081B2B] text-white text-xs font-semibold uppercase tracking-wider flex items-center gap-1.5 shadow-sm whitespace-nowrap active:scale-98 transition-transform"
+          className="rounded-full px-5 py-2.5 bg-gradient-to-r from-[#002B49] via-[#063352] to-[#002B49] text-white font-semibold text-xs tracking-wider flex items-center gap-1.5 whitespace-nowrap shadow-none active:scale-[0.98] transition-all"
         >
-          <ShoppingBag className="w-3.5 h-3.5" />
+          <ShoppingBag className="w-3.5 h-3.5 text-[#38B6CD]" />
           <span>+ Keranjang</span>
         </button>
       </div>

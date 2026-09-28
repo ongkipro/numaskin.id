@@ -77,19 +77,19 @@ export function HeroBanner() {
             Menghidrasi hingga ke lapisan seluler dan merawat elastisitas alami kulit.
           </p>
 
-          {/* Dual Action CTAs: Direct & Refined (Rounded Tipis) */}
+          {/* Dual Action CTAs: Refractive Aqua Glass System (Rounded Tipis & Presisi) */}
           <div className="grid grid-cols-2 sm:flex sm:flex-row items-center gap-2.5 sm:gap-3 mb-3.5 sm:mb-7">
             <Link
               to="/collections/all"
-              className="px-3 sm:px-7 py-2.5 sm:py-3.5 rounded-xs bg-[#002B49] hover:bg-[#034266] text-white text-[11px] sm:text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-1.5 sm:gap-2 transition-all shadow-[0_8px_20px_rgba(0,43,73,0.16)] text-center group"
+              className="btn-glass-primary px-3.5 sm:px-7 py-2.5 sm:py-3.5 text-[11px] sm:text-xs text-center group"
             >
               <span>Jelajahi Koleksi</span>
-              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#38B6CD] group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#38B6CD] group-hover:translate-x-1 transition-transform shrink-0" />
             </Link>
 
             <Link
               to="/collections/paket-hemat-bundling"
-              className="px-3 sm:px-6 py-2.5 sm:py-3.5 rounded-xs bg-white/95 hover:bg-white border border-white/90 hover:border-white text-[#002B49] text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-center transition-all shadow-2xs truncate"
+              className="btn-glass-secondary px-3 sm:px-6 py-2.5 sm:py-3.5 text-[11px] sm:text-xs text-center truncate"
             >
               <span>Paket Hemat</span>
             </Link>

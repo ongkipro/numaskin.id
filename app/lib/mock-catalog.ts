@@ -67,6 +67,8 @@ export interface Product {
   variants: {
     nodes: ProductVariant[];
   };
+  videoUrl?: string;
+  videoAltText?: string;
 }
 
 export interface Collection {
@@ -173,6 +175,12 @@ function normalizeProduct(raw: any, index: number, isBundle: boolean): Product {
     variants: {
       nodes: variants,
     },
+    videoUrl: (raw.media || []).find((m: any) => m.type === 'video')?.url || (
+      raw.handle.includes('facial-wash') || raw.handle.includes('treatment-lotion')
+        ? '/videos/numa-skin-deep-sea-water-ritual-desktop.mp4'
+        : undefined
+    ),
+    videoAltText: (raw.media || []).find((m: any) => m.type === 'video')?.alt_text || `${raw.title} - Official Video`,
   };
 }
 
@@ -291,6 +299,28 @@ export function getRoutineProducts(): Product[] {
     'numa-skin-adenosine-deep-sea-water-moisturizer-30g',
   ];
   return handles.map((h) => getProductByHandle(h)).filter((p): p is Product => p !== undefined);
+}
+
+/**
+ * Get 4 related products matching category, collection, or complementary routine
+ */
+export function getRelatedProducts(currentHandle: string, limit: number = 4): Product[] {
+  const current = getProductByHandle(currentHandle);
+  const candidates = allProducts.filter((p) => p.handle !== currentHandle);
+  if (!current) return candidates.slice(0, limit);
+
+  // 1. Same collection matches
+  const byCollection = candidates.filter((p) =>
+    p.collections.some((c) => current.collections.includes(c))
+  );
+
+  if (byCollection.length >= limit) {
+    return byCollection.slice(0, limit);
+  }
+
+  // 2. Complementary products from singles/bundles
+  const remaining = candidates.filter((p) => !byCollection.some((b) => b.handle === p.handle));
+  return [...byCollection, ...remaining].slice(0, limit);
 }
 
 /**

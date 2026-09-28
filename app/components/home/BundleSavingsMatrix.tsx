@@ -1,5 +1,6 @@
 import { Link } from 'react-router';
 import { ArrowRight } from 'lucide-react';
+import { formatRupiah } from '~/lib/utils';
 import type { Product } from '~/lib/mock-catalog';
 
 interface BundleSavingsMatrixProps {
@@ -14,8 +15,6 @@ interface ActiveBundleItem {
   benefit: string;
   label: string;
   bannerGradient: string;
-  accentBorder: string;
-  badgeBg: string;
   handle: string;
   defaultTitle: string;
   defaultImage: string;
@@ -33,9 +32,7 @@ const ACTIVE_BUNDLES: ActiveBundleItem[] = [
     heroActiveSuffix: 'MINERAL BLEND',
     benefit: 'HYDRATE & REPAIR SKIN BARRIER',
     label: 'Deep Sea Minerals',
-    bannerGradient: 'bg-gradient-to-r from-[#0B6E7D] via-[#127F90] to-[#269BA8]',
-    accentBorder: 'hover:border-[#269BA8]/50',
-    badgeBg: 'bg-[#EBF5F8] text-[#0B6E7D]',
+    bannerGradient: 'from-[#0B6E7D]/90 via-[#0E7A8A]/85 to-[#1E8A9A]/90',
     handle: 'numa-skin-paket-fresh-and-hydrate',
     defaultTitle: 'Paket Fresh & Hydrate Duo',
     defaultImage: '/images/bundles/fresh-and-hydrate-09-gallery.webp',
@@ -51,9 +48,7 @@ const ACTIVE_BUNDLES: ActiveBundleItem[] = [
     heroActiveSuffix: 'BOOSTER COMPLEX',
     benefit: 'CELLULAR LONGEVITY & ANTI-AGING',
     label: '2% NAD+ Booster',
-    bannerGradient: 'bg-gradient-to-r from-[#002B49] via-[#0E3D60] to-[#1E40AF]',
-    accentBorder: 'hover:border-[#002B49]/50',
-    badgeBg: 'bg-[#E8EFF5] text-[#002B49]',
+    bannerGradient: 'from-[#002B49]/95 via-[#063352]/90 to-[#0E4466]/95',
     handle: 'numa-skin-paket-anti-aging-trio',
     defaultTitle: 'Paket Anti-Aging Trio',
     defaultImage: '/images/bundles/anti-aging-trio-09-gallery.webp',
@@ -69,9 +64,7 @@ const ACTIVE_BUNDLES: ActiveBundleItem[] = [
     heroActiveSuffix: '& ALPHA ARBUTIN',
     benefit: 'CELL REPAIR & TONE-UP RADIANCE',
     label: 'Salmon PDRN Complex',
-    bannerGradient: 'bg-gradient-to-r from-[#881337] via-[#9F1239] to-[#E11D48]',
-    accentBorder: 'hover:border-[#E11D48]/50',
-    badgeBg: 'bg-[#FDF2F4] text-[#BE123C]',
+    bannerGradient: 'from-[#881337]/90 via-[#9F1239]/85 to-[#BE123C]/90',
     handle: 'numa-skin-paket-protection-duo-pdrn',
     defaultTitle: 'Paket Protection Duo PDRN',
     defaultImage: '/images/bundles/protection-duo-pdrn-09-gallery.webp',
@@ -87,9 +80,7 @@ const ACTIVE_BUNDLES: ActiveBundleItem[] = [
     heroActiveSuffix: '& SQUALANE SHIELD',
     benefit: 'FIRMING ELASTICITY & REPAIR',
     label: 'Adenosine & Squalane',
-    bannerGradient: 'bg-gradient-to-r from-[#003B5C] via-[#0E5277] to-[#1B729E]',
-    accentBorder: 'hover:border-[#0E5277]/50',
-    badgeBg: 'bg-[#EBF5F8] text-[#002B49]',
+    bannerGradient: 'from-[#003B5C]/90 via-[#0E5277]/85 to-[#166088]/90',
     handle: 'numa-skin-paket-daily-care-adenosine',
     defaultTitle: 'Paket Daily Care Adenosine',
     defaultImage: '/images/bundles/daily-care-adenosine-09-gallery.webp',
@@ -101,9 +92,9 @@ const ACTIVE_BUNDLES: ActiveBundleItem[] = [
   },
 ];
 
-export function BundleSavingsMatrix({ bundles, onAddToCart }: BundleSavingsMatrixProps) {
+export function BundleSavingsMatrix({ bundles }: BundleSavingsMatrixProps) {
   return (
-    <section className="w-full py-16 sm:py-24 bg-white">
+    <section className="w-full py-16 sm:py-24 bg-[#F8FCFD]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header (Centered Clean Luxury Presentation) */}
@@ -127,22 +118,30 @@ export function BundleSavingsMatrix({ bundles, onAddToCart }: BundleSavingsMatri
           </p>
         </div>
 
-        {/* 4-Card Active Bundles Grid (Presisi Atas, Rounded Tipis, Pure Image Fill) */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-3.5 lg:gap-4">
+        {/* 4-Card Active Bundles Grid (Frameless Frosted Glass, Center Aligned, Zero 3D Emboss) */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
           {ACTIVE_BUNDLES.map((item) => {
             const matchedBundle = bundles?.find((b) => b.handle === item.handle);
             const title = matchedBundle?.title || item.defaultTitle;
             const imageUrl = item.defaultImage || matchedBundle?.featuredImage?.url;
+            const price = matchedBundle?.priceRange?.minVariantPrice?.amount
+              ? parseFloat(matchedBundle.priceRange.minVariantPrice.amount)
+              : item.defaultPrice;
+            const compareAt = matchedBundle?.compareAtPriceRange?.minVariantPrice?.amount
+              ? parseFloat(matchedBundle.compareAtPriceRange.minVariantPrice.amount)
+              : item.defaultCompareAt;
+            const savingsPercent = compareAt && compareAt > price
+              ? Math.round(((compareAt - price) / compareAt) * 100)
+              : item.defaultSavingsPercent;
 
             return (
               <article
                 key={item.id}
-                className={`group flex flex-col justify-start h-full bg-white rounded-sm border border-slate-200/80 ${item.accentBorder} shadow-[0_4px_16px_rgba(0,43,73,0.04)] hover:shadow-[0_16px_36px_-10px_rgba(0,43,73,0.12)] transition-all duration-300 overflow-hidden select-none`}
+                className="group flex flex-col justify-start h-full bg-white/70 hover:bg-white/95 backdrop-blur-md rounded-2xl border border-white/80 hover:border-white shadow-none transition-all duration-300 overflow-hidden select-none"
               >
                 <Link to={`/products/${item.handle}`} className="flex flex-col h-full">
-                  {/* 01. Packshot Canvas Area (Pure Edge-to-Edge Image Fill, Frameless, No Badges) */}
+                  {/* 01. Packshot Canvas Area (Edge-to-Edge Clean Canvas) */}
                   <div className="relative aspect-square w-full bg-[#F4F9FA] overflow-hidden block">
-                    {/* Packshot Image with Edge-to-Edge Fill */}
                     <img
                       src={imageUrl}
                       alt={title}
@@ -154,47 +153,63 @@ export function BundleSavingsMatrix({ bundles, onAddToCart }: BundleSavingsMatri
                     <div className="absolute inset-0 bg-gradient-to-tr from-[#002B49]/8 via-transparent to-[#38B6CD]/12 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   </div>
 
-                  {/* 02. The Hero Active Ingredient Banner (Luminous Aqua Glass Ribbon) */}
-                  <div className={`px-2.5 py-2 sm:px-3 sm:py-2.5 ${item.bannerGradient} text-white flex flex-col justify-center relative overflow-hidden border-y border-white/25 shadow-[inset_0_1px_1px_rgba(255,255,255,0.3)]`}>
-                    {/* Liquid Caustics Light Refraction */}
-                    <div className="absolute inset-0 bg-gradient-to-tr from-black/10 via-white/15 to-transparent pointer-events-none" />
-                    
-                    <div className="relative z-10">
-                      <div className="flex items-baseline gap-1 sm:gap-1.5 flex-wrap">
-                        <span className="font-sans font-black text-xs sm:text-sm md:text-base leading-none tracking-tight">
+                  {/* 02. The Hero Active Ingredient Banner (Uniform Fixed Height Across All Cards, Zero 3D Borders) */}
+                  <div className={`h-[56px] sm:h-[50px] px-2.5 sm:px-3.5 bg-gradient-to-r ${item.bannerGradient} backdrop-blur-md text-white flex flex-col justify-center items-center relative border-0 shadow-none overflow-hidden`}>
+                    <div className="relative z-10 text-center w-full">
+                      <div className="flex items-baseline justify-center gap-1 sm:gap-1.5 flex-wrap">
+                        <span className="font-sans font-extrabold text-xs sm:text-sm md:text-[14px] leading-tight tracking-tight">
                           {item.heroActive}
                         </span>
-                        <span className="font-sans font-bold text-[8.5px] sm:text-[10px] md:text-[11px] leading-none opacity-95 tracking-wide">
+                        <span className="font-sans font-semibold text-[8.5px] sm:text-[9.5px] md:text-[10.5px] leading-tight opacity-90 tracking-wide">
                           {item.heroActiveSuffix}
                         </span>
                       </div>
-                      <span className="font-mono text-[7px] sm:text-[8px] md:text-[9px] uppercase tracking-wider opacity-90 mt-0.5 sm:mt-1 block truncate font-medium">
+                      <span className="font-mono text-[7px] sm:text-[8px] md:text-[8.5px] uppercase tracking-wider opacity-85 mt-0.5 block truncate font-medium">
                         {item.benefit}
                       </span>
                     </div>
                   </div>
 
-                  {/* 03. Under Card: Bundle Details (Presisi Atas, Clean & Focused) */}
-                  <div className="p-2.5 sm:p-3.5 flex flex-col flex-1 justify-between bg-white text-center">
+                  {/* 03. Under Card: Bundle Details (Presisi, Center Alignment, Clean Typography) */}
+                  <div className="p-3 sm:p-4 flex flex-col flex-1 justify-between bg-transparent text-center">
                     <div>
-                      {/* Active Label */}
-                      <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-[0.18em] font-semibold text-[#0B6E7D] block mb-0.5 sm:mb-1">
+                      {/* Active Formula Label */}
+                      <span className="font-mono text-[8.5px] sm:text-[9.5px] uppercase tracking-[0.18em] font-semibold text-[#0B6E7D] block mb-1">
                         {item.label}
                       </span>
 
                       {/* Product Bundle Title */}
-                      <h3 className="uppercase font-normal text-xs sm:text-[13px] text-[#002B49] leading-tight tracking-[0.05em] line-clamp-1 group-hover:text-[#269BA8] transition-colors mb-1">
-                        {title}
-                      </h3>
+                      <div className="h-5 sm:h-6 flex items-center justify-center mb-1 w-full">
+                        <h3 className="uppercase font-semibold text-xs sm:text-[13px] text-[#002B49] leading-tight tracking-[0.05em] line-clamp-1 group-hover:text-[#269BA8] transition-colors">
+                          {title}
+                        </h3>
+                      </div>
 
                       {/* Included Items Micro Description */}
-                      <p className="text-[9.5px] sm:text-[10.5px] text-slate-500 line-clamp-2 sm:line-clamp-1 font-normal leading-relaxed">
-                        {item.itemsIncluded}
-                      </p>
+                      <div className="h-7 sm:h-5 flex items-center justify-center mb-2.5 w-full">
+                        <p className="text-[10px] sm:text-[11px] text-slate-500 line-clamp-2 sm:line-clamp-1 font-normal leading-relaxed">
+                          {item.itemsIncluded}
+                        </p>
+                      </div>
+
+                      {/* Price & Savings Pill */}
+                      <div className="h-9 sm:h-7 flex items-center justify-center gap-1.5 sm:gap-2 mb-2 flex-wrap">
+                        <span className="font-semibold text-xs sm:text-sm text-[#002B49] font-sans tracking-tight">
+                          {formatRupiah(price)}
+                        </span>
+                        {compareAt && compareAt > price && (
+                          <span className="text-[10px] sm:text-[11px] text-slate-400 line-through font-mono">
+                            {formatRupiah(compareAt)}
+                          </span>
+                        )}
+                        <span className="font-mono text-[8px] sm:text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-[#EBF5F8] text-[#0B6E7D] font-semibold">
+                          Hemat {savingsPercent}%
+                        </span>
+                      </div>
                     </div>
 
                     {/* Subtle Formula Exploration Link */}
-                    <div className="pt-2 mt-2 border-t border-slate-100 flex items-center justify-center gap-1 text-[9.5px] sm:text-[10.5px] font-mono uppercase tracking-wider text-[#0B6E7D] group-hover:text-[#002B49] transition-colors">
+                    <div className="pt-2 mt-auto border-t border-slate-200/50 flex items-center justify-center gap-1 text-[9.5px] sm:text-[10.5px] font-mono uppercase tracking-wider text-[#0B6E7D] group-hover:text-[#002B49] transition-colors">
                       <span>Eksplorasi Formula</span>
                       <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform text-[#269BA8]" />
                     </div>
@@ -204,7 +219,6 @@ export function BundleSavingsMatrix({ bundles, onAddToCart }: BundleSavingsMatri
             );
           })}
         </div>
-
 
       </div>
     </section>

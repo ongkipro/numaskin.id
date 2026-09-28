@@ -13,9 +13,6 @@ export function ProductCard({ product }: ProductCardProps) {
     ? parseFloat(product.compareAtPriceRange.minVariantPrice.amount)
     : null;
   const imageUrl = product.featuredImage?.url || '/images/banners/02-shop-avatar-shopee-shop-profile-avatar.jpg';
-  const secondaryImageUrl = product.secondaryImage?.url && product.secondaryImage.url !== imageUrl
-    ? product.secondaryImage.url
-    : null;
 
   // Format clean mineral formula tag
   const formulaTag = product.netto
@@ -35,20 +32,8 @@ export function ProductCard({ product }: ProductCardProps) {
           src={imageUrl}
           alt={product.title}
           loading="lazy"
-          className={`w-full h-full object-cover transform-gpu transition-all duration-700 ease-out will-change-transform ${
-            secondaryImageUrl ? 'group-hover:opacity-0 group-hover:scale-105' : 'group-hover:scale-105'
-          }`}
+          className="w-full h-full object-cover transform-gpu transition-all duration-700 ease-out will-change-transform group-hover:scale-105"
         />
-
-        {/* Secondary Lifestyle / Endorsement Image on Hover */}
-        {secondaryImageUrl && (
-          <img
-            src={secondaryImageUrl}
-            alt={`${product.title} Lifestyle`}
-            loading="lazy"
-            className="absolute inset-0 w-full h-full object-cover transform-gpu transition-all duration-700 ease-out opacity-0 group-hover:opacity-100 group-hover:scale-105 will-change-transform"
-          />
-        )}
 
         {/* Liquid Aqua Glass Sheen (Subtle Water Refraction on Hover) */}
         <div className="absolute inset-0 bg-gradient-to-tr from-[#002B49]/8 via-transparent to-[#38B6CD]/12 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />

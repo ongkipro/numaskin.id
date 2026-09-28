@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import {
   ShieldCheck,
   Truck,
@@ -7,8 +7,41 @@ import {
 } from 'lucide-react';
 
 export function Footer() {
+  const location = useLocation();
+
+  const isLinkActive = (to: string) => {
+    if (to === '/') return location.pathname === '/';
+    return location.pathname === to || location.pathname.startsWith(`${to}/`);
+  };
+
+  const navLinks = [
+    { to: '/', label: 'Beranda' },
+    { to: '/pages/about', label: 'Tentang Numa Skin' },
+    { to: '/pages/science', label: 'Sains Air Laut Dalam' },
+    { to: '/blogs', label: 'Jurnal & Tips Kulit' },
+    { to: '/pages/faq', label: 'Pusat Bantuan & FAQ' },
+  ];
+
+  const categoryLinks = [
+    { to: '/collections/all', label: 'Semua Produk', badge: 'Katalog Lengkap', badgeAqua: true },
+    { to: '/collections/paket-hemat-bundling', label: 'Paket Rutinitas Hemat', badge: 'Hemat 23%', badgeAqua: true },
+    { to: '/collections/anti-aging-series', label: 'Anti-Aging (2% NAD+)', badge: 'Unggulan', badgeAqua: false },
+    { to: '/collections/cleanser-toner', label: 'Pembersih Wajah & Toner' },
+    { to: '/collections/serum-treatment', label: 'Serum & Perawatan Flek' },
+    { to: '/collections/moisturizer-day-cream', label: 'Pelembap Gel & Barrier Cream' },
+    { to: '/collections/sunscreen-protection', label: 'Tabir Surya Oxydew SPF 50+' },
+  ];
+
+  const policyLinks = [
+    { to: '/policies/privacy-policy', label: 'Kebijakan Privasi' },
+    { to: '/policies/terms-of-service', label: 'Syarat & Ketentuan' },
+    { to: '/policies/shipping-policy', label: 'Kebijakan Pengiriman' },
+    { to: '/policies/refund-policy', label: 'Kebijakan Pengembalian' },
+    { to: '/pages/bpom', label: 'Izin Edar BPOM RI' },
+  ];
+
   return (
-    <footer className="w-full bg-[#F8FCFD] text-slate-600 relative overflow-hidden mt-auto">
+    <footer className="w-full bg-[#F8FCFD] text-slate-600 relative overflow-hidden mt-auto border-none">
       {/* Seamless transition: flows naturally from preceding #F8FCFD section without harsh borders */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-14 sm:pt-16 pb-12 sm:pb-16">
         
@@ -20,7 +53,7 @@ export function Footer() {
           {/* Column 1: Brand Essence & Identity (Lg: 4 Cols) */}
           <div className="lg:col-span-4">
             <Link to="/" className="inline-block mb-4 group">
-              <span className="font-semibold text-xl tracking-[0.24em] text-[#002B49] block">
+              <span className="font-semibold text-xl tracking-[0.24em] text-[#002B49] block transition-colors group-hover:text-[#0B6E7D]">
                 NUMA · SKIN
               </span>
               <span className="text-[11px] tracking-[0.3em] text-[#0B6E7D] block font-light">
@@ -45,93 +78,93 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Katalog Produk (Lg: 3 Cols) */}
-          <div className="lg:col-span-3">
+          {/* Column 2: Menu Utama / Navigasi (Lg: 2 Cols) */}
+          <div className="lg:col-span-2">
             <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#002B49] mb-4">
-              Koleksi & Produk
+              Menu Utama
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-600">
+              {navLinks.map((item) => {
+                const active = isLinkActive(item.to);
+                return (
+                  <li key={item.to}>
+                    <Link
+                      to={item.to}
+                      className={`group flex items-center gap-1.5 transition-all duration-200 ${
+                        active
+                          ? 'text-[#002B49] font-semibold translate-x-1'
+                          : 'text-slate-600 hover:text-[#0B6E7D] hover:translate-x-1'
+                      }`}
+                    >
+                      <span
+                        className={`h-0.5 rounded-full bg-[#0B6E7D] transition-all duration-200 ${
+                          active
+                            ? 'w-2.5 opacity-100'
+                            : 'w-0 opacity-0 group-hover:w-2 group-hover:opacity-100'
+                        }`}
+                      />
+                      <span>{item.label}</span>
+                    </Link>
+                  </li>
+                );
+              })}
               <li>
-                <Link to="/collections/paket-hemat-bundling" className="hover:text-[#002B49] transition-colors flex items-center justify-between">
-                  <span>Paket Hemat Rutinitas</span>
-                  <span className="font-mono text-[10px] text-[#0B6E7D] font-medium">Hemat 23%</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/collections/anti-aging-series" className="hover:text-[#002B49] transition-colors flex items-center justify-between">
-                  <span>Anti-Aging Series (2% NAD+)</span>
-                  <span className="font-mono text-[10px] text-slate-400">Unggulan</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/collections/cleanser-toner" className="hover:text-[#002B49] transition-colors">
-                  Pembersih Wajah & Hydrating Toner
-                </Link>
-              </li>
-              <li>
-                <Link to="/collections/serum-treatment" className="hover:text-[#002B49] transition-colors">
-                  Serum & Perawatan Intensif Flek
-                </Link>
-              </li>
-              <li>
-                <Link to="/collections/moisturizer-day-cream" className="hover:text-[#002B49] transition-colors">
-                  Pelembap Gel & Barrier Cream
-                </Link>
-              </li>
-              <li>
-                <Link to="/collections/sunscreen-protection" className="hover:text-[#002B49] transition-colors">
-                  Tabir Surya Oxydew SPF 50+ PA++++
-                </Link>
-              </li>
-              <li className="pt-1.5">
-                <Link to="/collections/all" className="hover:text-[#0B6E7D] transition-colors text-[#002B49] font-mono text-[11px] uppercase tracking-wider font-semibold block">
-                  Lihat Seluruh Katalog (42 Produk) →
-                </Link>
+                <a
+                  href="https://wa.me/6281234567890?text=Halo%20Numa%20Skin,%20saya%20mau%20bertanya"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-1.5 text-slate-600 hover:text-[#0B6E7D] hover:translate-x-1 transition-all duration-200"
+                >
+                  <span className="w-0 opacity-0 group-hover:w-2 group-hover:opacity-100 h-0.5 rounded-full bg-[#0B6E7D] transition-all duration-200" />
+                  <span>Hubungi Kami</span>
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Bantuan & Info (Lg: 2 Cols) */}
-          <div className="lg:col-span-2">
+          {/* Column 3: Kategori Produk (Lg: 3 Cols) */}
+          <div className="lg:col-span-3">
             <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#002B49] mb-4">
-              Bantuan & Info
+              Kategori Produk
             </h4>
             <ul className="space-y-2.5 text-xs text-slate-600">
-              <li>
-                <Link to="/pages/faq" className="hover:text-[#002B49] transition-colors">
-                  Pusat Bantuan & FAQ
-                </Link>
-              </li>
-              <li>
-                <Link to="/pages/science" className="hover:text-[#002B49] transition-colors">
-                  Sains Air Laut Dalam
-                </Link>
-              </li>
-              <li>
-                <Link to="/pages/bpom" className="hover:text-[#002B49] transition-colors">
-                  Izin Edar BPOM RI
-                </Link>
-              </li>
-              <li>
-                <Link to="/pages/about" className="hover:text-[#002B49] transition-colors">
-                  Tentang Numa Skin
-                </Link>
-              </li>
-              <li>
-                <Link to="/blogs" className="hover:text-[#002B49] transition-colors">
-                  Jurnal & Tips Kulit
-                </Link>
-              </li>
-              <li>
-                <Link to="/pages/privacy-policy" className="hover:text-[#002B49] transition-colors text-slate-400">
-                  Kebijakan Privasi
-                </Link>
-              </li>
-              <li>
-                <Link to="/pages/terms" className="hover:text-[#002B49] transition-colors text-slate-400">
-                  Syarat & Ketentuan
-                </Link>
-              </li>
+              {categoryLinks.map((cat) => {
+                const active = isLinkActive(cat.to);
+                return (
+                  <li key={cat.to}>
+                    <Link
+                      to={cat.to}
+                      className={`group flex items-center justify-between transition-all duration-200 ${
+                        active
+                          ? 'text-[#002B49] font-semibold'
+                          : 'text-slate-600 hover:text-[#0B6E7D]'
+                      }`}
+                    >
+                      <span className="flex items-center gap-1.5 transition-transform duration-200 group-hover:translate-x-1">
+                        <span
+                          className={`h-0.5 rounded-full bg-[#0B6E7D] transition-all duration-200 ${
+                            active
+                              ? 'w-2.5 opacity-100'
+                              : 'w-0 opacity-0 group-hover:w-2 group-hover:opacity-100'
+                          }`}
+                        />
+                        <span>{cat.label}</span>
+                      </span>
+                      {cat.badge && (
+                        <span
+                          className={`font-mono text-[10px] transition-colors duration-200 ${
+                            cat.badgeAqua
+                              ? 'text-[#0B6E7D] font-medium group-hover:text-[#002B49]'
+                              : 'text-slate-400 group-hover:text-slate-600'
+                          }`}
+                        >
+                          {cat.badge}
+                        </span>
+                      )}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
 
@@ -156,10 +189,10 @@ export function Footer() {
                 href="https://wa.me/6281234567890?text=Halo%20Numa%20Skin,%20saya%20mau%20konsultasi%20skincare"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#002B49] hover:text-[#0B6E7D] transition-colors group"
+                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#002B49] hover:text-[#0B6E7D] hover:translate-x-1 transition-all duration-200 group"
               >
                 <span>Mulai Konsultasi Gratis</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" />
               </a>
             </div>
 
@@ -178,9 +211,40 @@ export function Footer() {
         </div>
 
         {/* =================================================================== */}
-        {/* BOTTOM COPYRIGHT & LEGAL NOTICE                                     */}
+        {/* POLICIES & LEGAL LINKS ROW (Kebijakan di List Bawah)                */}
         {/* =================================================================== */}
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+        <div className="py-6 border-b border-slate-200/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-slate-500">
+            <span className="font-mono text-[10px] uppercase tracking-wider text-[#0B6E7D] font-semibold">
+              Kebijakan:
+            </span>
+            {policyLinks.map((pol) => {
+              const active = isLinkActive(pol.to);
+              return (
+                <Link
+                  key={pol.to}
+                  to={pol.to}
+                  className={`transition-all duration-200 ${
+                    active
+                      ? 'text-[#002B49] font-medium underline underline-offset-4 decoration-[#0B6E7D]'
+                      : 'hover:text-[#0B6E7D]'
+                  }`}
+                >
+                  {pol.label}
+                </Link>
+              );
+            })}
+          </div>
+          
+          <div className="font-mono text-[10px] text-slate-400">
+            Terverifikasi Sistem Resmi
+          </div>
+        </div>
+
+        {/* =================================================================== */}
+        {/* BOTTOM COPYRIGHT & CERTIFICATION NOTICE                             */}
+        {/* =================================================================== */}
+        <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 text-[11px] text-slate-500">
             <span>Badan Pengawas Obat & Makanan (BPOM RI)</span>
             <span className="text-slate-300">•</span>
@@ -192,7 +256,7 @@ export function Footer() {
           </div>
 
           <div className="text-center md:text-right font-mono text-[11px] text-slate-400">
-            © 2022 Numa Skin Official. All rights reserved.
+            © 2026 Numa Skin Official. All rights reserved.
           </div>
         </div>
 

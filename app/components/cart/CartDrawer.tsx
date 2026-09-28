@@ -106,7 +106,7 @@ export function CartDrawer({
                 <Link
                   to="/collections/all"
                   onClick={onClose}
-                  className="inline-flex px-6 py-2.5 rounded-xs bg-[#002B49] text-white text-xs font-semibold hover:bg-[#081B2B] transition-colors shadow-xs"
+                  className="btn-glass-primary px-6 py-2.5 text-xs"
                 >
                   Jelajahi Produk
                 </Link>
@@ -187,7 +187,7 @@ export function CartDrawer({
                   <button
                     type="button"
                     onClick={() => onAddUpsell('numa-skin-deep-sea-water-treatment-lotion')}
-                    className="px-3 py-1.5 rounded-xs bg-white border border-[#002B49] text-[#002B49] text-xs font-semibold hover:bg-[#002B49] hover:text-white transition-colors"
+                    className="btn-glass-secondary px-3 py-1.5 text-xs font-semibold"
                   >
                     + Tambah
                   </button>
@@ -215,10 +215,10 @@ export function CartDrawer({
                         .join(',')}`
                     : '#'
                 }
-                className="w-full py-3.5 rounded-xs bg-[#002B49] hover:bg-[#081B2B] text-white text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 transition-colors shadow-sm"
+                className="btn-glass-primary w-full py-3.5 text-xs sm:text-[13px] tracking-wider group"
               >
                 <span>Lanjut ke Pembayaran</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 text-[#38B6CD] group-hover:translate-x-1 transition-transform" />
               </a>
 
               <div className="flex items-center justify-center gap-1.5 text-[11px] text-slate-400 pt-1">
