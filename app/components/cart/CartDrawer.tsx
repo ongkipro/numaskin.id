@@ -48,10 +48,10 @@ export function CartDrawer({
       />
 
       {/* Cart Container: Bottom Sheet (Mobile) / Slide-over Drawer (Desktop) */}
-      <div className="relative w-full max-h-[88vh] sm:max-h-full sm:h-full sm:fixed sm:inset-y-0 sm:right-0 sm:left-auto sm:max-w-md rounded-t-[28px] sm:rounded-none bg-white/95 backdrop-blur-2xl border-t sm:border-t-0 sm:border-l border-white/90 shadow-[0_-20px_60px_rgba(0,43,73,0.18)] sm:shadow-2xl flex flex-col z-50 animate-in slide-in-from-bottom sm:slide-in-from-bottom-0 sm:slide-in-from-right duration-300 overflow-hidden">
+      <div className="relative w-full max-h-[78vh] sm:max-h-full sm:h-full sm:fixed sm:inset-y-0 sm:right-0 sm:left-auto sm:max-w-md rounded-t-[32px] sm:rounded-none bg-white/92 backdrop-blur-2xl border-t sm:border-t-0 sm:border-l border-white/90 shadow-[0_-25px_60px_rgba(0,43,73,0.22)] sm:shadow-2xl flex flex-col z-50 animate-in slide-in-from-bottom duration-300 ease-out sm:slide-in-from-bottom-0 sm:slide-in-from-right overflow-hidden">
         
         {/* Top Sheet Drag Indicator Pill on Mobile */}
-        <div className="pt-3 pb-1 flex justify-center shrink-0 sm:hidden">
+        <div className="pt-3 pb-1.5 flex justify-center shrink-0 sm:hidden">
           <div className="w-12 h-1.5 rounded-full bg-slate-300/80" />
         </div>
 

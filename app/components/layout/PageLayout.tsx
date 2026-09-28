@@ -152,10 +152,10 @@ export function PageLayout({ children }: PageLayoutProps) {
           />
 
           {/* Search Container: Bottom Sheet (Mobile) / Centered Floating Card (Desktop) */}
-          <div className="relative w-full sm:max-w-2xl sm:mx-auto sm:my-16 max-h-[88vh] sm:max-h-[80vh] rounded-t-[28px] sm:rounded-2xl bg-white/95 backdrop-blur-2xl border-t sm:border border-white/90 shadow-[0_-20px_60px_rgba(0,43,73,0.18)] sm:shadow-[0_20px_60px_rgba(0,43,73,0.18)] flex flex-col z-50 animate-in slide-in-from-bottom sm:slide-in-from-bottom-0 sm:zoom-in-95 duration-300 overflow-hidden">
+          <div className="relative w-full sm:max-w-2xl sm:mx-auto sm:my-16 max-h-[78vh] sm:max-h-[80vh] rounded-t-[32px] sm:rounded-2xl bg-white/92 backdrop-blur-2xl border-t sm:border border-white/90 shadow-[0_-25px_60px_rgba(0,43,73,0.22)] sm:shadow-[0_20px_60px_rgba(0,43,73,0.18)] flex flex-col z-50 animate-in slide-in-from-bottom duration-300 ease-out sm:slide-in-from-bottom-0 sm:zoom-in-95 overflow-hidden">
             
             {/* Top Drag Indicator for Mobile */}
-            <div className="pt-3 pb-1 flex justify-center shrink-0 sm:hidden">
+            <div className="pt-3 pb-1.5 flex justify-center shrink-0 sm:hidden">
               <div className="w-12 h-1.5 rounded-full bg-slate-300/80" />
             </div>
 

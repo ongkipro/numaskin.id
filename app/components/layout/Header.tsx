@@ -546,10 +546,10 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
           />
 
           {/* Slide-up Bottom Sheet Container */}
-          <div className="relative w-full max-h-[88vh] rounded-t-[28px] bg-white/95 backdrop-blur-2xl border-t border-white/90 shadow-[0_-20px_60px_rgba(0,43,73,0.2)] flex flex-col z-[101] animate-in slide-in-from-bottom duration-300 overflow-hidden">
+          <div className="relative w-full max-h-[78vh] rounded-t-[32px] bg-white/92 backdrop-blur-2xl border-t border-white/90 shadow-[0_-25px_60px_rgba(0,43,73,0.22)] flex flex-col z-[101] animate-in slide-in-from-bottom duration-300 ease-out overflow-hidden">
             
             {/* Top Sheet Drag Indicator Pill */}
-            <div className="pt-3 pb-1 flex justify-center shrink-0">
+            <div className="pt-3 pb-1.5 flex justify-center shrink-0">
               <div className="w-12 h-1.5 rounded-full bg-slate-300/80" />
             </div>
 
