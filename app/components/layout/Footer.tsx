@@ -53,8 +53,8 @@ export function Footer() {
           {/* Column 1: Brand Essence & Identity (Lg: 4 Cols) */}
           <div className="lg:col-span-4">
             <Link to="/" className="inline-block mb-4 group">
-              <span className="font-semibold text-xl tracking-[0.24em] text-[#002B49] block transition-colors group-hover:text-[#0B6E7D]">
-                NUMA · SKIN
+              <span className="font-semibold text-xl tracking-[0.18em] text-[#002B49] block transition-colors group-hover:text-[#0B6E7D]">
+                NUMA·SKIN
               </span>
               <span className="text-[11px] tracking-[0.3em] text-[#0B6E7D] block font-light">
                 ヌマスキン · DEEP SEA WATER

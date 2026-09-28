@@ -112,7 +112,7 @@ export function ProductGallery({ product, discountPercent = 0 }: ProductGalleryP
       {/* 03. Mini Thumbnails Row: Tepat 5 Thumbnail Presisi di Layar, UI/UX Rapih & Edge-to-Edge */}
       {mediaItems.length > 1 && (
         <div className="w-full">
-          <div className="flex items-center gap-2 sm:gap-2.5 overflow-x-auto py-1.5 px-0.5 scrollbar-none snap-x snap-mandatory">
+          <div className="-mx-2 px-2 sm:-mx-2.5 sm:px-2.5 flex items-center gap-2 sm:gap-[10px] overflow-x-auto py-3 scrollbar-none snap-x snap-mandatory scroll-pl-2 sm:scroll-pl-2.5">
             {mediaItems.map((item, idx) => {
               const isSelected = activeIndex === idx;
               const isVideo = item.type === 'video';
@@ -122,7 +122,7 @@ export function ProductGallery({ product, discountPercent = 0 }: ProductGalleryP
                   key={idx}
                   type="button"
                   onClick={() => setActiveIndex(idx)}
-                  className={`group/thumb w-[calc((100%-32px)/5)] min-w-[calc((100%-32px)/5)] sm:w-[68px] sm:h-[68px] sm:min-w-[68px] aspect-square rounded-xl overflow-hidden flex-shrink-0 snap-start transition-all duration-300 relative p-0 bg-white cursor-pointer active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#269BA8] focus-visible:ring-offset-2 ${
+                  className={`group/thumb w-[calc((100%_-_32px)_/_5)] min-w-[calc((100%_-_32px)_/_5)] sm:w-[68px] sm:h-[68px] sm:min-w-[68px] aspect-square rounded-xl overflow-hidden flex-shrink-0 snap-start transition-all duration-300 relative p-0 bg-white cursor-pointer active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#269BA8] focus-visible:ring-offset-2 ${
                     isSelected
                       ? 'ring-2 ring-[#269BA8] ring-offset-2 ring-offset-[#F4F9FA] sm:ring-offset-white shadow-[0_4px_14px_rgba(38,155,168,0.22)] opacity-100'
                       : 'ring-1 ring-slate-200/90 opacity-60 hover:opacity-100 hover:ring-2 hover:ring-[#269BA8]/50 hover:ring-offset-1 hover:ring-offset-white hover:shadow-xs'

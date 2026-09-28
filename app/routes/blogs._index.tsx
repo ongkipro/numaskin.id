@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router';
 import type { Route } from './+types/blogs._index';
-import { BookOpen, Clock, ArrowRight, Sparkles, Droplets, ShieldCheck, ChevronRight } from 'lucide-react';
+import { BookOpen, Clock, ArrowRight, Droplets, ShieldCheck, ChevronRight } from 'lucide-react';
 
 export const meta: Route.MetaFunction = () => {
   return [
@@ -130,7 +130,7 @@ export default function BlogIndex() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
         <div className="aqua-glass-panel rounded-3xl p-8 sm:p-12 text-center relative overflow-hidden border border-white/80 shadow-[0_10px_30px_rgba(0,43,73,0.04)]">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBF5F8] border border-[#269BA8]/20 text-[#002B49] text-[11px] font-mono font-medium mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-[#269BA8]" />
+            <BookOpen className="w-3.5 h-3.5 text-[#269BA8]" />
             <span>NUMA SCIENCE JOURNAL & EDUCATION</span>
           </div>
           <h1 className="font-serif text-3xl sm:text-5xl text-slate-900 font-normal tracking-tight mb-4">

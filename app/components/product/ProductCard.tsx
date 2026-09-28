@@ -5,9 +5,10 @@ import type { Product } from '~/lib/mock-catalog';
 interface ProductCardProps {
   product: Product;
   onAddToCart?: (product: Product) => void;
+  priority?: boolean;
 }
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({ product, priority = false }: ProductCardProps) {
   const currentPrice = parseFloat(product.priceRange.minVariantPrice.amount);
   const compareAtPrice = product.compareAtPriceRange?.minVariantPrice.amount
     ? parseFloat(product.compareAtPriceRange.minVariantPrice.amount)
@@ -31,7 +32,9 @@ export function ProductCard({ product }: ProductCardProps) {
         <img
           src={imageUrl}
           alt={product.title}
-          loading="lazy"
+          loading={priority ? 'eager' : 'lazy'}
+          fetchPriority={priority ? 'high' : 'low'}
+          decoding="async"
           className="w-full h-full object-cover transform-gpu transition-all duration-700 ease-out will-change-transform group-hover:scale-105"
         />
 

@@ -75,6 +75,10 @@ def fetch_live_data():
           handle
           description
           descriptionHtml
+          seo {
+            title
+            description
+          }
           image {
             id
             url
@@ -264,14 +268,18 @@ def sync():
             }
         
         prod_handles = [p["handle"] for p in c.get("products", {}).get("nodes", [])]
+        col_seo = c.get("seo") or {}
+        col_seo_title = col_seo.get("title") or f"{c['title']} — Numa Skin Official"
+        col_seo_desc = col_seo.get("description") or c.get("description", "")
         clean_collections.append({
             "id": c["id"],
             "title": c["title"],
             "handle": c["handle"],
             "description": c.get("description", ""),
             "descriptionHtml": c.get("descriptionHtml", ""),
-            "seoTitle": f"{c['title']} — Numa Skin Official Store",
-            "seoDescription": c.get("description", ""),
+            "seo": col_seo,
+            "seoTitle": col_seo_title,
+            "seoDescription": col_seo_desc,
             "image": img_obj,
             "productCount": len(prod_handles),
             "productHandles": prod_handles,
@@ -290,6 +298,7 @@ def sync():
         for m in p.get("media", {}).get("nodes", []):
             if m.get("mediaContentType") == "IMAGE" and m.get("image"):
                 media_list.append({
+                    "type": "image",
                     "url": m["image"]["url"],
                     "alt_text": m["image"].get("altText") or p["title"],
                     "width": m["image"].get("width", 800),
@@ -297,12 +306,14 @@ def sync():
                 })
             elif m.get("mediaContentType") == "VIDEO":
                 sources = m.get("sources", [])
-                src_url = sources[0]["url"] if sources else None
-                media_list.append({
-                    "type": "video",
-                    "url": src_url,
-                    "alt_text": m.get("alt") or f"{p['title']} Official Video",
-                })
+                mp4_sources = [s for s in sources if (s.get("mimeType") == "video/mp4" or s.get("format") == "mp4") and s.get("url")]
+                src_url = mp4_sources[0]["url"] if mp4_sources else (sources[0]["url"] if sources and sources[0].get("url") else None)
+                if src_url:
+                    media_list.append({
+                        "type": "video",
+                        "url": src_url,
+                        "alt_text": m.get("alt") or f"{p['title']} Official Video",
+                    })
 
         # Featured and Secondary images
         img_nodes = [m for m in media_list if m.get("type") != "video"]
@@ -357,6 +368,10 @@ def sync():
 
         subtitle = prev.get("subtitle") or p.get("description", "").split("\n")[0][:100]
 
+        prod_seo = p.get("seo") or {}
+        prod_seo_title = prod_seo.get("title") or p["title"]
+        prod_seo_desc = prod_seo.get("description") or (p.get("description", "")[:155] if p.get("description") else f"{p['title']} resmi Numa Skin terdaftar BPOM RI.")
+
         prod_record = {
             "id": p["id"],
             "title": p["title"],
@@ -370,12 +385,12 @@ def sync():
             "netto": netto,
             "price": min_price,
             "compareAtPrice": min_cpr,
-            "metaDescription": p.get("seo", {}).get("description") or p.get("description", "")[:160],
+            "metaDescription": prod_seo_desc,
             "bodyHtml": p.get("descriptionHtml") or p.get("description", ""),
             "category": p.get("category"),
-            "seo": p.get("seo") or {},
-            "seoTitle": p.get("seo", {}).get("title") or p["title"],
-            "seoDescription": p.get("seo", {}).get("description") or p.get("description", "")[:155],
+            "seo": prod_seo,
+            "seoTitle": prod_seo_title,
+            "seoDescription": prod_seo_desc,
             "featuredImage": {
                 "url": featured_img.get("url"),
                 "altText": featured_img.get("alt_text", p["title"]),

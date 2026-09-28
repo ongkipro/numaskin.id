@@ -16,86 +16,84 @@ export function ProductAccordions({ product }: ProductAccordionsProps) {
   const tabs = [
     {
       id: 'benefits',
-      title: 'Manfaat Utama & Hasil Perawatan',
+      title: 'Manfaat',
       icon: CheckCircle2,
       content: (
-        <div className="space-y-2 text-xs text-slate-600 leading-relaxed font-sans">
+        <div className="space-y-1.5 text-xs text-slate-600 leading-relaxed font-sans">
           <p className="flex items-start gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#269BA8] mt-1.5 flex-shrink-0" />
-            <span>Menghidrasi kulit hingga lapisan terdalam tanpa rasa lengket atau berminyak berkat partikel molekul mikro Ulleung Island Deep Sea Water.</span>
+            <span>Menghidrasi intensif hingga lapisan terdalam tanpa rasa lengket.</span>
           </p>
           <p className="flex items-start gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#269BA8] mt-1.5 flex-shrink-0" />
-            <span>Memperkuat dan memperbaiki skin barrier yang rusak, meredakan kemerahan, serta mencegah hilangnya kelembapan alami (*Transepidermal Water Loss*).</span>
+            <span>Memperkuat skin barrier yang rusak dan meredakan kemerahan alami.</span>
           </p>
           <p className="flex items-start gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#269BA8] mt-1.5 flex-shrink-0" />
-            <span>Mengembalikan elastisitas kontur wajah, memudarkan flek hitam, serta menghaluskan garis-garis halus penuaan dalam 14 hari pemakaian teratur.</span>
+            <span>Mengembalikan elastisitas kulit dan menyamarkan garis halus penuaan.</span>
           </p>
         </div>
       ),
     },
     {
       id: 'actives',
-      title: 'Kandungan Aktif & Bioaktif Laut',
+      title: 'Kandungan Aktif',
       icon: Droplets,
       content: (
         <div className="space-y-2 text-xs text-slate-600 leading-relaxed font-sans">
-          <div className="p-3 rounded-xl bg-white/60 border border-white/80">
-            <strong className="text-[#002B49] block font-semibold mb-0.5">Ulleung Island Deep Sea Water</strong>
-            <p>Air laut dalam pulau Ulleung yang diambil dari kedalaman lebih dari 200 meter, kaya mineral murni (Magnesium, Kalsium, Kalium) dengan rasio mineral selaras cairan tubuh manusia.</p>
+          <div>
+            <span className="text-[#002B49] font-semibold">Ulleung Deep Sea Water: </span>
+            <span>Kaya mineral murni mikro untuk menjaga keseimbangan hidrasi seluler.</span>
           </div>
-          <div className="p-3 rounded-xl bg-white/60 border border-white/80">
-            <strong className="text-[#002B49] block font-semibold mb-0.5">2% NAD+ Cellular Booster & Salmon PDRN</strong>
-            <p>Koenzim vital pembentukan energi seluler kulit yang dipadukan Polydeoxyribonucleotide DNA Salmon murni untuk regenerasi jaringan sel yang menua.</p>
+          <div>
+            <span className="text-[#002B49] font-semibold">NAD+ & Salmon PDRN: </span>
+            <span>Mendukung regenerasi seluler dan meningkatkan elastisitas jaringan kulit.</span>
           </div>
-          <div className="p-3 rounded-xl bg-white/60 border border-white/80">
-            <strong className="text-[#002B49] block font-semibold mb-0.5">Adenosine, Squalane & Niacinamide</strong>
-            <p>Mencegah degradasi kolagen alami, mengunci kelembapan di lapisan epidermis, dan mencerahkan warna kulit secara merata.</p>
+          <div>
+            <span className="text-[#002B49] font-semibold">Adenosine & Niacinamide: </span>
+            <span>Mengunci kelembapan, meratakan warna kulit, dan memperkuat barrier.</span>
           </div>
         </div>
       ),
     },
     {
       id: 'usage',
-      title: 'Cara Penggunaan Ritual Harian',
+      title: 'Cara Pakai',
       icon: Clock,
       content: (
-        <div className="space-y-2 text-xs text-slate-600 leading-relaxed font-sans">
+        <div className="space-y-1.5 text-xs text-slate-600 leading-relaxed font-sans">
           <p className="flex items-start gap-2">
-            <span className="font-mono font-bold text-[#0B6E7D]">01.</span>
-            <span>Bersihkan wajah secara menyeluruh dengan Deep Sea Water Facial Wash Gel, bilas dengan air suam-suam kuku.</span>
+            <span className="font-mono font-bold text-[#0B6E7D]">1.</span>
+            <span>Tuang secukupnya pada telapak tangan atau kapas lembut.</span>
           </p>
           <p className="flex items-start gap-2">
-            <span className="font-mono font-bold text-[#0B6E7D]">02.</span>
-            <span>Aplikasikan Deep Sea Water Treatment Lotion untuk menyeimbangkan pH dan membuka pori-pori kulit.</span>
+            <span className="font-mono font-bold text-[#0B6E7D]">2.</span>
+            <span>Usapkan dan tepuk lembut ke seluruh permukaan wajah dan leher hingga meresap.</span>
           </p>
           <p className="flex items-start gap-2">
-            <span className="font-mono font-bold text-[#0B6E7D]">03.</span>
-            <span>Tuangkan 3–5 tetes serum secara merata, tepuk-tepuk lembut ke seluruh permukaan wajah dan leher hingga meresap.</span>
-          </p>
-          <p className="flex items-start gap-2">
-            <span className="font-mono font-bold text-[#0B6E7D]">04.</span>
-            <span>Kunci dengan Moisturizer pada pagi/malam, dan aplikasikan Tabir Surya Oxydew SPF 50+ pada pagi hari.</span>
+            <span className="font-mono font-bold text-[#0B6E7D]">3.</span>
+            <span>Gunakan pagi dan malam hari setelah membersihkan wajah.</span>
           </p>
         </div>
       ),
     },
     {
       id: 'bpom',
-      title: 'Legalitas Izin Edar BPOM RI & Keamanan',
+      title: 'BPOM & Keamanan',
       icon: ShieldCheck,
       content: (
-        <div className="space-y-2 text-xs text-slate-600 leading-relaxed font-sans">
-          <p>
-            <strong className="text-[#002B49]">Nomor Izin Edar BPOM:</strong>{' '}
-            <span className="font-mono text-[#0B6E7D] font-bold">{product.bpom || 'NA18220101675'}</span>
+        <div className="space-y-1.5 text-xs text-slate-600 leading-relaxed font-sans">
+          <p className="flex items-center gap-2">
+            <span className="text-slate-400 font-medium">Nomor BPOM:</span>
+            <span className="font-mono font-bold text-[#0B6E7D]">{product.bpom || 'NA18220101675'}</span>
+          </p>
+          <p className="flex items-center gap-2">
+            <span className="text-slate-400 font-medium">Sertifikasi:</span>
+            <span className="font-semibold text-slate-700">Halal Indonesia (BPJPH)</span>
           </p>
           <p>
-            <strong className="text-[#002B49]">Sertifikasi Halal:</strong> Terdaftar resmi Halal Indonesia (BPJPH).
-          </p>
-          <p>
-            <strong className="text-[#002B49]">Standar Keamanan Formulasi:</strong> 0% Alkohol, 0% Paraben, Bebas Pewangi Sintetis, Teruji Dermatologi (*Dermatologically Tested*), Aman untuk Ibu Hamil & Menyusui.
+            <span className="text-slate-400 font-medium">Standar: </span>
+            <span>0% Alkohol, 0% Paraben, Bebas Pewangi Sintetis, Dermatologically Tested, Aman untuk Bumil & Busui.</span>
           </p>
         </div>
       ),

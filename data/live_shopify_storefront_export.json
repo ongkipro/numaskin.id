@@ -16,6 +16,10 @@
         "handle": "frontpage",
         "description": "",
         "descriptionHtml": "",
+        "seo": {
+          "title": null,
+          "description": null
+        },
         "image": {
           "id": "gid://shopify/CollectionImage/1759396659446",
           "url": "https://cdn.shopify.com/s/files/1/0826/9368/5494/collections/collection-frontpage-hero-banner.webp?v=1790485348",
@@ -74,6 +78,10 @@
         "handle": "all-products",
         "description": "Koleksi lengkap produk perawatan kulit resmi Numa Skin dengan formula Deep Sea Water, anti-aging, dan pencerah berkualitas tinggi.",
         "descriptionHtml": "<p>Koleksi lengkap produk perawatan kulit resmi Numa Skin dengan formula Deep Sea Water, anti-aging, dan pencerah berkualitas tinggi.</p>",
+        "seo": {
+          "title": "Koleksi Skincare Numa Skin Resmi | Semua Produk",
+          "description": "Temukan seluruh produk skincare resmi Numa Skin: pembersih wajah, hydrating toner, moisturizer, day cream, serum NAD+, dan sunscreen berizin BPOM."
+        },
         "image": {
           "id": "gid://shopify/CollectionImage/1759396692214",
           "url": "https://cdn.shopify.com/s/files/1/0826/9368/5494/collections/collection-semua-produk-banner.webp?v=1790485361",
@@ -337,6 +345,10 @@
         "handle": "cleanser-toner",
         "description": "Langkah awal esensial membersihkan dan mengembalikan hidrasi alami kulit dengan kebaikan mineral laut.",
         "descriptionHtml": "<p>Langkah awal esensial membersihkan dan mengembalikan hidrasi alami kulit dengan kebaikan mineral laut.</p>",
+        "seo": {
+          "title": "Pembersih Wajah & Hydrating Toner | Numa Skin",
+          "description": "Facial wash gel lembut dan hydrating treatment lotion Numa Skin untuk membersihkan pori serta memperkuat skin barrier tanpa efek kering."
+        },
         "image": {
           "id": "gid://shopify/CollectionImage/1759396626678",
           "url": "https://cdn.shopify.com/s/files/1/0826/9368/5494/collections/collection-pembersih-toner-banner_b8c84522-29c8-4b0a-8416-4e5ebad3d4cb.webp?v=1790485371",
@@ -365,6 +377,10 @@
         "handle": "serum-treatment",
         "description": "Konsentrat nutrisi seluler untuk peremajaan, mengencangkan kulit, dan mengatasi tanda penuaan dini.",
         "descriptionHtml": "<p>Konsentrat nutrisi seluler untuk peremajaan, mengencangkan kulit, dan mengatasi tanda penuaan dini.</p>",
+        "seo": {
+          "title": "Serum Anti Aging & Whitening | Numa Skin",
+          "description": "Serum konsentrat NAD+ Booster Numa Skin teruji merawat keremajaan kulit, memperbaiki elastisitas, dan mencerahkan warna kulit kusam."
+        },
         "image": {
           "id": "gid://shopify/CollectionImage/1759396724982",
           "url": "https://cdn.shopify.com/s/files/1/0826/9368/5494/collections/collection-serum-treatment-banner.webp?v=1790485382",
@@ -388,6 +404,10 @@
         "handle": "moisturizer-day-cream",
         "description": "Krim pelembap kaya nutrisi dan day cream untuk menjaga elastisitas serta hidrasi kulit sepanjang hari.",
         "descriptionHtml": "<p>Krim pelembap kaya nutrisi dan day cream untuk menjaga elastisitas serta hidrasi kulit sepanjang hari.</p>",
+        "seo": {
+          "title": "Moisturizer & Tone-Up Day Cream | Numa Skin",
+          "description": "Pelembap Adenosine, Gloss Gel penenang barrier, dan PDRN Tone-Up Day Cream dari Numa Skin untuk kulit kenyal dan glowing natural."
+        },
         "image": {
           "id": "gid://shopify/CollectionImage/1759396757750",
           "url": "https://cdn.shopify.com/s/files/1/0826/9368/5494/collections/collection-pelembap-krim-pagi-banner.webp?v=1790485394",
@@ -421,6 +441,10 @@
         "handle": "sunscreen-protection",
         "description": "Perlindungan maksimal terhadap sinar UVA/UVB dan polusi lingkungan tanpa rasa lengket atau white cast.",
         "descriptionHtml": "<p>Perlindungan maksimal terhadap sinar UVA/UVB dan polusi lingkungan tanpa rasa lengket atau white cast.</p>",
+        "seo": {
+          "title": "Sunscreen SPF 50+ PA++++ Ringan | Numa Skin",
+          "description": "Oxydew Sunscreen Numa Skin dengan SPF 50+ PA++++ dan teknologi Luceane™ melindungi kulit dari photo-aging dan polusi perkotaan."
+        },
         "image": {
           "id": "gid://shopify/CollectionImage/1759396790518",
           "url": "https://cdn.shopify.com/s/files/1/0826/9368/5494/collections/collection-tabir-surya-perlindungan-banner.webp?v=1790485405",
@@ -444,6 +468,10 @@
         "handle": "paket-hemat-bundling",
         "description": "Rangkaian produk komprehensif dengan penawaran hemat untuk hasil perawatan kulit yang maksimal dan sinergis.",
         "descriptionHtml": "<p>Rangkaian produk komprehensif dengan penawaran hemat untuk hasil perawatan kulit yang maksimal dan sinergis.</p>",
+        "seo": {
+          "title": "Paket Hemat & Bundling Skincare | Numa Skin",
+          "description": "Pilihan paket hemat skincare Numa Skin: Duo, Trio, Routine 4-in-1, dan Complete 6-in-1 Set untuk solusi perawatan wajah menyeluruh."
+        },
         "image": {
           "id": "gid://shopify/CollectionImage/1759396823286",
           "url": "https://cdn.shopify.com/s/files/1/0826/9368/5494/collections/collection-paket-hemat-bundling-banner.webp?v=1790485418",
@@ -672,6 +700,10 @@
         "handle": "anti-aging-series",
         "description": "Rangkaian formulasi khusus untuk merawat elastisitas kulit, memudarkan garis halus, dan menjaga keremajaan wajah.",
         "descriptionHtml": "<p>Rangkaian formulasi khusus untuk merawat elastisitas kulit, memudarkan garis halus, dan menjaga keremajaan wajah.</p>",
+        "seo": {
+          "title": "Rangkaian Perawatan Anti Aging Resmi | Numa Skin",
+          "description": "Formula anti aging Numa Skin dengan perpaduan Deep Sea Water, Adenosine, PDRN, dan NAD+ untuk kulit kenyal, kencang, dan bercahaya."
+        },
         "image": {
           "id": "gid://shopify/CollectionImage/1759396856054",
           "url": "https://cdn.shopify.com/s/files/1/0826/9368/5494/collections/collection-anti-aging-series-banner.webp?v=1790485429",

@@ -11,19 +11,42 @@ import { StickyMobileCTA } from '~/components/product/StickyMobileCTA';
 
 export const meta: Route.MetaFunction = ({ data }: { data: any }) => {
   if (!data?.product) {
-    return [{ title: 'Produk Tidak Ditemukan — Numa Skin' }];
+    return [{ title: 'Produk Tidak Ditemukan - Numa Skin' }];
   }
-  const title = data.product.seoTitle || `${data.product.title} — Numa Skin Official`;
-  const description = data.product.seoDescription || data.product.description || `${data.product.title} formula resmi Numa Skin terdaftar BPOM RI.`;
-  const image = data.product.featuredImage?.url || '/images/banners/02-shop-avatar-shopee-shop-profile-avatar.jpg';
+  const p = data.product;
+  const rawTitle = p.seoTitle || p.title;
+  const title = rawTitle.toLowerCase().includes('numa skin')
+    ? rawTitle
+    : `${rawTitle} - Numa Skin Official`;
+  const description =
+    p.seoDescription ||
+    p.description ||
+    `${p.title} formula resmi Numa Skin terdaftar BPOM RI. Perawatan anti-aging dan hidrasi kulit berbahan aktif laut dalam.`;
+  const canonicalUrl = `https://numaskin.id/products/${p.handle}`;
+  const image = p.featuredImage?.url || '/images/banners/02-shop-avatar-shopee-shop-profile-avatar.jpg';
+  const price = p.priceRange?.minVariantPrice?.amount || '0';
+  const currency = p.priceRange?.minVariantPrice?.currencyCode || 'IDR';
 
   return [
-    { title: `${title} | Numa Skin` },
+    { title },
     { name: 'description', content: description },
+    { name: 'robots', content: 'index, follow' },
+    { tagName: 'link', rel: 'canonical', href: canonicalUrl },
+
+    // OpenGraph (Facebook / WhatsApp / iMessage)
+    { property: 'og:site_name', content: 'Numa Skin Official' },
+    { property: 'og:type', content: 'product' },
     { property: 'og:title', content: title },
     { property: 'og:description', content: description },
+    { property: 'og:url', content: canonicalUrl },
     { property: 'og:image', content: image },
-    { property: 'og:type', content: 'product' },
+    { property: 'og:image:alt', content: p.featuredImage?.altText || p.title },
+    { property: 'og:price:amount', content: price },
+    { property: 'og:price:currency', content: currency },
+    { property: 'product:price:amount', content: price },
+    { property: 'product:price:currency', content: currency },
+
+    // Twitter Card
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: title },
     { name: 'twitter:description', content: description },
@@ -63,6 +86,35 @@ export default function ProductDetailPage() {
 
   return (
     <div className="w-full bg-transparent pb-24 sm:pb-0 min-h-screen relative">
+      {/* Schema.org Product Structured Data (Google Rich Results / Merchant) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Product',
+            name: product.title,
+            description: product.seoDescription || product.description,
+            image: [product.featuredImage?.url],
+            sku: product.variants?.nodes?.[0]?.sku || `NUMA-${product.handle.toUpperCase()}`,
+            brand: {
+              '@type': 'Brand',
+              name: 'Numa Skin',
+            },
+            offers: {
+              '@type': 'Offer',
+              priceCurrency: 'IDR',
+              price: product.priceRange.minVariantPrice.amount,
+              availability: 'https://schema.org/InStock',
+              url: `https://numaskin.id/products/${product.handle}`,
+              seller: {
+                '@type': 'Organization',
+                name: 'Numa Skin Official',
+              },
+            },
+          }),
+        }}
+      />
       
       {/* ========================================================= */}
       {/* 01. FIXED AMBIENT WATER VIDEO (Fixed down to footer)       */}
@@ -145,15 +197,16 @@ export default function ProductDetailPage() {
         selectedPrice={currentPrice}
         onAddToCart={() => {
           if (typeof window !== 'undefined') {
+            const defaultVariant = product.variants?.nodes?.[0];
             window.dispatchEvent(
               new CustomEvent('numa:add-to-cart', {
                 detail: {
                   item: {
                     id: `cart-${Date.now()}`,
-                    variantId: selectedVariant?.id || `gid://shopify/ProductVariant/${product.handle}-0`,
+                    variantId: defaultVariant?.id || `gid://shopify/ProductVariant/${product.handle}-0`,
                     title: product.title,
                     handle: product.handle,
-                    variantTitle: selectedVariant?.title,
+                    variantTitle: defaultVariant?.title,
                     price: currentPrice,
                     quantity: 1,
                     image: product.featuredImage?.url || '/images/banners/02-shop-avatar-shopee-shop-profile-avatar.jpg',

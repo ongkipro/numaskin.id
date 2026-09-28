@@ -186,7 +186,7 @@ export function CartDrawer({
                   </div>
                   <button
                     type="button"
-                    onClick={() => onAddUpsell('numa-skin-deep-sea-water-treatment-lotion')}
+                    onClick={() => onAddUpsell('deep-sea-water-treatment-lotion')}
                     className="btn-glass-secondary px-3 py-1.5 text-xs font-semibold"
                   >
                     + Tambah

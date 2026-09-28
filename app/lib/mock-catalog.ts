@@ -82,14 +82,14 @@ export interface Collection {
 }
 
 const CLEAN_THUMBNAILS: Record<string, string> = {
-  'numa-skin-deep-sea-water-facial-wash-100ml': '/images/products/clean-1x1/numa-skin-deep-sea-water-facial-wash-100ml-clean-1x1.webp',
-  'numa-skin-calming-barrier-gloss-gel-moisturizer-30ml': '/images/products/clean-1x1/numa-skin-calming-barrier-gloss-gel-moisturizer-30ml-clean-1x1.webp',
-  'numa-skin-deep-sea-water-treatment-lotion': '/images/products/clean-1x1/numa-skin-deep-sea-water-treatment-lotion-clean-1x1.webp',
-  'numa-skin-adenosine-deep-sea-water-moisturizer-30g': '/images/products/clean-1x1/numa-skin-adenosine-deep-sea-water-moisturizer-30g-clean-1x1.webp',
-  'numa-skin-pdrn-alpha-arbutin-tone-up-day-cream-30g': '/images/products/clean-1x1/numa-skin-pdrn-alpha-arbutin-tone-up-day-cream-30g-clean-1x1.webp',
-  'numa-skin-oxydew-sunscreen-luceane-spf50-30ml': '/images/products/clean-1x1/numa-skin-oxydew-sunscreen-luceane-spf50-30ml-clean-1x1.webp',
-  'numa-skin-nad-booster-anti-aging-serum-20ml': '/images/products/clean-1x1/numa-skin-nad-booster-anti-aging-serum-20ml-clean-1x1.webp',
-  'numa-skin-paket-lengkap-6-in-1-routine': '/images/products/clean-1x1/numa-skin-paket-lengkap-6-in-1-routine-clean-1x1.webp',
+  'deep-sea-water-facial-wash-gel': '/images/products/clean-1x1/numa-skin-deep-sea-water-facial-wash-100ml-clean-1x1.webp',
+  'calming-barrier-gloss-gel-moisturizer': '/images/products/clean-1x1/numa-skin-calming-barrier-gloss-gel-moisturizer-30ml-clean-1x1.webp',
+  'deep-sea-water-treatment-lotion': '/images/products/clean-1x1/numa-skin-deep-sea-water-treatment-lotion-clean-1x1.webp',
+  'adenosine-deep-sea-water-moisturizer': '/images/products/clean-1x1/numa-skin-adenosine-deep-sea-water-moisturizer-30g-clean-1x1.webp',
+  'pdrn-alpha-arbutin-tone-up-day-cream': '/images/products/clean-1x1/numa-skin-pdrn-alpha-arbutin-tone-up-day-cream-30g-clean-1x1.webp',
+  'oxydew-sunscreen-luceane-spf50-pa': '/images/products/clean-1x1/numa-skin-oxydew-sunscreen-luceane-spf50-30ml-clean-1x1.webp',
+  'nad-booster-anti-aging-serum': '/images/products/clean-1x1/numa-skin-nad-booster-anti-aging-serum-20ml-clean-1x1.webp',
+  'paket-lengkap-6-in-1-routine': '/images/products/clean-1x1/numa-skin-paket-lengkap-6-in-1-routine-clean-1x1.webp',
 };
 
 // Normalize raw catalog product to Shopify Storefront API GraphQL shape
@@ -139,6 +139,8 @@ function normalizeProduct(raw: any, index: number, isBundle: boolean): Product {
     sku: v.sku || `NUMA-${raw.handle.toUpperCase().slice(0, 10)}`,
   }));
 
+  const videoMedia = (raw.media || []).find((m: any) => m.type === 'video' && m.url);
+
   return {
     id: raw.id || `gid://shopify/Product/${isBundle ? 'bundle' : 'single'}-${index}`,
     title: raw.title,
@@ -175,114 +177,115 @@ function normalizeProduct(raw: any, index: number, isBundle: boolean): Product {
     variants: {
       nodes: variants,
     },
-    videoUrl: (raw.media || []).find((m: any) => m.type === 'video')?.url || (
-      raw.handle.includes('facial-wash') || raw.handle.includes('treatment-lotion')
-        ? '/videos/numa-skin-deep-sea-water-ritual-desktop.mp4'
-        : undefined
-    ),
-    videoAltText: (raw.media || []).find((m: any) => m.type === 'video')?.alt_text || `${raw.title} - Official Video`,
+    videoUrl: videoMedia?.url || undefined,
+    videoAltText: videoMedia ? (videoMedia.alt_text || `${raw.title} - Official Video`) : undefined,
   };
 }
 
-// Master lists
-const allSingles: Product[] = (catalogData.singles || []).map((s: any, i: number) => normalizeProduct(s, i, false));
-const allBundles: Product[] = (catalogData.bundles || []).map((b: any, i: number) => normalizeProduct(b, i, true));
-const allProducts: Product[] = [...allSingles, ...allBundles];
+  // Master lists
+  const allSingles: Product[] = (catalogData.singles || []).map((s: any, i: number) => normalizeProduct(s, i, false));
+  const allBundles: Product[] = (catalogData.bundles || []).map((b: any, i: number) => normalizeProduct(b, i, true));
+  const allProducts: Product[] = [...allSingles, ...allBundles];
 
-const allCollections: Collection[] = (catalogData.collections || []).map((c: any, i: number) => ({
-  id: c.id || `gid://shopify/Collection/${i}`,
-  title: c.title,
-  handle: c.handle,
-  description: c.description,
-  seoTitle: c.seoTitle,
-  seoDescription: c.seoDescription,
-  image: c.image ? {
-    url: c.image.url || c.image,
-    altText: c.image.altText || c.title,
-    width: c.image.width || 1500,
-    height: c.image.height || 1000,
-  } : {
-    url: '/images/banners/04-category-banner-kategori-paket-awet-muda-banner.jpg',
-    altText: c.title,
-  },
-}));
+  const allCollections: Collection[] = (catalogData.collections || []).map((c: any, i: number) => ({
+    id: c.id || `gid://shopify/Collection/${i}`,
+    title: c.title,
+    handle: c.handle,
+    description: c.description,
+    seoTitle: c.seoTitle,
+    seoDescription: c.seoDescription,
+    image: c.image ? {
+      url: c.image.url || c.image,
+      altText: c.image.altText || c.title,
+      width: c.image.width || 1500,
+      height: c.image.height || 1000,
+    } : {
+      url: '/images/banners/04-category-banner-kategori-paket-awet-muda-banner.jpg',
+      altText: c.title,
+    },
+  }));
 
-/**
- * Get all catalog products
- */
-export function getAllProducts(): Product[] {
-  return allProducts;
-}
-
-/**
- * Get 8 core singles
- */
-export function getFeaturedSingles(): Product[] {
-  return allSingles;
-}
-
-/**
- * Get 42 bundles
- */
-export function getAllBundles(): Product[] {
-  return allBundles;
-}
-
-/**
- * Find single product by handle
- */
-export function getProductByHandle(handle: string): Product | undefined {
-  return allProducts.find((p) => p.handle === handle);
-}
-
-/**
- * Get all collections
- */
-export function getAllCollections(): Collection[] {
-  return allCollections;
-}
-
-/**
- * Get collection by handle along with its products
- */
-export function getCollectionByHandle(handle: string): { collection: Collection; products: Product[] } | undefined {
-  const collection = allCollections.find((c) => c.handle === handle);
-  const rawCollection = (catalogData.collections || []).find((c: any) => c.handle === handle);
-  const isSpecialHandle = ['all', 'all-products', 'singles', 'bundles'].includes(handle);
-  if (!collection && !isSpecialHandle) return undefined;
-
-  let products: Product[] = [];
-  if (rawCollection?.productHandles && rawCollection.productHandles.length > 0) {
-    const handleSet = new Set(rawCollection.productHandles);
-    products = rawCollection.productHandles
-      .map((h: string) => allProducts.find((p) => p.handle === h))
-      .filter((p: Product | undefined): p is Product => Boolean(p));
-    
-    const remaining = allProducts.filter((p) => p.collections.includes(handle) && !handleSet.has(p.handle));
-    products.push(...remaining);
-  } else if (handle === 'all' || handle === 'all-products') {
-    products = allProducts;
-  } else if (handle === 'paket-hemat-bundling' || handle === 'bundles') {
-    products = allBundles;
-  } else if (handle === 'singles') {
-    products = allSingles;
-  } else {
-    products = allProducts.filter((p) => p.collections.includes(handle));
+  /**
+   * Get all catalog products
+   */
+  export function getAllProducts(): Product[] {
+    return allProducts;
   }
 
-  const resolvedCollection = collection || {
-    id: `gid://shopify/Collection/${handle}`,
-    title: handle === 'bundles' ? 'Paket Bundling' : handle === 'singles' ? 'Produk Satuan' : 'Semua Produk',
-    handle: handle,
-    description: 'Katalog lengkap rangkaian perawatan anti-aging dan hidrasi kulit Numa Skin.',
-    image: {
-      url: 'https://cdn.shopify.com/s/files/1/0826/9368/5494/collections/collection-semua-produk-banner.webp?v=1790485361',
-      altText: 'Semua Produk Numa Skin',
-    },
-  };
+  /**
+   * Get 8 core singles
+   */
+  export function getFeaturedSingles(): Product[] {
+    return allSingles;
+  }
 
-  return { collection: resolvedCollection, products };
-}
+  /**
+   * Get 42 bundles
+   */
+  export function getAllBundles(): Product[] {
+    return allBundles;
+  }
+
+  /**
+   * Find single product by handle
+   */
+  export function getProductByHandle(handle: string): Product | undefined {
+    return allProducts.find((p) => p.handle === handle);
+  }
+
+  /**
+   * Get all collections
+   */
+  export function getAllCollections(): Collection[] {
+    return allCollections;
+  }
+
+  /**
+   * Get collection by handle along with its products
+   */
+  export function getCollectionByHandle(handle: string): { collection: Collection; products: Product[] } | undefined {
+    const allProductsCol = allCollections.find((c) => c.handle === 'all-products');
+    const collection = handle === 'all'
+      ? (allProductsCol ? { ...allProductsCol, handle: 'all' } : undefined)
+      : allCollections.find((c) => c.handle === handle);
+    const rawCollection = (catalogData.collections || []).find((c: any) => c.handle === (handle === 'all' ? 'all-products' : handle));
+    const isSpecialHandle = ['all', 'all-products', 'singles', 'bundles'].includes(handle);
+    if (!collection && !isSpecialHandle) return undefined;
+
+    let products: Product[] = [];
+    if (rawCollection?.productHandles && rawCollection.productHandles.length > 0) {
+      const handleSet = new Set(rawCollection.productHandles);
+      products = rawCollection.productHandles
+        .map((h: string) => allProducts.find((p) => p.handle === h))
+        .filter((p: Product | undefined): p is Product => Boolean(p));
+      
+      const remaining = allProducts.filter((p) => p.collections.includes(handle) && !handleSet.has(p.handle));
+      products.push(...remaining);
+    } else if (handle === 'all' || handle === 'all-products') {
+      products = allProducts;
+    } else if (handle === 'paket-hemat-bundling' || handle === 'bundles') {
+      products = allBundles;
+    } else if (handle === 'singles') {
+      products = allSingles;
+    } else {
+      products = allProducts.filter((p) => p.collections.includes(handle));
+    }
+
+    const resolvedCollection = collection || {
+      id: `gid://shopify/Collection/${handle}`,
+      title: handle === 'bundles' ? 'Paket Bundling' : handle === 'singles' ? 'Produk Satuan' : 'Semua Produk',
+      handle: handle,
+      description: 'Koleksi lengkap produk perawatan kulit resmi Numa Skin dengan formula Deep Sea Water, anti-aging, dan pencerah berkualitas tinggi.',
+      seoTitle: 'Semua Produk - Katalog Skincare Alami Deep Sea Water - Numa Skin',
+      seoDescription: 'Temukan seluruh produk skincare resmi Numa Skin: pembersih wajah, hydrating toner, moisturizer, day cream, serum NAD+, dan sunscreen berizin BPOM.',
+      image: {
+        url: 'https://cdn.shopify.com/s/files/1/0826/9368/5494/collections/collection-semua-produk-banner.webp?v=1790485361',
+        altText: 'Semua Produk Numa Skin',
+      },
+    };
+
+    return { collection: resolvedCollection, products };
+  }
 
 /**
  * Get the 4-step routine products
@@ -293,10 +296,10 @@ export function getCollectionByHandle(handle: string): { collection: Collection;
  */
 export function getRoutineProducts(): Product[] {
   const handles = [
-    'numa-skin-deep-sea-water-facial-wash-100ml',
-    'numa-skin-deep-sea-water-treatment-lotion',
-    'numa-skin-nad-booster-anti-aging-serum-20ml',
-    'numa-skin-adenosine-deep-sea-water-moisturizer-30g',
+    'deep-sea-water-facial-wash-gel',
+    'deep-sea-water-treatment-lotion',
+    'nad-booster-anti-aging-serum',
+    'adenosine-deep-sea-water-moisturizer',
   ];
   return handles.map((h) => getProductByHandle(h)).filter((p): p is Product => p !== undefined);
 }

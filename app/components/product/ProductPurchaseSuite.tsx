@@ -74,19 +74,7 @@ export function ProductPurchaseSuite({ product, upsellProduct }: ProductPurchase
   return (
     <div className="flex flex-col justify-start w-full">
       
-      {/* 01. BPOM & Netto Tag */}
-      <div className="flex items-center gap-2 mb-2 flex-wrap">
-        <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-wider font-semibold text-[#0B6E7D] bg-[#EBF5F8] px-2.5 py-0.5 rounded-full border border-[#269BA8]/20">
-          {product.bpom ? `BPOM: ${product.bpom}` : 'BPOM: NA18220101675'}
-        </span>
-        {product.netto && (
-          <span className="font-mono text-[9px] sm:text-[10px] uppercase tracking-wider text-slate-500 bg-white/80 px-2 py-0.5 rounded-full border border-slate-200/60">
-            {product.netto}
-          </span>
-        )}
-      </div>
-
-      {/* 02. Product Title */}
+      {/* 01. Product Title */}
       <h1 className="font-serif text-2xl sm:text-[28px] lg:text-[32px] text-[#002B49] font-normal leading-snug mb-1.5">
         {product.title}
       </h1>
@@ -130,10 +118,10 @@ export function ProductPurchaseSuite({ product, upsellProduct }: ProductPurchase
                   key={v.id}
                   type="button"
                   onClick={() => setSelectedVariantIndex(vIdx)}
-                  className={`px-4 py-1.5 text-xs rounded-full font-semibold transition-all duration-200 cursor-pointer ${
+                  className={`px-4 py-1.5 text-xs !rounded-full font-semibold transition-all duration-200 cursor-pointer ${
                     isSelected
-                      ? 'bg-[#002B49] text-white shadow-xs'
-                      : 'bg-white/80 hover:bg-white text-slate-700 border border-slate-200/80 hover:border-[#269BA8]/40'
+                      ? 'btn-glass-primary'
+                      : 'btn-glass-outline text-slate-700'
                   }`}
                 >
                   {cleanTitle}
@@ -192,21 +180,21 @@ export function ProductPurchaseSuite({ product, upsellProduct }: ProductPurchase
             </button>
           </div>
 
-          {/* Add to Cart Button */}
+          {/* Add to Cart Button (Clean UI/UX: Single ShoppingBag Icon without redundant + symbol) */}
           <button
             type="button"
             onClick={handleAddToCart}
-            className="flex-1 py-3 px-5 rounded-full bg-white/95 hover:bg-white text-[#002B49] border border-slate-300/90 hover:border-[#269BA8] font-semibold text-xs sm:text-[13px] tracking-wider flex items-center justify-center gap-2 transition-all shadow-2xs active:scale-[0.99] cursor-pointer"
+            className="btn-glass-secondary flex-1 py-3 px-5 !rounded-full font-semibold text-xs sm:text-[13px] tracking-wider flex items-center justify-center gap-2 cursor-pointer"
           >
             <ShoppingBag className="w-4 h-4 text-[#0B6E7D]" />
-            <span>+ Keranjang</span>
+            <span>Tambah ke Keranjang</span>
           </button>
         </div>
 
         {/* Primary CTA: Beli Sekarang (Direct Checkout ke Shopify) */}
         <a
           href={directCheckoutUrl}
-          className="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-[#002B49] via-[#063352] to-[#002B49] text-white font-semibold text-xs sm:text-[13px] tracking-wider flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.99] transition-all shadow-xs cursor-pointer"
+          className="btn-glass-primary w-full py-3.5 px-6 !rounded-full font-semibold text-xs sm:text-[13px] tracking-wider flex items-center justify-center gap-2 cursor-pointer"
         >
           <span>Beli Sekarang · {formatRupiah(totalPrice)}</span>
           <ArrowRight className="w-4 h-4 text-[#38B6CD]" />

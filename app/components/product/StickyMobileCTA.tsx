@@ -32,14 +32,14 @@ export function StickyMobileCTA({ product, selectedPrice, onAddToCart }: StickyM
           </div>
         </div>
 
-        {/* Action Button */}
+        {/* Action Button (Clean Single ShoppingBag Icon without redundant + symbol) */}
         <button
           type="button"
           onClick={onAddToCart}
-          className="rounded-full px-5 py-2.5 bg-gradient-to-r from-[#002B49] via-[#063352] to-[#002B49] text-white font-semibold text-xs tracking-wider flex items-center gap-1.5 whitespace-nowrap shadow-none active:scale-[0.98] transition-all"
+          className="btn-glass-primary !rounded-full px-5 py-2.5 text-xs tracking-wider flex items-center gap-1.5 whitespace-nowrap"
         >
           <ShoppingBag className="w-3.5 h-3.5 text-[#38B6CD]" />
-          <span>+ Keranjang</span>
+          <span>Keranjang</span>
         </button>
       </div>
     </div>

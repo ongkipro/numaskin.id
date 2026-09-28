@@ -72,7 +72,7 @@ const MAIN_CATEGORIES: CategoryCardItem[] = [
 
 const RECENT_PRODUCTS: RecentProductItem[] = [
   {
-    handle: 'numa-skin-nad-booster-anti-aging-serum-20ml',
+    handle: 'nad-booster-anti-aging-serum',
     title: 'Numa Skin NAD+ Booster Anti-Aging Serum 20ml',
     shortTitle: 'NAD+ Booster Serum 20ml',
     price: 'Rp 108.999',
@@ -81,7 +81,7 @@ const RECENT_PRODUCTS: RecentProductItem[] = [
     image: '/images/seo/numa-skin-nad-booster-anti-aging-serum-20ml-01-front.webp',
   },
   {
-    handle: 'numa-skin-deep-sea-water-treatment-lotion',
+    handle: 'deep-sea-water-treatment-lotion',
     title: 'Numa Skin Deep Sea Water Treatment Lotion 150ml',
     shortTitle: 'Treatment Lotion 150ml',
     price: 'Rp 79.000',
@@ -90,7 +90,7 @@ const RECENT_PRODUCTS: RecentProductItem[] = [
     image: '/images/seo/numa-skin-deep-sea-water-treatment-lotion-150ml-01-front.webp',
   },
   {
-    handle: 'numa-skin-adenosine-deep-sea-water-moisturizer-30g',
+    handle: 'adenosine-deep-sea-water-moisturizer',
     title: 'Numa Skin Adenosine Deep Sea Water Moisturizer 30g',
     shortTitle: 'Adenosine Moisturizer 30g',
     price: 'Rp 78.999',
@@ -99,7 +99,7 @@ const RECENT_PRODUCTS: RecentProductItem[] = [
     image: '/images/seo/numa-skin-adenosine-deep-sea-water-moisturizer-30g-01-front.webp',
   },
   {
-    handle: 'numa-skin-oxydew-sunscreen-luceane-spf50-30ml',
+    handle: 'oxydew-sunscreen-luceane-spf50-pa',
     title: 'Numa Skin Oxydew Sunscreen Luceane SPF 50+ 30ml',
     shortTitle: 'Oxydew Sunscreen 30ml',
     price: 'Rp 79.000',
@@ -213,11 +213,11 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
   const isHome = location.pathname === '/';
   const isProduct = location.pathname.startsWith('/products/');
   const isTransparentHeroPage = isHome || isProduct;
+  const isHomeActive = location.pathname === '/';
   const isKategoriActive =
     collectionsDropdownOpen ||
     (location.pathname.startsWith('/collections') && location.pathname !== '/collections/paket-hemat-bundling');
   const isBundlingActive = location.pathname === '/collections/paket-hemat-bundling';
-  const isBlogActive = location.pathname.startsWith('/blogs');
 
   // Trigger aqua glass when scrolled down or when mega menu is open
   const isGlassActive = isScrolled || collectionsDropdownOpen;
@@ -256,6 +256,22 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
 
             {/* Desktop Navigation Links (Zero Layout Shift on Click/Hover) */}
             <nav className="hidden lg:flex items-center gap-1.5 sm:gap-2 shrink-0">
+              {/* Direct Link: Home */}
+              <Link
+                to="/"
+                onMouseEnter={() => {
+                  if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
+                  setCollectionsDropdownOpen(false);
+                }}
+                className={`text-xs uppercase tracking-[0.08em] font-medium flex items-center gap-1.5 px-3.5 py-1.5 rounded-xs transition-colors duration-150 shrink-0 whitespace-nowrap ${
+                  isHomeActive && !collectionsDropdownOpen
+                    ? 'bg-[#002B49]/8 text-[#002B49]'
+                    : 'text-slate-700 hover:text-[#002B49] hover:bg-[#002B49]/5'
+                }`}
+              >
+                <span>Home</span>
+              </Link>
+
               {/* Kategori Trigger */}
               <button
                 type="button"
@@ -263,7 +279,7 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
                 onMouseLeave={handleMouseLeaveKategori}
                 onClick={() => setCollectionsDropdownOpen((prev) => !prev)}
                 className={`group text-xs uppercase tracking-[0.08em] font-medium flex items-center gap-1.5 px-3.5 py-1.5 rounded-xs transition-colors duration-150 cursor-pointer shrink-0 whitespace-nowrap ${
-                  collectionsDropdownOpen
+                  isKategoriActive
                     ? 'bg-[#002B49]/8 text-[#002B49]'
                     : 'text-slate-700 hover:text-[#002B49] hover:bg-[#002B49]/5'
                 }`}
@@ -288,28 +304,12 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
                   setCollectionsDropdownOpen(false);
                 }}
                 className={`text-xs uppercase tracking-[0.08em] font-medium flex items-center gap-1.5 px-3.5 py-1.5 rounded-xs transition-colors duration-150 shrink-0 whitespace-nowrap ${
-                  isBundlingActive
+                  isBundlingActive && !collectionsDropdownOpen
                     ? 'bg-[#002B49]/8 text-[#002B49]'
                     : 'text-slate-700 hover:text-[#002B49] hover:bg-[#002B49]/5'
                 }`}
               >
                 <span>Paket Bundling</span>
-              </Link>
-
-              {/* Direct Link: Blog */}
-              <Link
-                to="/blogs"
-                onMouseEnter={() => {
-                  if (closeTimeoutRef.current) clearTimeout(closeTimeoutRef.current);
-                  setCollectionsDropdownOpen(false);
-                }}
-                className={`text-xs uppercase tracking-[0.08em] font-medium flex items-center gap-1.5 px-3.5 py-1.5 rounded-xs transition-colors duration-150 shrink-0 whitespace-nowrap ${
-                  isBlogActive
-                    ? 'bg-[#002B49]/8 text-[#002B49]'
-                    : 'text-slate-700 hover:text-[#002B49] hover:bg-[#002B49]/5'
-                }`}
-              >
-                <span>Blog</span>
               </Link>
             </nav>
           </div>
@@ -325,10 +325,10 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
             className="flex flex-col items-center justify-center shrink-0 px-2"
           >
             <Link to="/" className="group flex flex-col items-center text-center">
-              <span className="font-sans font-medium text-lg sm:text-xl tracking-[0.22em] uppercase transition-colors text-[#002B49] group-hover:text-[#269BA8]">
-                NUMA · SKIN
+              <span className="font-sans font-medium text-lg sm:text-xl tracking-[0.16em] uppercase transition-colors text-[#002B49] group-hover:text-[#269BA8]">
+                NUMA·SKIN
               </span>
-              <span className="text-[10px] tracking-[0.35em] font-normal -mt-0.5 transition-colors text-[#0B6E7D]">
+              <span className="text-[10px] tracking-[0.32em] font-normal -mt-0.5 transition-colors text-[#0B6E7D]">
                 ヌマスキン
               </span>
             </Link>
@@ -354,10 +354,10 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
               <Search className="w-4.5 h-4.5" strokeWidth={1.8} />
             </button>
 
-            {/* Customer Account Trigger Icon */}
+            {/* Customer Account Trigger Icon (Desktop Only - on mobile it lives inside the burger menu) */}
             <Link
               to="/account"
-              className="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 focus:outline-hidden text-[#002B49] hover:text-[#269BA8] hover:bg-[#002B49]/5"
+              className="hidden sm:flex w-9 h-9 rounded-full items-center justify-center transition-all duration-200 focus:outline-hidden text-[#002B49] hover:text-[#269BA8] hover:bg-[#002B49]/5"
               aria-label="Akun Saya"
             >
               <User className="w-4.5 h-4.5" strokeWidth={1.8} />
@@ -549,8 +549,8 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
             {/* Drawer Header */}
             <div className="h-16 sm:h-20 px-6 border-b border-[#E2EDF0] flex items-center justify-between shrink-0">
               <div className="flex flex-col">
-                <span className="font-sans font-medium text-base tracking-[0.22em] text-[#002B49] uppercase">
-                  NUMA · SKIN
+                <span className="font-sans font-medium text-base tracking-[0.16em] text-[#002B49] uppercase">
+                  NUMA·SKIN
                 </span>
                 <span className="text-[10px] tracking-[0.28em] text-[#5A6E7F] -mt-0.5">
                   ヌマスキン
@@ -581,6 +581,24 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
                 <span>Cari produk atau bahan aktif...</span>
               </button>
 
+              {/* Dedicated Mobile Customer Account Card */}
+              <Link
+                to="/account"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full flex items-center justify-between p-3 rounded-xs bg-white/75 hover:bg-white text-xs border border-white/85 transition-colors group"
+              >
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-full bg-[#002B49]/8 flex items-center justify-center text-[#002B49] group-hover:bg-[#002B49] group-hover:text-white transition-colors">
+                    <User className="w-4 h-4" />
+                  </div>
+                  <div className="text-left">
+                    <span className="font-semibold text-slate-900 block leading-tight">Akun Saya & Pesanan</span>
+                    <span className="text-[10px] text-slate-500 font-mono">Masuk atau cek status pesanan</span>
+                  </div>
+                </div>
+                <ArrowRight className="w-3.5 h-3.5 text-[#0B6E7D] group-hover:translate-x-0.5 transition-transform" />
+              </Link>
+
               {/* Group 1: Menu Utama (Fixed at Top, Never Shifts) */}
               <div>
                 <span className="font-mono text-[10px] uppercase tracking-widest text-[#269BA8] font-bold block mb-2.5">
@@ -588,9 +606,25 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
                 </span>
                 <nav className="flex flex-col space-y-1 text-sm">
                   <Link
+                    to="/"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`py-2 px-2.5 rounded-xs font-medium flex items-center justify-between transition-colors ${
+                      location.pathname === '/'
+                        ? 'bg-[#002B49]/8 text-[#002B49]'
+                        : 'hover:bg-white text-slate-800 hover:text-[#002B49]'
+                    }`}
+                  >
+                    <span>Home</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
+                  </Link>
+                  <Link
                     to="/collections/all"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="py-2 px-2.5 rounded-xs hover:bg-white text-slate-800 hover:text-[#002B49] font-medium flex items-center justify-between transition-colors"
+                    className={`py-2 px-2.5 rounded-xs font-medium flex items-center justify-between transition-colors ${
+                      location.pathname === '/collections/all'
+                        ? 'bg-[#002B49]/8 text-[#002B49]'
+                        : 'hover:bg-white text-slate-800 hover:text-[#002B49]'
+                    }`}
                   >
                     <span>Semua Produk</span>
                     <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
@@ -598,19 +632,16 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
                   <Link
                     to="/collections/paket-hemat-bundling"
                     onClick={() => setMobileMenuOpen(false)}
-                    className="py-2 px-2.5 rounded-xs hover:bg-white text-slate-800 hover:text-[#002B49] font-medium flex items-center justify-between transition-colors"
+                    className={`py-2 px-2.5 rounded-xs font-medium flex items-center justify-between transition-colors ${
+                      location.pathname === '/collections/paket-hemat-bundling'
+                        ? 'bg-[#002B49]/8 text-[#002B49]'
+                        : 'hover:bg-white text-slate-800 hover:text-[#002B49]'
+                    }`}
                   >
                     <span>Paket Bundling</span>
                     <span className="font-mono text-[10px] text-[#002B49] bg-[#EBF5F8] px-2 py-0.5 rounded-xs font-semibold">
                       42 Pilihan Set
                     </span>
-                  </Link>
-                  <Link
-                    to="/blogs"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="py-2 px-2.5 rounded-xs hover:bg-white text-slate-800 hover:text-[#002B49] font-medium transition-colors"
-                  >
-                    Blog & Jurnal Edukasi
                   </Link>
                   <Link
                     to="/pages/science"
@@ -625,14 +656,6 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
                     className="py-2 px-2.5 rounded-xs hover:bg-white text-slate-800 hover:text-[#002B49] font-medium transition-colors"
                   >
                     Verifikasi Izin Edar BPOM RI
-                  </Link>
-                  <Link
-                    to="/account"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="py-2 px-2.5 rounded-xs hover:bg-white text-slate-800 hover:text-[#002B49] font-medium transition-colors flex items-center justify-between"
-                  >
-                    <span>Akun Saya & Pesanan</span>
-                    <User className="w-4 h-4 text-slate-400" />
                   </Link>
                 </nav>
               </div>

@@ -5,19 +5,19 @@ const SHOPEE_2X3_BANNERS = [
     id: 'treatment-lotion-150',
     title: 'Deep Sea Water Treatment Lotion 150ml',
     imageUrl: '/images/banners/shopee/shopee-banner-2x3-01.webp',
-    href: '/products/numa-skin-deep-sea-water-treatment-lotion',
+    href: '/products/deep-sea-water-treatment-lotion',
   },
   {
     id: 'gloss-gel-moisturizer',
     title: 'Gloss Gel Moisturizer 30ml',
     imageUrl: '/images/banners/shopee/shopee-banner-2x3-02.webp',
-    href: '/products/numa-skin-calming-hydrating-barrier-gloss-gel-moisturizer-30ml',
+    href: '/products/calming-barrier-gloss-gel-moisturizer',
   },
   {
     id: 'treatment-lotion-50',
     title: 'Deep Sea Water Treatment Lotion 50ml',
     imageUrl: '/images/banners/shopee/shopee-banner-2x3-03.webp',
-    href: '/products/numa-skin-deep-sea-water-treatment-lotion',
+    href: '/products/deep-sea-water-treatment-lotion',
   },
 ];
 

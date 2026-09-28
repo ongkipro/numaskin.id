@@ -13,28 +13,28 @@ const STEPS = [
   {
     step: '01',
     phase: 'BERSIHKAN',
-    handle: 'numa-skin-deep-sea-water-facial-wash-100ml',
+    handle: 'deep-sea-water-facial-wash-gel',
     activeHighlight: '5% Niacinamide & Sea Water',
     price: 68999,
   },
   {
     step: '02',
     phase: 'HIDRASI',
-    handle: 'numa-skin-deep-sea-water-treatment-lotion',
+    handle: 'deep-sea-water-treatment-lotion',
     activeHighlight: 'Ulleung Deep Sea Water',
     price: 79000,
   },
   {
     step: '03',
     phase: 'NUTRISI',
-    handle: 'numa-skin-nad-booster-anti-aging-serum-20ml',
+    handle: 'nad-booster-anti-aging-serum',
     activeHighlight: '2% NAD+ & 4X Peptide',
     price: 108999,
   },
   {
     step: '04',
     phase: 'KUNCI',
-    handle: 'numa-skin-adenosine-deep-sea-water-moisturizer-30g',
+    handle: 'adenosine-deep-sea-water-moisturizer',
     activeHighlight: 'Adenosine & Phytosqualane',
     price: 78999,
   },
@@ -232,7 +232,7 @@ export function RoutineStepper({ products }: RoutineStepperProps) {
             </div>
 
             <Link
-              to="/products/numa-skin-paket-complete-routine-4-in-1-150ml"
+              to="/products/paket-complete-routine-4-in-1-150ml"
               className="btn-glass-cyan px-4 py-2.5 sm:px-5 sm:py-3 text-[10px] sm:text-[11px] font-mono group shrink-0"
             >
               <span>Beli Paket 4-in-1</span>

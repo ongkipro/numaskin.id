@@ -57,7 +57,7 @@ export function AmbassadorSpotlight() {
             </div>
 
             <Link
-              to="/products/numa-skin-adenosine-deep-sea-water-moisturizer-30g"
+              to="/products/adenosine-deep-sea-water-moisturizer"
               className="btn-glass-primary px-6 py-2.5 sm:py-3 text-[10px] sm:text-[11px] font-mono group"
             >
               <span>Pelajari Rangkaian Pilihan</span>
