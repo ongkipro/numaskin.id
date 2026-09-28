@@ -173,9 +173,9 @@ export function ProductGallery({ product, discountPercent = 0 }: ProductGalleryP
               100% BPOM &amp; Halal
             </span>
           </div>
-          <p className="text-[11px] sm:text-xs text-slate-600 sm:text-slate-700 leading-snug sm:leading-relaxed mt-0.5">
+          <p className="text-[11px] sm:text-xs text-slate-500 sm:text-slate-700 leading-snug sm:leading-relaxed mt-0.5">
             <span className="sm:hidden">
-              Formula Deep Sea Water teruji klinis melembapkan tanpa iritasi.
+              Formula Deep Sea Water teruji klinis tanpa iritasi.
             </span>
             <span className="hidden sm:inline">
               Uji klinis membuktikan kemurnian Ulleung Island Deep Sea Water menembus lapisan pelindung kulit tanpa memicu iritasi. 100% Terdaftar BPOM RI dan Halal Indonesia.
