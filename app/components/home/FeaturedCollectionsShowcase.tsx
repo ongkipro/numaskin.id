@@ -9,38 +9,35 @@ interface FeaturedCollectionsShowcaseProps {
 }
 
 export function FeaturedCollectionsShowcase({ products, onAddToCart }: FeaturedCollectionsShowcaseProps) {
-  const displayedProducts = products.slice(0, 8);
-
   return (
-    <section className="w-full py-16 sm:py-24 bg-white relative">
+    <section className="w-full pt-8 sm:pt-12 pb-16 sm:pb-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header (Standard Clean Shopify Pattern) */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-12">
-          <div>
-            <span className="font-mono text-xs uppercase tracking-widest text-[#269BA8] font-semibold block mb-1.5">
-              KOLEKSI UNGGULAN
-            </span>
-            <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-slate-900 leading-tight">
-              Formula Utama Numa Skin
-            </h2>
-            <p className="text-xs sm:text-sm text-slate-500 mt-2 max-w-xl">
-              Rangkaian esensial berbahan dasar Ulleung Island Deep Sea Water & 2% NAD+ Booster, terdaftar resmi BPOM RI.
-            </p>
+        {/* Section Header (Minimalist Luxury Presentation with Aqua Glass Underline) */}
+        <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14 flex flex-col items-center">
+          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-[#002B49] tracking-tight uppercase font-normal">
+            Koleksi Unggulan
+          </h2>
+
+          {/* Luminous Aqua Glass Underline */}
+          <div className="mt-3.5 mb-3 flex items-center justify-center gap-1.5">
+            <div className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-[#269BA8]/40" />
+            <div className="h-1 w-12 sm:w-16 rounded-full bg-gradient-to-r from-[#269BA8] via-[#38B6CD] to-[#269BA8] shadow-[0_0_12px_rgba(38,155,168,0.5)] border border-white/60 backdrop-blur-xs" />
+            <div className="h-px w-8 sm:w-12 bg-gradient-to-l from-transparent to-[#269BA8]/40" />
           </div>
 
           <Link
             to="/collections/all"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#002B49] hover:text-[#269BA8] transition-colors shrink-0"
+            className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-mono uppercase tracking-widest text-[#0B6E7D] hover:text-[#002B49] transition-colors group"
           >
             <span>Lihat Semua Produk</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#269BA8]" />
           </Link>
         </div>
 
-        {/* 4-Col Desktop / 2-Col Mobile Shopify Product Grid (8 Core Products, No Tabs) */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-          {displayedProducts.map((product) => (
+        {/* Unified 8-Product Standard Collection Grid (Precise & Harmonious) */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-2 sm:gap-x-3 lg:gap-x-3.5 gap-y-6 sm:gap-y-8">
+          {products.map((product) => (
             <ProductCard
               key={product.id}
               product={product}

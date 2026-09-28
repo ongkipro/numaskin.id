@@ -29,12 +29,12 @@ const REVIEWS = [
 
 export function ReviewsCarousel() {
   return (
-    <section className="w-full py-16 sm:py-24 bg-[#F8FCFD] border-b border-slate-100">
+    <section className="w-full py-16 sm:py-24 bg-[#F8FCFD]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 mb-2 px-3 py-1 rounded-full bg-[#EBF5F8] text-[#0B6E7D]">
+          <div className="inline-flex items-center gap-2 mb-2 px-3 py-1 rounded-xs bg-[#EBF5F8] text-[#0B6E7D]">
             <span className="w-1.5 h-1.5 rounded-full bg-[#0B6E7D]" />
             <span className="font-mono text-[11px] uppercase tracking-widest font-semibold">
               VERIFIED EVIDENCE
@@ -48,12 +48,12 @@ export function ReviewsCarousel() {
           </p>
         </div>
 
-        {/* Reviews Cards (Flat Minimalist) */}
+        {/* Reviews Cards (Flat Minimalist, Rounded Tipis) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {REVIEWS.map((rev, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-xl bg-white border border-slate-100/90 hover:border-[#38B6CD]/30 transition-all flex flex-col justify-between"
+              className="p-6 rounded-sm bg-white border border-slate-100/90 hover:border-[#38B6CD]/30 transition-all flex flex-col justify-between"
             >
               <div>
                 {/* Rating & Concern */}
@@ -64,7 +64,7 @@ export function ReviewsCarousel() {
                     ))}
                   </div>
 
-                  <span className="font-mono text-[10px] text-[#0B6E7D] bg-[#EBF5F8] px-2.5 py-0.5 rounded-full font-medium">
+                  <span className="font-mono text-[10px] text-[#0B6E7D] bg-[#EBF5F8] px-2.5 py-0.5 rounded-xs font-medium">
                     {rev.concern}
                   </span>
                 </div>

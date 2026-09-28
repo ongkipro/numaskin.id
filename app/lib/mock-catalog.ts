@@ -79,21 +79,48 @@ export interface Collection {
   image?: ProductImage;
 }
 
+const CLEAN_THUMBNAILS: Record<string, string> = {
+  'numa-skin-deep-sea-water-facial-wash-100ml': '/images/products/clean-1x1/numa-skin-deep-sea-water-facial-wash-100ml-clean-1x1.webp',
+  'numa-skin-calming-barrier-gloss-gel-moisturizer-30ml': '/images/products/clean-1x1/numa-skin-calming-barrier-gloss-gel-moisturizer-30ml-clean-1x1.webp',
+  'numa-skin-deep-sea-water-treatment-lotion': '/images/products/clean-1x1/numa-skin-deep-sea-water-treatment-lotion-clean-1x1.webp',
+  'numa-skin-adenosine-deep-sea-water-moisturizer-30g': '/images/products/clean-1x1/numa-skin-adenosine-deep-sea-water-moisturizer-30g-clean-1x1.webp',
+  'numa-skin-pdrn-alpha-arbutin-tone-up-day-cream-30g': '/images/products/clean-1x1/numa-skin-pdrn-alpha-arbutin-tone-up-day-cream-30g-clean-1x1.webp',
+  'numa-skin-oxydew-sunscreen-luceane-spf50-30ml': '/images/products/clean-1x1/numa-skin-oxydew-sunscreen-luceane-spf50-30ml-clean-1x1.webp',
+  'numa-skin-nad-booster-anti-aging-serum-20ml': '/images/products/clean-1x1/numa-skin-nad-booster-anti-aging-serum-20ml-clean-1x1.webp',
+  'numa-skin-paket-lengkap-6-in-1-routine': '/images/products/clean-1x1/numa-skin-paket-lengkap-6-in-1-routine-clean-1x1.webp',
+};
+
 // Normalize raw catalog product to Shopify Storefront API GraphQL shape
 function normalizeProduct(raw: any, index: number, isBundle: boolean): Product {
-  const images: ProductImage[] = (raw.media || []).map((m: any) => ({
+  const rawImages: ProductImage[] = (raw.media || []).map((m: any) => ({
     url: m.url || (m.seo_filename ? `/images/seo/${m.seo_filename}` : '/images/banners/02-shop-avatar-shopee-shop-profile-avatar.jpg'),
     altText: m.alt_text || raw.title,
     width: 800,
     height: 800,
   }));
 
-  const featuredImage = raw.featuredImage || images[0] || {
-    url: '/images/banners/02-shop-avatar-shopee-shop-profile-avatar.jpg',
-    altText: raw.title,
-  };
+  const cleanThumbUrl = CLEAN_THUMBNAILS[raw.handle];
+  const originalPrimary = raw.featuredImage || rawImages[0];
 
-  const secondaryImage = raw.secondaryImage || images[1] || featuredImage;
+  const featuredImage: ProductImage = cleanThumbUrl
+    ? {
+        url: cleanThumbUrl,
+        altText: `${raw.title} - Official Packshot`,
+        width: 1080,
+        height: 1080,
+      }
+    : (originalPrimary || {
+        url: '/images/banners/02-shop-avatar-shopee-shop-profile-avatar.jpg',
+        altText: raw.title,
+      });
+
+  const secondaryImage: ProductImage = cleanThumbUrl && originalPrimary
+    ? originalPrimary
+    : (raw.secondaryImage || rawImages[1] || featuredImage);
+
+  const images: ProductImage[] = cleanThumbUrl
+    ? [featuredImage, ...rawImages.filter((img) => img.url !== cleanThumbUrl)]
+    : rawImages;
 
   const variants: ProductVariant[] = (raw.variants || []).map((v: any, vIndex: number) => ({
     id: v.id || `gid://shopify/ProductVariant/${raw.handle}-${vIndex}`,

@@ -58,8 +58,8 @@ export function HeroBanner() {
         {/* Content Column: Anchored to Bottom on Mobile, Centered on Desktop */}
         <div className="mt-auto sm:my-auto pb-3 pt-2 sm:py-4 max-w-xl lg:max-w-2xl text-left">
           
-          {/* Top Brand & Science Signature (Clean white pill, no blur block) */}
-          <div className="inline-flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-4 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white/95 border border-white/90 shadow-2xs">
+          {/* Top Brand & Science Signature (Clean white pill, rounded tipis) */}
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 mb-2 sm:mb-4 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-xs bg-white/95 border border-white/90 shadow-2xs">
             <span className="w-1.5 h-1.5 rounded-full bg-[#0B6E7D]" />
             <span className="font-mono text-[9px] sm:text-[11px] font-semibold tracking-[0.18em] sm:tracking-[0.2em] text-[#002B49] uppercase">
               DEEP SEA MINERAL SCIENCE · ヌマスキン
@@ -77,11 +77,11 @@ export function HeroBanner() {
             Menghidrasi hingga ke lapisan seluler dan merawat elastisitas alami kulit.
           </p>
 
-          {/* Dual Action CTAs: Direct & Refined (Grid 2-col on mobile, flex on desktop) */}
+          {/* Dual Action CTAs: Direct & Refined (Rounded Tipis) */}
           <div className="grid grid-cols-2 sm:flex sm:flex-row items-center gap-2.5 sm:gap-3 mb-3.5 sm:mb-7">
             <Link
               to="/collections/all"
-              className="px-3 sm:px-7 py-2.5 sm:py-3.5 rounded-full bg-[#002B49] hover:bg-[#034266] text-white text-[11px] sm:text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-1.5 sm:gap-2 transition-all shadow-[0_8px_20px_rgba(0,43,73,0.16)] text-center group"
+              className="px-3 sm:px-7 py-2.5 sm:py-3.5 rounded-xs bg-[#002B49] hover:bg-[#034266] text-white text-[11px] sm:text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-1.5 sm:gap-2 transition-all shadow-[0_8px_20px_rgba(0,43,73,0.16)] text-center group"
             >
               <span>Jelajahi Koleksi</span>
               <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#38B6CD] group-hover:translate-x-0.5 transition-transform" />
@@ -89,7 +89,7 @@ export function HeroBanner() {
 
             <Link
               to="/collections/paket-hemat-bundling"
-              className="px-3 sm:px-6 py-2.5 sm:py-3.5 rounded-full bg-white/95 hover:bg-white border border-white/90 hover:border-white text-[#002B49] text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-center transition-all shadow-2xs truncate"
+              className="px-3 sm:px-6 py-2.5 sm:py-3.5 rounded-xs bg-white/95 hover:bg-white border border-white/90 hover:border-white text-[#002B49] text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-center transition-all shadow-2xs truncate"
             >
               <span>Paket Hemat</span>
             </Link>
@@ -115,7 +115,7 @@ export function HeroBanner() {
         {/* 3. BOTTOM REASSURANCE & SCROLL INDICATOR STRIP           */}
         {/* ========================================================= */}
         <div className="w-full pt-1 sm:pt-2">
-          <div className="flex items-center justify-between text-[10px] sm:text-[11px] text-slate-600 font-mono pt-2.5 sm:pt-3 border-t border-slate-300/20 sm:border-slate-300/40">
+          <div className="flex items-center justify-between text-[10px] sm:text-[11px] text-slate-600 font-mono pt-2 sm:pt-2.5">
             <div className="flex items-center gap-1.5 sm:gap-2 truncate">
               <ShieldCheck className="w-3.5 h-3.5 text-[#0B6E7D] flex-shrink-0" />
               <span className="truncate">Toko Resmi Numa Skin Indonesia · 100% Produk Asli & Halal</span>

@@ -1,7 +1,7 @@
 {
   "store": {
     "name": "Numa Skin Official",
-    "domain": "numaskin.id",
+    "domain": "y2x75f-40.myshopify.com",
     "currency": "IDR"
   },
   "collections": [
@@ -308,12 +308,13 @@
   "singles": [
     {
       "id": "gid://shopify/Product/10321359044854",
-      "title": "Numa Skin Deep Sea Water Facial Wash Gel 100ml",
+      "title": "Deep Sea Water Facial Wash Gel",
       "subtitle": "Pembersih Wajah Lembut Anti-Aging & Mencerahkan dengan 5% Niacinamide",
       "handle": "numa-skin-deep-sea-water-facial-wash-100ml",
       "productType": "Facial Cleanser",
       "vendor": "Numa Skin",
       "tags": [
+        "100ml",
         "anti aging",
         "bpom",
         "brightening",
@@ -396,12 +397,13 @@
     },
     {
       "id": "gid://shopify/Product/10321359339766",
-      "title": "Numa Skin Calming Barrier Gloss Gel Moisturizer 30ml",
+      "title": "Calming Barrier Gloss Gel Moisturizer",
       "subtitle": "Gel Pelembap Ringan Penenang Kulit untuk Tampilan Sehat & Dewy Glow",
       "handle": "numa-skin-calming-barrier-gloss-gel-moisturizer-30ml",
       "productType": "Moisturizer",
       "vendor": "Numa Skin",
       "tags": [
+        "30ml",
         "acne friendly",
         "barrier gel",
         "bpom",
@@ -537,12 +539,14 @@
     },
     {
       "id": "gid://shopify/Product/10321359372534",
-      "title": "Numa Skin Deep Sea Water Treatment Lotion",
+      "title": "Deep Sea Water Treatment Lotion",
       "subtitle": "Hydrating Toner & Essence Anti-Aging untuk Memperkuat Skin Barrier Hydrating toner anti aging dengan",
       "handle": "numa-skin-deep-sea-water-treatment-lotion",
       "productType": "Hydrating Toner",
       "vendor": "Numa Skin",
       "tags": [
+        "150ml",
+        "50ml",
         "anti aging",
         "bpom",
         "calming",
@@ -752,12 +756,13 @@
     },
     {
       "id": "gid://shopify/Product/10321359470838",
-      "title": "Numa Skin Adenosine Deep Sea Water Moisturizer 30g",
+      "title": "Adenosine Deep Sea Water Moisturizer",
       "subtitle": "Pelembap Intensif Anti-Aging untuk Mengunci Elastisitas & Nutrisi Kulit",
       "handle": "numa-skin-adenosine-deep-sea-water-moisturizer-30g",
       "productType": "Moisturizer",
       "vendor": "Numa Skin",
       "tags": [
+        "30g",
         "adenosine",
         "anti aging",
         "bpom",
@@ -954,12 +959,13 @@
     },
     {
       "id": "gid://shopify/Product/10321359536374",
-      "title": "Numa Skin PDRN Alpha Arbutin Tone-Up Day Cream 30g",
+      "title": "PDRN Alpha Arbutin Tone-Up Day Cream",
       "subtitle": "Krim Pagi Pencerah Instan & Perawatan Anti-Aging dengan UV Protection",
       "handle": "numa-skin-pdrn-alpha-arbutin-tone-up-day-cream-30g",
       "productType": "Day Cream",
       "vendor": "Numa Skin",
       "tags": [
+        "30g",
         "alpha arbutin",
         "anti aging",
         "bpom",
@@ -1077,12 +1083,13 @@
     },
     {
       "id": "gid://shopify/Product/10321359601910",
-      "title": "Numa Skin Oxydew Sunscreen Luceane SPF 50+ PA++++ 30ml",
+      "title": "Oxydew Sunscreen Luceane SPF 50+ PA++++",
       "subtitle": "Tabir Surya Ringan Perlindungan Maksimal & Anti-Polusi Tanpa White Cast",
       "handle": "numa-skin-oxydew-sunscreen-luceane-spf50-30ml",
       "productType": "Sunscreen",
       "vendor": "Numa Skin",
       "tags": [
+        "30ml",
         "anti pollution",
         "bpom",
         "luceane",
@@ -1218,12 +1225,13 @@
     },
     {
       "id": "gid://shopify/Product/10321359634678",
-      "title": "Numa Skin NAD+ Booster Anti-Aging Serum 20ml",
+      "title": "NAD+ Booster Anti-Aging Serum",
       "subtitle": "Serum Konsentrat Rejuvenasi Seluler untuk Kulit Kencang & Cerah Merata",
       "handle": "numa-skin-nad-booster-anti-aging-serum-20ml",
       "productType": "Face Serum",
       "vendor": "Numa Skin",
       "tags": [
+        "20ml",
         "anti aging",
         "booster serum",
         "bpom",
@@ -1355,7 +1363,7 @@
   "bundles": [
     {
       "id": "gid://shopify/Product/10321359700214",
-      "title": "Numa Skin Paket Lengkap 6-in-1 Routine",
+      "title": "Paket Lengkap 6-in-1 Routine",
       "subtitle": "Rangkaian Terlengkap 6 Langkah untuk Kulit Awet Muda & Cerah",
       "handle": "numa-skin-paket-lengkap-6-in-1-routine",
       "productType": "Skincare Set",
@@ -1502,12 +1510,13 @@
     },
     {
       "id": "gid://shopify/Product/10321359732982",
-      "title": "Numa Skin Paket Ultimate Anti-Aging 150ml",
+      "title": "Paket Ultimate Anti-Aging (150ml)",
       "subtitle": "Set Lengkap Peremajaan Kulit dengan Treatment Lotion Full Size",
       "handle": "numa-skin-paket-ultimate-anti-aging-150ml",
       "productType": "Skincare Set",
       "vendor": "Numa Skin",
       "tags": [
+        "150ml",
         "anti aging",
         "bpom",
         "bundling hemat",
@@ -1637,12 +1646,13 @@
     },
     {
       "id": "gid://shopify/Product/10321359798518",
-      "title": "Numa Skin Paket Ultimate Anti-Aging 50ml",
+      "title": "Paket Ultimate Anti-Aging (50ml)",
       "subtitle": "Set Lengkap Peremajaan Kulit Praktis dengan Treatment Lotion 50ml",
       "handle": "numa-skin-paket-ultimate-anti-aging-50ml",
       "productType": "Skincare Set",
       "vendor": "Numa Skin",
       "tags": [
+        "50ml",
         "anti aging",
         "bpom",
         "bundling hemat",
@@ -1772,12 +1782,13 @@
     },
     {
       "id": "gid://shopify/Product/10321359831286",
-      "title": "Numa Skin Paket Complete Routine 4-in-1 150ml",
+      "title": "Paket Complete Routine 4-in-1 (150ml)",
       "subtitle": "Empat Langkah Esensial Perawatan Wajah Anti Aging Full Size",
       "handle": "numa-skin-paket-complete-routine-4-in-1-150ml",
       "productType": "Skincare Set",
       "vendor": "Numa Skin",
       "tags": [
+        "150ml",
         "anti aging",
         "bpom",
         "bundling hemat",
@@ -1901,12 +1912,13 @@
     },
     {
       "id": "gid://shopify/Product/10321359864054",
-      "title": "Numa Skin Paket Complete Routine 4-in-1 50ml",
+      "title": "Paket Complete Routine 4-in-1 (50ml)",
       "subtitle": "Empat Langkah Esensial Perawatan Wajah Anti Aging Travel Size",
       "handle": "numa-skin-paket-complete-routine-4-in-1-50ml",
       "productType": "Skincare Set",
       "vendor": "Numa Skin",
       "tags": [
+        "50ml",
         "anti aging",
         "bpom",
         "bundling hemat",
@@ -2030,7 +2042,7 @@
     },
     {
       "id": "gid://shopify/Product/10321359929590",
-      "title": "Numa Skin Paket Triple Protection 3-in-1",
+      "title": "Paket Triple Protection 3-in-1",
       "subtitle": "Tiga Perlindungan Utama: Pembersih, Pelembap, dan Tabir Surya",
       "handle": "numa-skin-paket-triple-protection-3-in-1",
       "productType": "Skincare Set",
@@ -2160,7 +2172,7 @@
     },
     {
       "id": "gid://shopify/Product/10321359962358",
-      "title": "Numa Skin Paket Anti-Aging Trio",
+      "title": "Paket Anti-Aging Trio",
       "subtitle": "Trio Formulasi Khusus Merawat Kekencangan & Elastisitas Wajah",
       "handle": "numa-skin-paket-anti-aging-trio",
       "productType": "Skincare Set",
@@ -2295,12 +2307,13 @@
     },
     {
       "id": "gid://shopify/Product/10321359995126",
-      "title": "Numa Skin Paket Age Repair Trio 150ml",
+      "title": "Paket Age Repair Trio (150ml)",
       "subtitle": "Trio Perbaikan Skin Barrier & Tanda Penuaan dengan Lotion 150ml",
       "handle": "numa-skin-paket-age-repair-trio-150ml",
       "productType": "Skincare Set",
       "vendor": "Numa Skin",
       "tags": [
+        "150ml",
         "anti aging",
         "bpom",
         "bundling hemat",
@@ -2430,7 +2443,7 @@
     },
     {
       "id": "gid://shopify/Product/10321360060662",
-      "title": "Numa Skin Paket Age Defense Trio",
+      "title": "Paket Age Defense Trio",
       "subtitle": "Trio Pertahanan Kulit dari Penuaan Dini & Sinar Matahari",
       "handle": "numa-skin-paket-age-defense-trio",
       "productType": "Skincare Set",
@@ -2565,12 +2578,13 @@
     },
     {
       "id": "gid://shopify/Product/10321360093430",
-      "title": "Numa Skin Paket Rejuvenating Trio 150ml",
+      "title": "Paket Rejuvenating Trio (150ml)",
       "subtitle": "Trio Rejuvenasi Kulit Intensif dengan Treatment Lotion 150ml",
       "handle": "numa-skin-paket-rejuvenating-trio-150ml",
       "productType": "Skincare Set",
       "vendor": "Numa Skin",
       "tags": [
+        "150ml",
         "anti aging",
         "bpom",
         "bundling hemat",
@@ -2700,12 +2714,13 @@
     },
     {
       "id": "gid://shopify/Product/10321360158966",
-      "title": "Numa Skin Paket Rejuvenating Trio 50ml",
+      "title": "Paket Rejuvenating Trio (50ml)",
       "subtitle": "Trio Rejuvenasi Kulit Intensif dengan Treatment Lotion 50ml",
       "handle": "numa-skin-paket-rejuvenating-trio-50ml",
       "productType": "Skincare Set",
       "vendor": "Numa Skin",
       "tags": [
+        "50ml",
         "anti aging",
         "bpom",
         "bundling hemat",
@@ -2835,7 +2850,7 @@
     },
     {
       "id": "gid://shopify/Product/10321360224502",
-      "title": "Numa Skin Paket Glow Up Adenosine",
+      "title": "Paket Glow Up Adenosine",
       "subtitle": "Rutinitas Pembersihan, Hidrasi Toner, dan Pelembap Adenosine",
       "handle": "numa-skin-paket-glow-up-adenosine",
       "productType": "Skincare Set",
@@ -2981,7 +2996,7 @@
     },
     {
       "id": "gid://shopify/Product/10321360257270",
-      "title": "Numa Skin Paket Glow Up Gloss Gel",
+      "title": "Paket Glow Up Gloss Gel",
       "subtitle": "Rutinitas Pembersihan, Hidrasi Toner, dan Calming Gloss Gel",
       "handle": "numa-skin-paket-glow-up-gloss-gel",
       "productType": "Skincare Set",
@@ -3127,12 +3142,13 @@
     },
     {
       "id": "gid://shopify/Product/10321360322806",
-      "title": "Numa Skin Paket Youth Glow Duo 150ml",
+      "title": "Paket Youth Glow Duo (150ml)",
       "subtitle": "Duo Pencerah & Peremajaan Kulit dengan Treatment Lotion 150ml",
       "handle": "numa-skin-paket-youth-glow-duo-150ml",
       "productType": "Skincare Set",
       "vendor": "Numa Skin",
       "tags": [
+        "150ml",
         "anti aging",
         "bpom",
         "bundling hemat",
@@ -3262,12 +3278,13 @@
     },
     {
       "id": "gid://shopify/Product/10321360355574",
-      "title": "Numa Skin Paket Youth Glow Duo 50ml",
+      "title": "Paket Youth Glow Duo (50ml)",
       "subtitle": "Duo Pencerah & Peremajaan Kulit dengan Treatment Lotion 50ml",
       "handle": "numa-skin-paket-youth-glow-duo-50ml",
       "productType": "Skincare Set",
       "vendor": "Numa Skin",
       "tags": [
+        "50ml",
         "anti aging",
         "bpom",
         "bundling hemat",
@@ -3397,7 +3414,7 @@
     },
     {
       "id": "gid://shopify/Product/10321360421110",
-      "title": "Numa Skin Paket Clean & Glow Duo",
+      "title": "Paket Clean & Glow Duo",
       "subtitle": "Duo Pembersih Wajah & Serum Konsentrat NAD+ Booster",
       "handle": "numa-skin-paket-clean-and-glow",
       "productType": "Skincare Set",
@@ -3527,7 +3544,7 @@
     },
     {
       "id": "gid://shopify/Product/10321360453878",
-      "title": "Numa Skin Paket Fresh & Hydrate Duo",
+      "title": "Paket Fresh & Hydrate Duo",
       "subtitle": "Duo Pembersih Wajah Lembut & Treatment Lotion 150ml",
       "handle": "numa-skin-paket-fresh-and-hydrate",
       "productType": "Skincare Set",
@@ -3673,7 +3690,7 @@
     },
     {
       "id": "gid://shopify/Product/10321360552182",
-      "title": "Numa Skin Paket Daily Protection Duo",
+      "title": "Paket Daily Protection Duo",
       "subtitle": "Duo Pembersih Wajah & Tabir Surya SPF 50+ PA++++",
       "handle": "numa-skin-paket-daily-protection",
       "productType": "Skincare Set",
@@ -3808,7 +3825,7 @@
     },
     {
       "id": "gid://shopify/Product/10321360584950",
-      "title": "Numa Skin Paket Daily Care Adenosine",
+      "title": "Paket Daily Care Adenosine",
       "subtitle": "Duo Pembersih Lembut & Pelembap Anti-Aging Adenosine",
       "handle": "numa-skin-paket-daily-care-adenosine",
       "productType": "Skincare Set",
@@ -3938,7 +3955,7 @@
     },
     {
       "id": "gid://shopify/Product/10321360650486",
-      "title": "Numa Skin Paket Daily Care Gloss Gel",
+      "title": "Paket Daily Care Gloss Gel",
       "subtitle": "Duo Pembersih Lembut & Pelembap Calming Gloss Gel",
       "handle": "numa-skin-paket-daily-care-gloss-gel",
       "productType": "Skincare Set",
@@ -4068,7 +4085,7 @@
     },
     {
       "id": "gid://shopify/Product/10321360683254",
-      "title": "Numa Skin Paket Daily Glow Duo",
+      "title": "Paket Daily Glow Duo",
       "subtitle": "Duo Pembersih Lembut & PDRN Tone-Up Day Cream",
       "handle": "numa-skin-paket-daily-glow",
       "productType": "Skincare Set",
@@ -4198,7 +4215,7 @@
     },
     {
       "id": "gid://shopify/Product/10321360748790",
-      "title": "Numa Skin Paket Skin Protection Duo",
+      "title": "Paket Skin Protection Duo",
       "subtitle": "Duo Perlindungan Seluler: Serum NAD+ & Sunscreen SPF 50+",
       "handle": "numa-skin-paket-skin-protection-duo",
       "productType": "Skincare Set",
@@ -4333,12 +4350,13 @@
     },
     {
       "id": "gid://shopify/Product/10321360814326",
-      "title": "Numa Skin Paket Skin Recharge Duo 150ml",
+      "title": "Paket Skin Recharge Duo (150ml)",
       "subtitle": "Duo Rehidrasi & Energi Seluler dengan Lotion 150ml",
       "handle": "numa-skin-paket-skin-recharge-duo-150ml",
       "productType": "Skincare Set",
       "vendor": "Numa Skin",
       "tags": [
+        "150ml",
         "anti aging",
         "bpom",
         "bundling hemat",
@@ -4468,12 +4486,13 @@
     },
     {
       "id": "gid://shopify/Product/10321360879862",
-      "title": "Numa Skin Paket Skin Recharge Duo 50ml",
+      "title": "Paket Skin Recharge Duo (50ml)",
       "subtitle": "Duo Rehidrasi & Energi Seluler dengan Lotion 50ml",
       "handle": "numa-skin-paket-skin-recharge-duo-50ml",
       "productType": "Skincare Set",
       "vendor": "Numa Skin",
       "tags": [
+        "50ml",
         "anti aging",
         "bpom",
         "bundling hemat",
@@ -4603,7 +4622,7 @@
     },
     {
       "id": "gid://shopify/Product/10321360912630",
-      "title": "Numa Skin Paket Timeless Skin Set",
+      "title": "Paket Timeless Skin Set",
       "subtitle": "Duo Serum NAD+ & Pelembap Calming Gloss Gel",
       "handle": "numa-skin-paket-timeless-skin-set",
       "productType": "Skincare Set",
@@ -4738,7 +4757,7 @@
     },
     {
       "id": "gid://shopify/Product/10321360978166",
-      "title": "Numa Skin Paket NAD+ Youth Boost Set",
+      "title": "Paket NAD+ Youth Boost Set",
       "subtitle": "Duo Serum Konsentrat NAD+ & Pelembap Adenosine",
       "handle": "numa-skin-paket-nad-youth-boost-set",
       "productType": "Skincare Set",
@@ -4873,7 +4892,7 @@
     },
     {
       "id": "gid://shopify/Product/10321361043702",
-      "title": "Numa Skin Paket Luminous Duo",
+      "title": "Paket Luminous Duo",
       "subtitle": "Duo Pencerah Kulit: Day Cream PDRN & Serum NAD+",
       "handle": "numa-skin-paket-luminous-duo",
       "productType": "Skincare Set",
@@ -5008,7 +5027,7 @@
     },
     {
       "id": "gid://shopify/Product/10321361076470",
-      "title": "Numa Skin Paket Protection Duo PDRN",
+      "title": "Paket Protection Duo PDRN",
       "subtitle": "Duo Day Cream PDRN & Tabir Surya SPF 50+ PA++++",
       "handle": "numa-skin-paket-protection-duo-pdrn",
       "productType": "Skincare Set",
@@ -5143,7 +5162,7 @@
     },
     {
       "id": "gid://shopify/Product/10321361109238",
-      "title": "Numa Skin Paket Hydra Glow Duo",
+      "title": "Paket Hydra Glow Duo",
       "subtitle": "Duo Pelembap Adenosine & Krim Pagi PDRN Tone-Up",
       "handle": "numa-skin-paket-hydra-glow-duo",
       "productType": "Skincare Set",
@@ -5278,7 +5297,7 @@
     },
     {
       "id": "gid://shopify/Product/10321361174774",
-      "title": "Numa Skin Paket Moist Glow Duo",
+      "title": "Paket Moist Glow Duo",
       "subtitle": "Duo Calming Gloss Gel & Krim Pagi PDRN Tone-Up",
       "handle": "numa-skin-paket-moist-glow-duo",
       "productType": "Skincare Set",
@@ -5413,7 +5432,7 @@
     },
     {
       "id": "gid://shopify/Product/10321361273078",
-      "title": "Numa Skin Paket Sunscreen & Gloss Gel",
+      "title": "Paket Sunscreen & Gloss Gel",
       "subtitle": "Duo Tabir Surya Ringan SPF 50+ & Gel Pelembap Sejuk",
       "handle": "numa-skin-paket-sunscreen-dan-gloss-gel",
       "productType": "Skincare Set",
@@ -5564,12 +5583,13 @@
     },
     {
       "id": "gid://shopify/Product/10321361305846",
-      "title": "Numa Skin Paket Sunscreen & Toner 150ml",
+      "title": "Paket Sunscreen & Toner (150ml)",
       "subtitle": "Duo Hidrasi Maksimal & Perlindungan UV Harian",
       "handle": "numa-skin-paket-sunscreen-dan-toner-150ml",
       "productType": "Skincare Set",
       "vendor": "Numa Skin",
       "tags": [
+        "150ml",
         "anti aging",
         "bpom",
         "bundling hemat",
@@ -5715,12 +5735,13 @@
     },
     {
       "id": "gid://shopify/Product/10321361371382",
-      "title": "Numa Skin Paket Sunscreen & Toner 50ml",
+      "title": "Paket Sunscreen & Toner (50ml)",
       "subtitle": "Duo Hidrasi Travel Size & Perlindungan UV Harian",
       "handle": "numa-skin-paket-sunscreen-dan-toner-50ml",
       "productType": "Skincare Set",
       "vendor": "Numa Skin",
       "tags": [
+        "50ml",
         "anti aging",
         "bpom",
         "bundling hemat",
@@ -5866,12 +5887,13 @@
     },
     {
       "id": "gid://shopify/Product/10321361436918",
-      "title": "Numa Skin Paket Sunscreen, Adenosine & Toner 150ml",
+      "title": "Paket Sunscreen, Adenosine & Toner (150ml)",
       "subtitle": "Trio Perlindungan, Pelembap Anti-Aging & Toner 150ml",
       "handle": "numa-skin-paket-sunscreen-adenosine-toner-150ml",
       "productType": "Skincare Set",
       "vendor": "Numa Skin",
       "tags": [
+        "150ml",
         "anti aging",
         "bpom",
         "bundling hemat",
@@ -6017,12 +6039,13 @@
     },
     {
       "id": "gid://shopify/Product/10321361469686",
-      "title": "Numa Skin Paket Sunscreen, Adenosine & Toner 50ml",
+      "title": "Paket Sunscreen, Adenosine & Toner (50ml)",
       "subtitle": "Trio Perlindungan, Pelembap Anti-Aging & Toner 50ml",
       "handle": "numa-skin-paket-sunscreen-adenosine-toner-50ml",
       "productType": "Skincare Set",
       "vendor": "Numa Skin",
       "tags": [
+        "50ml",
         "anti aging",
         "bpom",
         "bundling hemat",
@@ -6200,7 +6223,7 @@
     },
     {
       "id": "gid://shopify/Product/10321361502454",
-      "title": "Numa Skin Paket Adenosine & Sunscreen",
+      "title": "Paket Adenosine & Sunscreen",
       "subtitle": "Duo Pelembap Anti-Aging Adenosine & Tabir Surya SPF 50+",
       "handle": "numa-skin-paket-adenosine-dan-sunscreen",
       "productType": "Skincare Set",
@@ -6377,12 +6400,13 @@
     },
     {
       "id": "gid://shopify/Product/10321361567990",
-      "title": "Numa Skin Paket Adenosine & Toner 150ml",
+      "title": "Paket Adenosine & Toner (150ml)",
       "subtitle": "Duo Pelembap Anti-Aging & Treatment Lotion 150ml",
       "handle": "numa-skin-paket-adenosine-dan-toner-150ml",
       "productType": "Skincare Set",
       "vendor": "Numa Skin",
       "tags": [
+        "150ml",
         "anti aging",
         "bpom",
         "bundling hemat",
@@ -6560,7 +6584,7 @@
     },
     {
       "id": "gid://shopify/Product/10321361600758",
-      "title": "Numa Skin Paket Toner 150ml & Gloss Gel",
+      "title": "Paket Toner 150ml & Gloss Gel",
       "subtitle": "Duo Treatment Lotion 150ml & Calming Gloss Gel",
       "handle": "numa-skin-paket-toner-150ml-dan-gloss-gel",
       "productType": "Skincare Set",
@@ -6705,7 +6729,7 @@
     },
     {
       "id": "gid://shopify/Product/10321361666294",
-      "title": "Numa Skin Paket Toner 50ml & Gloss Gel",
+      "title": "Paket Toner 50ml & Gloss Gel",
       "subtitle": "Duo Hidrasi Segar Praktis & Calming Gloss Gel",
       "handle": "numa-skin-paket-toner-50ml-dan-gloss-gel",
       "productType": "Skincare Set",
@@ -6904,12 +6928,13 @@
     },
     {
       "id": "gid://shopify/Product/10321361731830",
-      "title": "Numa Skin Paket Twin Pack Toner 2x150ml",
+      "title": "Paket Twin Pack Toner (2x150ml)",
       "subtitle": "Duo Treatment Lotion Full Size Ekstra Hemat 2x150ml",
       "handle": "numa-skin-paket-twin-pack-toner-2x150ml",
       "productType": "Skincare Set",
       "vendor": "Numa Skin",
       "tags": [
+        "2x150ml",
         "anti aging",
         "bpom",
         "bundling hemat",
@@ -7043,7 +7068,7 @@
     },
     {
       "id": "gid://shopify/Product/10321361797366",
-      "title": "Numa Skin Paket Duo Toner 150ml + 50ml",
+      "title": "Paket Duo Toner (150ml+50ml)",
       "subtitle": "Paket Komplit Treatment Lotion Full Size & Travel Size",
       "handle": "numa-skin-paket-duo-toner-150ml-50ml",
       "productType": "Skincare Set",
@@ -7182,7 +7207,7 @@
     },
     {
       "id": "gid://shopify/Product/10321361830134",
-      "title": "Numa Skin Paket Exclusive Lotion & Gloss Gel",
+      "title": "Paket Exclusive Lotion & Gloss Gel",
       "subtitle": "Paket Eksklusif Treatment Lotion 150ml, 50ml & Gloss Gel",
       "handle": "numa-skin-paket-exclusive-lotion-gloss-gel",
       "productType": "Skincare Set",

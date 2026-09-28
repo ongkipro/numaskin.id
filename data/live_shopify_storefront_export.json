@@ -2,8 +2,8 @@
   "shop": {
     "name": "Numa Skin Official",
     "primaryDomain": {
-      "host": "numaskin.id",
-      "url": "https://numaskin.id"
+      "host": "y2x75f-40.myshopify.com",
+      "url": "https://y2x75f-40.myshopify.com"
     },
     "myshopifyDomain": "y2x75f-40.myshopify.com",
     "currencyCode": "IDR"
@@ -27,42 +27,42 @@
           "nodes": [
             {
               "id": "gid://shopify/Product/10321359700214",
-              "title": "Numa Skin Paket Lengkap 6-in-1 Routine",
+              "title": "Paket Lengkap 6-in-1 Routine",
               "handle": "numa-skin-paket-lengkap-6-in-1-routine"
             },
             {
               "id": "gid://shopify/Product/10321359634678",
-              "title": "Numa Skin NAD+ Booster Anti-Aging Serum 20ml",
+              "title": "NAD+ Booster Anti-Aging Serum",
               "handle": "numa-skin-nad-booster-anti-aging-serum-20ml"
             },
             {
               "id": "gid://shopify/Product/10321359601910",
-              "title": "Numa Skin Oxydew Sunscreen Luceane SPF 50+ PA++++ 30ml",
+              "title": "Oxydew Sunscreen Luceane SPF 50+ PA++++",
               "handle": "numa-skin-oxydew-sunscreen-luceane-spf50-30ml"
             },
             {
               "id": "gid://shopify/Product/10321359536374",
-              "title": "Numa Skin PDRN Alpha Arbutin Tone-Up Day Cream 30g",
+              "title": "PDRN Alpha Arbutin Tone-Up Day Cream",
               "handle": "numa-skin-pdrn-alpha-arbutin-tone-up-day-cream-30g"
             },
             {
               "id": "gid://shopify/Product/10321359470838",
-              "title": "Numa Skin Adenosine Deep Sea Water Moisturizer 30g",
+              "title": "Adenosine Deep Sea Water Moisturizer",
               "handle": "numa-skin-adenosine-deep-sea-water-moisturizer-30g"
             },
             {
               "id": "gid://shopify/Product/10321359372534",
-              "title": "Numa Skin Deep Sea Water Treatment Lotion",
+              "title": "Deep Sea Water Treatment Lotion",
               "handle": "numa-skin-deep-sea-water-treatment-lotion"
             },
             {
               "id": "gid://shopify/Product/10321359339766",
-              "title": "Numa Skin Calming Barrier Gloss Gel Moisturizer 30ml",
+              "title": "Calming Barrier Gloss Gel Moisturizer",
               "handle": "numa-skin-calming-barrier-gloss-gel-moisturizer-30ml"
             },
             {
               "id": "gid://shopify/Product/10321359044854",
-              "title": "Numa Skin Deep Sea Water Facial Wash Gel 100ml",
+              "title": "Deep Sea Water Facial Wash Gel",
               "handle": "numa-skin-deep-sea-water-facial-wash-100ml"
             }
           ]
@@ -85,247 +85,247 @@
           "nodes": [
             {
               "id": "gid://shopify/Product/10321361830134",
-              "title": "Numa Skin Paket Exclusive Lotion & Gloss Gel",
+              "title": "Paket Exclusive Lotion & Gloss Gel",
               "handle": "numa-skin-paket-exclusive-lotion-gloss-gel"
             },
             {
               "id": "gid://shopify/Product/10321361797366",
-              "title": "Numa Skin Paket Duo Toner 150ml + 50ml",
+              "title": "Paket Duo Toner (150ml+50ml)",
               "handle": "numa-skin-paket-duo-toner-150ml-50ml"
             },
             {
               "id": "gid://shopify/Product/10321361731830",
-              "title": "Numa Skin Paket Twin Pack Toner 2x150ml",
+              "title": "Paket Twin Pack Toner (2x150ml)",
               "handle": "numa-skin-paket-twin-pack-toner-2x150ml"
             },
             {
               "id": "gid://shopify/Product/10321361666294",
-              "title": "Numa Skin Paket Toner 50ml & Gloss Gel",
+              "title": "Paket Toner 50ml & Gloss Gel",
               "handle": "numa-skin-paket-toner-50ml-dan-gloss-gel"
             },
             {
               "id": "gid://shopify/Product/10321361600758",
-              "title": "Numa Skin Paket Toner 150ml & Gloss Gel",
+              "title": "Paket Toner 150ml & Gloss Gel",
               "handle": "numa-skin-paket-toner-150ml-dan-gloss-gel"
             },
             {
               "id": "gid://shopify/Product/10321361567990",
-              "title": "Numa Skin Paket Adenosine & Toner 150ml",
+              "title": "Paket Adenosine & Toner (150ml)",
               "handle": "numa-skin-paket-adenosine-dan-toner-150ml"
             },
             {
               "id": "gid://shopify/Product/10321361502454",
-              "title": "Numa Skin Paket Adenosine & Sunscreen",
+              "title": "Paket Adenosine & Sunscreen",
               "handle": "numa-skin-paket-adenosine-dan-sunscreen"
             },
             {
               "id": "gid://shopify/Product/10321361469686",
-              "title": "Numa Skin Paket Sunscreen, Adenosine & Toner 50ml",
+              "title": "Paket Sunscreen, Adenosine & Toner (50ml)",
               "handle": "numa-skin-paket-sunscreen-adenosine-toner-50ml"
             },
             {
               "id": "gid://shopify/Product/10321361436918",
-              "title": "Numa Skin Paket Sunscreen, Adenosine & Toner 150ml",
+              "title": "Paket Sunscreen, Adenosine & Toner (150ml)",
               "handle": "numa-skin-paket-sunscreen-adenosine-toner-150ml"
             },
             {
               "id": "gid://shopify/Product/10321361371382",
-              "title": "Numa Skin Paket Sunscreen & Toner 50ml",
+              "title": "Paket Sunscreen & Toner (50ml)",
               "handle": "numa-skin-paket-sunscreen-dan-toner-50ml"
             },
             {
               "id": "gid://shopify/Product/10321361305846",
-              "title": "Numa Skin Paket Sunscreen & Toner 150ml",
+              "title": "Paket Sunscreen & Toner (150ml)",
               "handle": "numa-skin-paket-sunscreen-dan-toner-150ml"
             },
             {
               "id": "gid://shopify/Product/10321361273078",
-              "title": "Numa Skin Paket Sunscreen & Gloss Gel",
+              "title": "Paket Sunscreen & Gloss Gel",
               "handle": "numa-skin-paket-sunscreen-dan-gloss-gel"
             },
             {
               "id": "gid://shopify/Product/10321361174774",
-              "title": "Numa Skin Paket Moist Glow Duo",
+              "title": "Paket Moist Glow Duo",
               "handle": "numa-skin-paket-moist-glow-duo"
             },
             {
               "id": "gid://shopify/Product/10321361109238",
-              "title": "Numa Skin Paket Hydra Glow Duo",
+              "title": "Paket Hydra Glow Duo",
               "handle": "numa-skin-paket-hydra-glow-duo"
             },
             {
               "id": "gid://shopify/Product/10321361076470",
-              "title": "Numa Skin Paket Protection Duo PDRN",
+              "title": "Paket Protection Duo PDRN",
               "handle": "numa-skin-paket-protection-duo-pdrn"
             },
             {
               "id": "gid://shopify/Product/10321361043702",
-              "title": "Numa Skin Paket Luminous Duo",
+              "title": "Paket Luminous Duo",
               "handle": "numa-skin-paket-luminous-duo"
             },
             {
               "id": "gid://shopify/Product/10321360978166",
-              "title": "Numa Skin Paket NAD+ Youth Boost Set",
+              "title": "Paket NAD+ Youth Boost Set",
               "handle": "numa-skin-paket-nad-youth-boost-set"
             },
             {
               "id": "gid://shopify/Product/10321360912630",
-              "title": "Numa Skin Paket Timeless Skin Set",
+              "title": "Paket Timeless Skin Set",
               "handle": "numa-skin-paket-timeless-skin-set"
             },
             {
               "id": "gid://shopify/Product/10321360879862",
-              "title": "Numa Skin Paket Skin Recharge Duo 50ml",
+              "title": "Paket Skin Recharge Duo (50ml)",
               "handle": "numa-skin-paket-skin-recharge-duo-50ml"
             },
             {
               "id": "gid://shopify/Product/10321360814326",
-              "title": "Numa Skin Paket Skin Recharge Duo 150ml",
+              "title": "Paket Skin Recharge Duo (150ml)",
               "handle": "numa-skin-paket-skin-recharge-duo-150ml"
             },
             {
               "id": "gid://shopify/Product/10321360748790",
-              "title": "Numa Skin Paket Skin Protection Duo",
+              "title": "Paket Skin Protection Duo",
               "handle": "numa-skin-paket-skin-protection-duo"
             },
             {
               "id": "gid://shopify/Product/10321360683254",
-              "title": "Numa Skin Paket Daily Glow Duo",
+              "title": "Paket Daily Glow Duo",
               "handle": "numa-skin-paket-daily-glow"
             },
             {
               "id": "gid://shopify/Product/10321360650486",
-              "title": "Numa Skin Paket Daily Care Gloss Gel",
+              "title": "Paket Daily Care Gloss Gel",
               "handle": "numa-skin-paket-daily-care-gloss-gel"
             },
             {
               "id": "gid://shopify/Product/10321360584950",
-              "title": "Numa Skin Paket Daily Care Adenosine",
+              "title": "Paket Daily Care Adenosine",
               "handle": "numa-skin-paket-daily-care-adenosine"
             },
             {
               "id": "gid://shopify/Product/10321360552182",
-              "title": "Numa Skin Paket Daily Protection Duo",
+              "title": "Paket Daily Protection Duo",
               "handle": "numa-skin-paket-daily-protection"
             },
             {
               "id": "gid://shopify/Product/10321360453878",
-              "title": "Numa Skin Paket Fresh & Hydrate Duo",
+              "title": "Paket Fresh & Hydrate Duo",
               "handle": "numa-skin-paket-fresh-and-hydrate"
             },
             {
               "id": "gid://shopify/Product/10321360421110",
-              "title": "Numa Skin Paket Clean & Glow Duo",
+              "title": "Paket Clean & Glow Duo",
               "handle": "numa-skin-paket-clean-and-glow"
             },
             {
               "id": "gid://shopify/Product/10321360355574",
-              "title": "Numa Skin Paket Youth Glow Duo 50ml",
+              "title": "Paket Youth Glow Duo (50ml)",
               "handle": "numa-skin-paket-youth-glow-duo-50ml"
             },
             {
               "id": "gid://shopify/Product/10321360322806",
-              "title": "Numa Skin Paket Youth Glow Duo 150ml",
+              "title": "Paket Youth Glow Duo (150ml)",
               "handle": "numa-skin-paket-youth-glow-duo-150ml"
             },
             {
               "id": "gid://shopify/Product/10321360257270",
-              "title": "Numa Skin Paket Glow Up Gloss Gel",
+              "title": "Paket Glow Up Gloss Gel",
               "handle": "numa-skin-paket-glow-up-gloss-gel"
             },
             {
               "id": "gid://shopify/Product/10321360224502",
-              "title": "Numa Skin Paket Glow Up Adenosine",
+              "title": "Paket Glow Up Adenosine",
               "handle": "numa-skin-paket-glow-up-adenosine"
             },
             {
               "id": "gid://shopify/Product/10321360158966",
-              "title": "Numa Skin Paket Rejuvenating Trio 50ml",
+              "title": "Paket Rejuvenating Trio (50ml)",
               "handle": "numa-skin-paket-rejuvenating-trio-50ml"
             },
             {
               "id": "gid://shopify/Product/10321360093430",
-              "title": "Numa Skin Paket Rejuvenating Trio 150ml",
+              "title": "Paket Rejuvenating Trio (150ml)",
               "handle": "numa-skin-paket-rejuvenating-trio-150ml"
             },
             {
               "id": "gid://shopify/Product/10321360060662",
-              "title": "Numa Skin Paket Age Defense Trio",
+              "title": "Paket Age Defense Trio",
               "handle": "numa-skin-paket-age-defense-trio"
             },
             {
               "id": "gid://shopify/Product/10321359995126",
-              "title": "Numa Skin Paket Age Repair Trio 150ml",
+              "title": "Paket Age Repair Trio (150ml)",
               "handle": "numa-skin-paket-age-repair-trio-150ml"
             },
             {
               "id": "gid://shopify/Product/10321359962358",
-              "title": "Numa Skin Paket Anti-Aging Trio",
+              "title": "Paket Anti-Aging Trio",
               "handle": "numa-skin-paket-anti-aging-trio"
             },
             {
               "id": "gid://shopify/Product/10321359929590",
-              "title": "Numa Skin Paket Triple Protection 3-in-1",
+              "title": "Paket Triple Protection 3-in-1",
               "handle": "numa-skin-paket-triple-protection-3-in-1"
             },
             {
               "id": "gid://shopify/Product/10321359864054",
-              "title": "Numa Skin Paket Complete Routine 4-in-1 50ml",
+              "title": "Paket Complete Routine 4-in-1 (50ml)",
               "handle": "numa-skin-paket-complete-routine-4-in-1-50ml"
             },
             {
               "id": "gid://shopify/Product/10321359831286",
-              "title": "Numa Skin Paket Complete Routine 4-in-1 150ml",
+              "title": "Paket Complete Routine 4-in-1 (150ml)",
               "handle": "numa-skin-paket-complete-routine-4-in-1-150ml"
             },
             {
               "id": "gid://shopify/Product/10321359798518",
-              "title": "Numa Skin Paket Ultimate Anti-Aging 50ml",
+              "title": "Paket Ultimate Anti-Aging (50ml)",
               "handle": "numa-skin-paket-ultimate-anti-aging-50ml"
             },
             {
               "id": "gid://shopify/Product/10321359732982",
-              "title": "Numa Skin Paket Ultimate Anti-Aging 150ml",
+              "title": "Paket Ultimate Anti-Aging (150ml)",
               "handle": "numa-skin-paket-ultimate-anti-aging-150ml"
             },
             {
               "id": "gid://shopify/Product/10321359700214",
-              "title": "Numa Skin Paket Lengkap 6-in-1 Routine",
+              "title": "Paket Lengkap 6-in-1 Routine",
               "handle": "numa-skin-paket-lengkap-6-in-1-routine"
             },
             {
               "id": "gid://shopify/Product/10321359634678",
-              "title": "Numa Skin NAD+ Booster Anti-Aging Serum 20ml",
+              "title": "NAD+ Booster Anti-Aging Serum",
               "handle": "numa-skin-nad-booster-anti-aging-serum-20ml"
             },
             {
               "id": "gid://shopify/Product/10321359601910",
-              "title": "Numa Skin Oxydew Sunscreen Luceane SPF 50+ PA++++ 30ml",
+              "title": "Oxydew Sunscreen Luceane SPF 50+ PA++++",
               "handle": "numa-skin-oxydew-sunscreen-luceane-spf50-30ml"
             },
             {
               "id": "gid://shopify/Product/10321359536374",
-              "title": "Numa Skin PDRN Alpha Arbutin Tone-Up Day Cream 30g",
+              "title": "PDRN Alpha Arbutin Tone-Up Day Cream",
               "handle": "numa-skin-pdrn-alpha-arbutin-tone-up-day-cream-30g"
             },
             {
               "id": "gid://shopify/Product/10321359470838",
-              "title": "Numa Skin Adenosine Deep Sea Water Moisturizer 30g",
+              "title": "Adenosine Deep Sea Water Moisturizer",
               "handle": "numa-skin-adenosine-deep-sea-water-moisturizer-30g"
             },
             {
               "id": "gid://shopify/Product/10321359372534",
-              "title": "Numa Skin Deep Sea Water Treatment Lotion",
+              "title": "Deep Sea Water Treatment Lotion",
               "handle": "numa-skin-deep-sea-water-treatment-lotion"
             },
             {
               "id": "gid://shopify/Product/10321359339766",
-              "title": "Numa Skin Calming Barrier Gloss Gel Moisturizer 30ml",
+              "title": "Calming Barrier Gloss Gel Moisturizer",
               "handle": "numa-skin-calming-barrier-gloss-gel-moisturizer-30ml"
             },
             {
               "id": "gid://shopify/Product/10321359044854",
-              "title": "Numa Skin Deep Sea Water Facial Wash Gel 100ml",
+              "title": "Deep Sea Water Facial Wash Gel",
               "handle": "numa-skin-deep-sea-water-facial-wash-100ml"
             }
           ]
@@ -348,12 +348,12 @@
           "nodes": [
             {
               "id": "gid://shopify/Product/10321359372534",
-              "title": "Numa Skin Deep Sea Water Treatment Lotion",
+              "title": "Deep Sea Water Treatment Lotion",
               "handle": "numa-skin-deep-sea-water-treatment-lotion"
             },
             {
               "id": "gid://shopify/Product/10321359044854",
-              "title": "Numa Skin Deep Sea Water Facial Wash Gel 100ml",
+              "title": "Deep Sea Water Facial Wash Gel",
               "handle": "numa-skin-deep-sea-water-facial-wash-100ml"
             }
           ]
@@ -376,7 +376,7 @@
           "nodes": [
             {
               "id": "gid://shopify/Product/10321359634678",
-              "title": "Numa Skin NAD+ Booster Anti-Aging Serum 20ml",
+              "title": "NAD+ Booster Anti-Aging Serum",
               "handle": "numa-skin-nad-booster-anti-aging-serum-20ml"
             }
           ]
@@ -399,17 +399,17 @@
           "nodes": [
             {
               "id": "gid://shopify/Product/10321359536374",
-              "title": "Numa Skin PDRN Alpha Arbutin Tone-Up Day Cream 30g",
+              "title": "PDRN Alpha Arbutin Tone-Up Day Cream",
               "handle": "numa-skin-pdrn-alpha-arbutin-tone-up-day-cream-30g"
             },
             {
               "id": "gid://shopify/Product/10321359470838",
-              "title": "Numa Skin Adenosine Deep Sea Water Moisturizer 30g",
+              "title": "Adenosine Deep Sea Water Moisturizer",
               "handle": "numa-skin-adenosine-deep-sea-water-moisturizer-30g"
             },
             {
               "id": "gid://shopify/Product/10321359339766",
-              "title": "Numa Skin Calming Barrier Gloss Gel Moisturizer 30ml",
+              "title": "Calming Barrier Gloss Gel Moisturizer",
               "handle": "numa-skin-calming-barrier-gloss-gel-moisturizer-30ml"
             }
           ]
@@ -432,7 +432,7 @@
           "nodes": [
             {
               "id": "gid://shopify/Product/10321359601910",
-              "title": "Numa Skin Oxydew Sunscreen Luceane SPF 50+ PA++++ 30ml",
+              "title": "Oxydew Sunscreen Luceane SPF 50+ PA++++",
               "handle": "numa-skin-oxydew-sunscreen-luceane-spf50-30ml"
             }
           ]
@@ -455,212 +455,212 @@
           "nodes": [
             {
               "id": "gid://shopify/Product/10321361830134",
-              "title": "Numa Skin Paket Exclusive Lotion & Gloss Gel",
+              "title": "Paket Exclusive Lotion & Gloss Gel",
               "handle": "numa-skin-paket-exclusive-lotion-gloss-gel"
             },
             {
               "id": "gid://shopify/Product/10321361797366",
-              "title": "Numa Skin Paket Duo Toner 150ml + 50ml",
+              "title": "Paket Duo Toner (150ml+50ml)",
               "handle": "numa-skin-paket-duo-toner-150ml-50ml"
             },
             {
               "id": "gid://shopify/Product/10321361731830",
-              "title": "Numa Skin Paket Twin Pack Toner 2x150ml",
+              "title": "Paket Twin Pack Toner (2x150ml)",
               "handle": "numa-skin-paket-twin-pack-toner-2x150ml"
             },
             {
               "id": "gid://shopify/Product/10321361666294",
-              "title": "Numa Skin Paket Toner 50ml & Gloss Gel",
+              "title": "Paket Toner 50ml & Gloss Gel",
               "handle": "numa-skin-paket-toner-50ml-dan-gloss-gel"
             },
             {
               "id": "gid://shopify/Product/10321361600758",
-              "title": "Numa Skin Paket Toner 150ml & Gloss Gel",
+              "title": "Paket Toner 150ml & Gloss Gel",
               "handle": "numa-skin-paket-toner-150ml-dan-gloss-gel"
             },
             {
               "id": "gid://shopify/Product/10321361567990",
-              "title": "Numa Skin Paket Adenosine & Toner 150ml",
+              "title": "Paket Adenosine & Toner (150ml)",
               "handle": "numa-skin-paket-adenosine-dan-toner-150ml"
             },
             {
               "id": "gid://shopify/Product/10321361502454",
-              "title": "Numa Skin Paket Adenosine & Sunscreen",
+              "title": "Paket Adenosine & Sunscreen",
               "handle": "numa-skin-paket-adenosine-dan-sunscreen"
             },
             {
               "id": "gid://shopify/Product/10321361469686",
-              "title": "Numa Skin Paket Sunscreen, Adenosine & Toner 50ml",
+              "title": "Paket Sunscreen, Adenosine & Toner (50ml)",
               "handle": "numa-skin-paket-sunscreen-adenosine-toner-50ml"
             },
             {
               "id": "gid://shopify/Product/10321361436918",
-              "title": "Numa Skin Paket Sunscreen, Adenosine & Toner 150ml",
+              "title": "Paket Sunscreen, Adenosine & Toner (150ml)",
               "handle": "numa-skin-paket-sunscreen-adenosine-toner-150ml"
             },
             {
               "id": "gid://shopify/Product/10321361371382",
-              "title": "Numa Skin Paket Sunscreen & Toner 50ml",
+              "title": "Paket Sunscreen & Toner (50ml)",
               "handle": "numa-skin-paket-sunscreen-dan-toner-50ml"
             },
             {
               "id": "gid://shopify/Product/10321361305846",
-              "title": "Numa Skin Paket Sunscreen & Toner 150ml",
+              "title": "Paket Sunscreen & Toner (150ml)",
               "handle": "numa-skin-paket-sunscreen-dan-toner-150ml"
             },
             {
               "id": "gid://shopify/Product/10321361273078",
-              "title": "Numa Skin Paket Sunscreen & Gloss Gel",
+              "title": "Paket Sunscreen & Gloss Gel",
               "handle": "numa-skin-paket-sunscreen-dan-gloss-gel"
             },
             {
               "id": "gid://shopify/Product/10321361174774",
-              "title": "Numa Skin Paket Moist Glow Duo",
+              "title": "Paket Moist Glow Duo",
               "handle": "numa-skin-paket-moist-glow-duo"
             },
             {
               "id": "gid://shopify/Product/10321361109238",
-              "title": "Numa Skin Paket Hydra Glow Duo",
+              "title": "Paket Hydra Glow Duo",
               "handle": "numa-skin-paket-hydra-glow-duo"
             },
             {
               "id": "gid://shopify/Product/10321361076470",
-              "title": "Numa Skin Paket Protection Duo PDRN",
+              "title": "Paket Protection Duo PDRN",
               "handle": "numa-skin-paket-protection-duo-pdrn"
             },
             {
               "id": "gid://shopify/Product/10321361043702",
-              "title": "Numa Skin Paket Luminous Duo",
+              "title": "Paket Luminous Duo",
               "handle": "numa-skin-paket-luminous-duo"
             },
             {
               "id": "gid://shopify/Product/10321360978166",
-              "title": "Numa Skin Paket NAD+ Youth Boost Set",
+              "title": "Paket NAD+ Youth Boost Set",
               "handle": "numa-skin-paket-nad-youth-boost-set"
             },
             {
               "id": "gid://shopify/Product/10321360912630",
-              "title": "Numa Skin Paket Timeless Skin Set",
+              "title": "Paket Timeless Skin Set",
               "handle": "numa-skin-paket-timeless-skin-set"
             },
             {
               "id": "gid://shopify/Product/10321360879862",
-              "title": "Numa Skin Paket Skin Recharge Duo 50ml",
+              "title": "Paket Skin Recharge Duo (50ml)",
               "handle": "numa-skin-paket-skin-recharge-duo-50ml"
             },
             {
               "id": "gid://shopify/Product/10321360814326",
-              "title": "Numa Skin Paket Skin Recharge Duo 150ml",
+              "title": "Paket Skin Recharge Duo (150ml)",
               "handle": "numa-skin-paket-skin-recharge-duo-150ml"
             },
             {
               "id": "gid://shopify/Product/10321360748790",
-              "title": "Numa Skin Paket Skin Protection Duo",
+              "title": "Paket Skin Protection Duo",
               "handle": "numa-skin-paket-skin-protection-duo"
             },
             {
               "id": "gid://shopify/Product/10321360683254",
-              "title": "Numa Skin Paket Daily Glow Duo",
+              "title": "Paket Daily Glow Duo",
               "handle": "numa-skin-paket-daily-glow"
             },
             {
               "id": "gid://shopify/Product/10321360650486",
-              "title": "Numa Skin Paket Daily Care Gloss Gel",
+              "title": "Paket Daily Care Gloss Gel",
               "handle": "numa-skin-paket-daily-care-gloss-gel"
             },
             {
               "id": "gid://shopify/Product/10321360584950",
-              "title": "Numa Skin Paket Daily Care Adenosine",
+              "title": "Paket Daily Care Adenosine",
               "handle": "numa-skin-paket-daily-care-adenosine"
             },
             {
               "id": "gid://shopify/Product/10321360552182",
-              "title": "Numa Skin Paket Daily Protection Duo",
+              "title": "Paket Daily Protection Duo",
               "handle": "numa-skin-paket-daily-protection"
             },
             {
               "id": "gid://shopify/Product/10321360453878",
-              "title": "Numa Skin Paket Fresh & Hydrate Duo",
+              "title": "Paket Fresh & Hydrate Duo",
               "handle": "numa-skin-paket-fresh-and-hydrate"
             },
             {
               "id": "gid://shopify/Product/10321360421110",
-              "title": "Numa Skin Paket Clean & Glow Duo",
+              "title": "Paket Clean & Glow Duo",
               "handle": "numa-skin-paket-clean-and-glow"
             },
             {
               "id": "gid://shopify/Product/10321360355574",
-              "title": "Numa Skin Paket Youth Glow Duo 50ml",
+              "title": "Paket Youth Glow Duo (50ml)",
               "handle": "numa-skin-paket-youth-glow-duo-50ml"
             },
             {
               "id": "gid://shopify/Product/10321360322806",
-              "title": "Numa Skin Paket Youth Glow Duo 150ml",
+              "title": "Paket Youth Glow Duo (150ml)",
               "handle": "numa-skin-paket-youth-glow-duo-150ml"
             },
             {
               "id": "gid://shopify/Product/10321360257270",
-              "title": "Numa Skin Paket Glow Up Gloss Gel",
+              "title": "Paket Glow Up Gloss Gel",
               "handle": "numa-skin-paket-glow-up-gloss-gel"
             },
             {
               "id": "gid://shopify/Product/10321360224502",
-              "title": "Numa Skin Paket Glow Up Adenosine",
+              "title": "Paket Glow Up Adenosine",
               "handle": "numa-skin-paket-glow-up-adenosine"
             },
             {
               "id": "gid://shopify/Product/10321360158966",
-              "title": "Numa Skin Paket Rejuvenating Trio 50ml",
+              "title": "Paket Rejuvenating Trio (50ml)",
               "handle": "numa-skin-paket-rejuvenating-trio-50ml"
             },
             {
               "id": "gid://shopify/Product/10321360093430",
-              "title": "Numa Skin Paket Rejuvenating Trio 150ml",
+              "title": "Paket Rejuvenating Trio (150ml)",
               "handle": "numa-skin-paket-rejuvenating-trio-150ml"
             },
             {
               "id": "gid://shopify/Product/10321360060662",
-              "title": "Numa Skin Paket Age Defense Trio",
+              "title": "Paket Age Defense Trio",
               "handle": "numa-skin-paket-age-defense-trio"
             },
             {
               "id": "gid://shopify/Product/10321359995126",
-              "title": "Numa Skin Paket Age Repair Trio 150ml",
+              "title": "Paket Age Repair Trio (150ml)",
               "handle": "numa-skin-paket-age-repair-trio-150ml"
             },
             {
               "id": "gid://shopify/Product/10321359962358",
-              "title": "Numa Skin Paket Anti-Aging Trio",
+              "title": "Paket Anti-Aging Trio",
               "handle": "numa-skin-paket-anti-aging-trio"
             },
             {
               "id": "gid://shopify/Product/10321359929590",
-              "title": "Numa Skin Paket Triple Protection 3-in-1",
+              "title": "Paket Triple Protection 3-in-1",
               "handle": "numa-skin-paket-triple-protection-3-in-1"
             },
             {
               "id": "gid://shopify/Product/10321359864054",
-              "title": "Numa Skin Paket Complete Routine 4-in-1 50ml",
+              "title": "Paket Complete Routine 4-in-1 (50ml)",
               "handle": "numa-skin-paket-complete-routine-4-in-1-50ml"
             },
             {
               "id": "gid://shopify/Product/10321359831286",
-              "title": "Numa Skin Paket Complete Routine 4-in-1 150ml",
+              "title": "Paket Complete Routine 4-in-1 (150ml)",
               "handle": "numa-skin-paket-complete-routine-4-in-1-150ml"
             },
             {
               "id": "gid://shopify/Product/10321359798518",
-              "title": "Numa Skin Paket Ultimate Anti-Aging 50ml",
+              "title": "Paket Ultimate Anti-Aging (50ml)",
               "handle": "numa-skin-paket-ultimate-anti-aging-50ml"
             },
             {
               "id": "gid://shopify/Product/10321359732982",
-              "title": "Numa Skin Paket Ultimate Anti-Aging 150ml",
+              "title": "Paket Ultimate Anti-Aging (150ml)",
               "handle": "numa-skin-paket-ultimate-anti-aging-150ml"
             },
             {
               "id": "gid://shopify/Product/10321359700214",
-              "title": "Numa Skin Paket Lengkap 6-in-1 Routine",
+              "title": "Paket Lengkap 6-in-1 Routine",
               "handle": "numa-skin-paket-lengkap-6-in-1-routine"
             }
           ]
@@ -683,247 +683,247 @@
           "nodes": [
             {
               "id": "gid://shopify/Product/10321361830134",
-              "title": "Numa Skin Paket Exclusive Lotion & Gloss Gel",
+              "title": "Paket Exclusive Lotion & Gloss Gel",
               "handle": "numa-skin-paket-exclusive-lotion-gloss-gel"
             },
             {
               "id": "gid://shopify/Product/10321361797366",
-              "title": "Numa Skin Paket Duo Toner 150ml + 50ml",
+              "title": "Paket Duo Toner (150ml+50ml)",
               "handle": "numa-skin-paket-duo-toner-150ml-50ml"
             },
             {
               "id": "gid://shopify/Product/10321361731830",
-              "title": "Numa Skin Paket Twin Pack Toner 2x150ml",
+              "title": "Paket Twin Pack Toner (2x150ml)",
               "handle": "numa-skin-paket-twin-pack-toner-2x150ml"
             },
             {
               "id": "gid://shopify/Product/10321361666294",
-              "title": "Numa Skin Paket Toner 50ml & Gloss Gel",
+              "title": "Paket Toner 50ml & Gloss Gel",
               "handle": "numa-skin-paket-toner-50ml-dan-gloss-gel"
             },
             {
               "id": "gid://shopify/Product/10321361600758",
-              "title": "Numa Skin Paket Toner 150ml & Gloss Gel",
+              "title": "Paket Toner 150ml & Gloss Gel",
               "handle": "numa-skin-paket-toner-150ml-dan-gloss-gel"
             },
             {
               "id": "gid://shopify/Product/10321361567990",
-              "title": "Numa Skin Paket Adenosine & Toner 150ml",
+              "title": "Paket Adenosine & Toner (150ml)",
               "handle": "numa-skin-paket-adenosine-dan-toner-150ml"
             },
             {
               "id": "gid://shopify/Product/10321361502454",
-              "title": "Numa Skin Paket Adenosine & Sunscreen",
+              "title": "Paket Adenosine & Sunscreen",
               "handle": "numa-skin-paket-adenosine-dan-sunscreen"
             },
             {
               "id": "gid://shopify/Product/10321361469686",
-              "title": "Numa Skin Paket Sunscreen, Adenosine & Toner 50ml",
+              "title": "Paket Sunscreen, Adenosine & Toner (50ml)",
               "handle": "numa-skin-paket-sunscreen-adenosine-toner-50ml"
             },
             {
               "id": "gid://shopify/Product/10321361436918",
-              "title": "Numa Skin Paket Sunscreen, Adenosine & Toner 150ml",
+              "title": "Paket Sunscreen, Adenosine & Toner (150ml)",
               "handle": "numa-skin-paket-sunscreen-adenosine-toner-150ml"
             },
             {
               "id": "gid://shopify/Product/10321361371382",
-              "title": "Numa Skin Paket Sunscreen & Toner 50ml",
+              "title": "Paket Sunscreen & Toner (50ml)",
               "handle": "numa-skin-paket-sunscreen-dan-toner-50ml"
             },
             {
               "id": "gid://shopify/Product/10321361305846",
-              "title": "Numa Skin Paket Sunscreen & Toner 150ml",
+              "title": "Paket Sunscreen & Toner (150ml)",
               "handle": "numa-skin-paket-sunscreen-dan-toner-150ml"
             },
             {
               "id": "gid://shopify/Product/10321361273078",
-              "title": "Numa Skin Paket Sunscreen & Gloss Gel",
+              "title": "Paket Sunscreen & Gloss Gel",
               "handle": "numa-skin-paket-sunscreen-dan-gloss-gel"
             },
             {
               "id": "gid://shopify/Product/10321361174774",
-              "title": "Numa Skin Paket Moist Glow Duo",
+              "title": "Paket Moist Glow Duo",
               "handle": "numa-skin-paket-moist-glow-duo"
             },
             {
               "id": "gid://shopify/Product/10321361109238",
-              "title": "Numa Skin Paket Hydra Glow Duo",
+              "title": "Paket Hydra Glow Duo",
               "handle": "numa-skin-paket-hydra-glow-duo"
             },
             {
               "id": "gid://shopify/Product/10321361076470",
-              "title": "Numa Skin Paket Protection Duo PDRN",
+              "title": "Paket Protection Duo PDRN",
               "handle": "numa-skin-paket-protection-duo-pdrn"
             },
             {
               "id": "gid://shopify/Product/10321361043702",
-              "title": "Numa Skin Paket Luminous Duo",
+              "title": "Paket Luminous Duo",
               "handle": "numa-skin-paket-luminous-duo"
             },
             {
               "id": "gid://shopify/Product/10321360978166",
-              "title": "Numa Skin Paket NAD+ Youth Boost Set",
+              "title": "Paket NAD+ Youth Boost Set",
               "handle": "numa-skin-paket-nad-youth-boost-set"
             },
             {
               "id": "gid://shopify/Product/10321360912630",
-              "title": "Numa Skin Paket Timeless Skin Set",
+              "title": "Paket Timeless Skin Set",
               "handle": "numa-skin-paket-timeless-skin-set"
             },
             {
               "id": "gid://shopify/Product/10321360879862",
-              "title": "Numa Skin Paket Skin Recharge Duo 50ml",
+              "title": "Paket Skin Recharge Duo (50ml)",
               "handle": "numa-skin-paket-skin-recharge-duo-50ml"
             },
             {
               "id": "gid://shopify/Product/10321360814326",
-              "title": "Numa Skin Paket Skin Recharge Duo 150ml",
+              "title": "Paket Skin Recharge Duo (150ml)",
               "handle": "numa-skin-paket-skin-recharge-duo-150ml"
             },
             {
               "id": "gid://shopify/Product/10321360748790",
-              "title": "Numa Skin Paket Skin Protection Duo",
+              "title": "Paket Skin Protection Duo",
               "handle": "numa-skin-paket-skin-protection-duo"
             },
             {
               "id": "gid://shopify/Product/10321360683254",
-              "title": "Numa Skin Paket Daily Glow Duo",
+              "title": "Paket Daily Glow Duo",
               "handle": "numa-skin-paket-daily-glow"
             },
             {
               "id": "gid://shopify/Product/10321360650486",
-              "title": "Numa Skin Paket Daily Care Gloss Gel",
+              "title": "Paket Daily Care Gloss Gel",
               "handle": "numa-skin-paket-daily-care-gloss-gel"
             },
             {
               "id": "gid://shopify/Product/10321360584950",
-              "title": "Numa Skin Paket Daily Care Adenosine",
+              "title": "Paket Daily Care Adenosine",
               "handle": "numa-skin-paket-daily-care-adenosine"
             },
             {
               "id": "gid://shopify/Product/10321360552182",
-              "title": "Numa Skin Paket Daily Protection Duo",
+              "title": "Paket Daily Protection Duo",
               "handle": "numa-skin-paket-daily-protection"
             },
             {
               "id": "gid://shopify/Product/10321360453878",
-              "title": "Numa Skin Paket Fresh & Hydrate Duo",
+              "title": "Paket Fresh & Hydrate Duo",
               "handle": "numa-skin-paket-fresh-and-hydrate"
             },
             {
               "id": "gid://shopify/Product/10321360421110",
-              "title": "Numa Skin Paket Clean & Glow Duo",
+              "title": "Paket Clean & Glow Duo",
               "handle": "numa-skin-paket-clean-and-glow"
             },
             {
               "id": "gid://shopify/Product/10321360355574",
-              "title": "Numa Skin Paket Youth Glow Duo 50ml",
+              "title": "Paket Youth Glow Duo (50ml)",
               "handle": "numa-skin-paket-youth-glow-duo-50ml"
             },
             {
               "id": "gid://shopify/Product/10321360322806",
-              "title": "Numa Skin Paket Youth Glow Duo 150ml",
+              "title": "Paket Youth Glow Duo (150ml)",
               "handle": "numa-skin-paket-youth-glow-duo-150ml"
             },
             {
               "id": "gid://shopify/Product/10321360257270",
-              "title": "Numa Skin Paket Glow Up Gloss Gel",
+              "title": "Paket Glow Up Gloss Gel",
               "handle": "numa-skin-paket-glow-up-gloss-gel"
             },
             {
               "id": "gid://shopify/Product/10321360224502",
-              "title": "Numa Skin Paket Glow Up Adenosine",
+              "title": "Paket Glow Up Adenosine",
               "handle": "numa-skin-paket-glow-up-adenosine"
             },
             {
               "id": "gid://shopify/Product/10321360158966",
-              "title": "Numa Skin Paket Rejuvenating Trio 50ml",
+              "title": "Paket Rejuvenating Trio (50ml)",
               "handle": "numa-skin-paket-rejuvenating-trio-50ml"
             },
             {
               "id": "gid://shopify/Product/10321360093430",
-              "title": "Numa Skin Paket Rejuvenating Trio 150ml",
+              "title": "Paket Rejuvenating Trio (150ml)",
               "handle": "numa-skin-paket-rejuvenating-trio-150ml"
             },
             {
               "id": "gid://shopify/Product/10321360060662",
-              "title": "Numa Skin Paket Age Defense Trio",
+              "title": "Paket Age Defense Trio",
               "handle": "numa-skin-paket-age-defense-trio"
             },
             {
               "id": "gid://shopify/Product/10321359995126",
-              "title": "Numa Skin Paket Age Repair Trio 150ml",
+              "title": "Paket Age Repair Trio (150ml)",
               "handle": "numa-skin-paket-age-repair-trio-150ml"
             },
             {
               "id": "gid://shopify/Product/10321359962358",
-              "title": "Numa Skin Paket Anti-Aging Trio",
+              "title": "Paket Anti-Aging Trio",
               "handle": "numa-skin-paket-anti-aging-trio"
             },
             {
               "id": "gid://shopify/Product/10321359929590",
-              "title": "Numa Skin Paket Triple Protection 3-in-1",
+              "title": "Paket Triple Protection 3-in-1",
               "handle": "numa-skin-paket-triple-protection-3-in-1"
             },
             {
               "id": "gid://shopify/Product/10321359864054",
-              "title": "Numa Skin Paket Complete Routine 4-in-1 50ml",
+              "title": "Paket Complete Routine 4-in-1 (50ml)",
               "handle": "numa-skin-paket-complete-routine-4-in-1-50ml"
             },
             {
               "id": "gid://shopify/Product/10321359831286",
-              "title": "Numa Skin Paket Complete Routine 4-in-1 150ml",
+              "title": "Paket Complete Routine 4-in-1 (150ml)",
               "handle": "numa-skin-paket-complete-routine-4-in-1-150ml"
             },
             {
               "id": "gid://shopify/Product/10321359798518",
-              "title": "Numa Skin Paket Ultimate Anti-Aging 50ml",
+              "title": "Paket Ultimate Anti-Aging (50ml)",
               "handle": "numa-skin-paket-ultimate-anti-aging-50ml"
             },
             {
               "id": "gid://shopify/Product/10321359732982",
-              "title": "Numa Skin Paket Ultimate Anti-Aging 150ml",
+              "title": "Paket Ultimate Anti-Aging (150ml)",
               "handle": "numa-skin-paket-ultimate-anti-aging-150ml"
             },
             {
               "id": "gid://shopify/Product/10321359700214",
-              "title": "Numa Skin Paket Lengkap 6-in-1 Routine",
+              "title": "Paket Lengkap 6-in-1 Routine",
               "handle": "numa-skin-paket-lengkap-6-in-1-routine"
             },
             {
               "id": "gid://shopify/Product/10321359634678",
-              "title": "Numa Skin NAD+ Booster Anti-Aging Serum 20ml",
+              "title": "NAD+ Booster Anti-Aging Serum",
               "handle": "numa-skin-nad-booster-anti-aging-serum-20ml"
             },
             {
               "id": "gid://shopify/Product/10321359601910",
-              "title": "Numa Skin Oxydew Sunscreen Luceane SPF 50+ PA++++ 30ml",
+              "title": "Oxydew Sunscreen Luceane SPF 50+ PA++++",
               "handle": "numa-skin-oxydew-sunscreen-luceane-spf50-30ml"
             },
             {
               "id": "gid://shopify/Product/10321359536374",
-              "title": "Numa Skin PDRN Alpha Arbutin Tone-Up Day Cream 30g",
+              "title": "PDRN Alpha Arbutin Tone-Up Day Cream",
               "handle": "numa-skin-pdrn-alpha-arbutin-tone-up-day-cream-30g"
             },
             {
               "id": "gid://shopify/Product/10321359470838",
-              "title": "Numa Skin Adenosine Deep Sea Water Moisturizer 30g",
+              "title": "Adenosine Deep Sea Water Moisturizer",
               "handle": "numa-skin-adenosine-deep-sea-water-moisturizer-30g"
             },
             {
               "id": "gid://shopify/Product/10321359372534",
-              "title": "Numa Skin Deep Sea Water Treatment Lotion",
+              "title": "Deep Sea Water Treatment Lotion",
               "handle": "numa-skin-deep-sea-water-treatment-lotion"
             },
             {
               "id": "gid://shopify/Product/10321359339766",
-              "title": "Numa Skin Calming Barrier Gloss Gel Moisturizer 30ml",
+              "title": "Calming Barrier Gloss Gel Moisturizer",
               "handle": "numa-skin-calming-barrier-gloss-gel-moisturizer-30ml"
             },
             {
               "id": "gid://shopify/Product/10321359044854",
-              "title": "Numa Skin Deep Sea Water Facial Wash Gel 100ml",
+              "title": "Deep Sea Water Facial Wash Gel",
               "handle": "numa-skin-deep-sea-water-facial-wash-100ml"
             }
           ]
@@ -935,12 +935,13 @@
     "nodes": [
       {
         "id": "gid://shopify/Product/10321359044854",
-        "title": "Numa Skin Deep Sea Water Facial Wash Gel 100ml",
+        "title": "Deep Sea Water Facial Wash Gel",
         "handle": "numa-skin-deep-sea-water-facial-wash-100ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Facial Cleanser",
         "tags": [
+          "100ml",
           "anti aging",
           "bpom",
           "brightening",
@@ -1032,12 +1033,13 @@
       },
       {
         "id": "gid://shopify/Product/10321359339766",
-        "title": "Numa Skin Calming Barrier Gloss Gel Moisturizer 30ml",
+        "title": "Calming Barrier Gloss Gel Moisturizer",
         "handle": "numa-skin-calming-barrier-gloss-gel-moisturizer-30ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Moisturizer",
         "tags": [
+          "30ml",
           "acne friendly",
           "barrier gel",
           "bpom",
@@ -1245,12 +1247,14 @@
       },
       {
         "id": "gid://shopify/Product/10321359372534",
-        "title": "Numa Skin Deep Sea Water Treatment Lotion",
+        "title": "Deep Sea Water Treatment Lotion",
         "handle": "numa-skin-deep-sea-water-treatment-lotion",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Hydrating Toner",
         "tags": [
+          "150ml",
+          "50ml",
           "anti aging",
           "bpom",
           "calming",
@@ -1566,12 +1570,13 @@
       },
       {
         "id": "gid://shopify/Product/10321359470838",
-        "title": "Numa Skin Adenosine Deep Sea Water Moisturizer 30g",
+        "title": "Adenosine Deep Sea Water Moisturizer",
         "handle": "numa-skin-adenosine-deep-sea-water-moisturizer-30g",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Moisturizer",
         "tags": [
+          "30g",
           "adenosine",
           "anti aging",
           "bpom",
@@ -1872,12 +1877,13 @@
       },
       {
         "id": "gid://shopify/Product/10321359536374",
-        "title": "Numa Skin PDRN Alpha Arbutin Tone-Up Day Cream 30g",
+        "title": "PDRN Alpha Arbutin Tone-Up Day Cream",
         "handle": "numa-skin-pdrn-alpha-arbutin-tone-up-day-cream-30g",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Day Cream",
         "tags": [
+          "30g",
           "alpha arbutin",
           "anti aging",
           "bpom",
@@ -2059,12 +2065,13 @@
       },
       {
         "id": "gid://shopify/Product/10321359601910",
-        "title": "Numa Skin Oxydew Sunscreen Luceane SPF 50+ PA++++ 30ml",
+        "title": "Oxydew Sunscreen Luceane SPF 50+ PA++++",
         "handle": "numa-skin-oxydew-sunscreen-luceane-spf50-30ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Sunscreen",
         "tags": [
+          "30ml",
           "anti pollution",
           "bpom",
           "luceane",
@@ -2279,12 +2286,13 @@
       },
       {
         "id": "gid://shopify/Product/10321359634678",
-        "title": "Numa Skin NAD+ Booster Anti-Aging Serum 20ml",
+        "title": "NAD+ Booster Anti-Aging Serum",
         "handle": "numa-skin-nad-booster-anti-aging-serum-20ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Face Serum",
         "tags": [
+          "20ml",
           "anti aging",
           "booster serum",
           "bpom",
@@ -2488,7 +2496,7 @@
       },
       {
         "id": "gid://shopify/Product/10321359700214",
-        "title": "Numa Skin Paket Lengkap 6-in-1 Routine",
+        "title": "Paket Lengkap 6-in-1 Routine",
         "handle": "numa-skin-paket-lengkap-6-in-1-routine",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -2686,12 +2694,13 @@
       },
       {
         "id": "gid://shopify/Product/10321359732982",
-        "title": "Numa Skin Paket Ultimate Anti-Aging 150ml",
+        "title": "Paket Ultimate Anti-Aging (150ml)",
         "handle": "numa-skin-paket-ultimate-anti-aging-150ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Skincare Set",
         "tags": [
+          "150ml",
           "anti aging",
           "bpom",
           "bundling hemat",
@@ -2899,12 +2908,13 @@
       },
       {
         "id": "gid://shopify/Product/10321359798518",
-        "title": "Numa Skin Paket Ultimate Anti-Aging 50ml",
+        "title": "Paket Ultimate Anti-Aging (50ml)",
         "handle": "numa-skin-paket-ultimate-anti-aging-50ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Skincare Set",
         "tags": [
+          "50ml",
           "anti aging",
           "bpom",
           "bundling hemat",
@@ -3112,12 +3122,13 @@
       },
       {
         "id": "gid://shopify/Product/10321359831286",
-        "title": "Numa Skin Paket Complete Routine 4-in-1 150ml",
+        "title": "Paket Complete Routine 4-in-1 (150ml)",
         "handle": "numa-skin-paket-complete-routine-4-in-1-150ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Skincare Set",
         "tags": [
+          "150ml",
           "anti aging",
           "bpom",
           "bundling hemat",
@@ -3314,12 +3325,13 @@
       },
       {
         "id": "gid://shopify/Product/10321359864054",
-        "title": "Numa Skin Paket Complete Routine 4-in-1 50ml",
+        "title": "Paket Complete Routine 4-in-1 (50ml)",
         "handle": "numa-skin-paket-complete-routine-4-in-1-50ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Skincare Set",
         "tags": [
+          "50ml",
           "anti aging",
           "bpom",
           "bundling hemat",
@@ -3516,7 +3528,7 @@
       },
       {
         "id": "gid://shopify/Product/10321359929590",
-        "title": "Numa Skin Paket Triple Protection 3-in-1",
+        "title": "Paket Triple Protection 3-in-1",
         "handle": "numa-skin-paket-triple-protection-3-in-1",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -3694,7 +3706,7 @@
       },
       {
         "id": "gid://shopify/Product/10321359962358",
-        "title": "Numa Skin Paket Anti-Aging Trio",
+        "title": "Paket Anti-Aging Trio",
         "handle": "numa-skin-paket-anti-aging-trio",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -3907,12 +3919,13 @@
       },
       {
         "id": "gid://shopify/Product/10321359995126",
-        "title": "Numa Skin Paket Age Repair Trio 150ml",
+        "title": "Paket Age Repair Trio (150ml)",
         "handle": "numa-skin-paket-age-repair-trio-150ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Skincare Set",
         "tags": [
+          "150ml",
           "anti aging",
           "bpom",
           "bundling hemat",
@@ -4113,7 +4126,7 @@
       },
       {
         "id": "gid://shopify/Product/10321360060662",
-        "title": "Numa Skin Paket Age Defense Trio",
+        "title": "Paket Age Defense Trio",
         "handle": "numa-skin-paket-age-defense-trio",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -4326,12 +4339,13 @@
       },
       {
         "id": "gid://shopify/Product/10321360093430",
-        "title": "Numa Skin Paket Rejuvenating Trio 150ml",
+        "title": "Paket Rejuvenating Trio (150ml)",
         "handle": "numa-skin-paket-rejuvenating-trio-150ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Skincare Set",
         "tags": [
+          "150ml",
           "anti aging",
           "bpom",
           "bundling hemat",
@@ -4539,12 +4553,13 @@
       },
       {
         "id": "gid://shopify/Product/10321360158966",
-        "title": "Numa Skin Paket Rejuvenating Trio 50ml",
+        "title": "Paket Rejuvenating Trio (50ml)",
         "handle": "numa-skin-paket-rejuvenating-trio-50ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Skincare Set",
         "tags": [
+          "50ml",
           "anti aging",
           "bpom",
           "bundling hemat",
@@ -4752,7 +4767,7 @@
       },
       {
         "id": "gid://shopify/Product/10321360224502",
-        "title": "Numa Skin Paket Glow Up Adenosine",
+        "title": "Paket Glow Up Adenosine",
         "handle": "numa-skin-paket-glow-up-adenosine",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -4945,7 +4960,7 @@
       },
       {
         "id": "gid://shopify/Product/10321360257270",
-        "title": "Numa Skin Paket Glow Up Gloss Gel",
+        "title": "Paket Glow Up Gloss Gel",
         "handle": "numa-skin-paket-glow-up-gloss-gel",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -5138,12 +5153,13 @@
       },
       {
         "id": "gid://shopify/Product/10321360322806",
-        "title": "Numa Skin Paket Youth Glow Duo 150ml",
+        "title": "Paket Youth Glow Duo (150ml)",
         "handle": "numa-skin-paket-youth-glow-duo-150ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Skincare Set",
         "tags": [
+          "150ml",
           "anti aging",
           "bpom",
           "bundling hemat",
@@ -5351,12 +5367,13 @@
       },
       {
         "id": "gid://shopify/Product/10321360355574",
-        "title": "Numa Skin Paket Youth Glow Duo 50ml",
+        "title": "Paket Youth Glow Duo (50ml)",
         "handle": "numa-skin-paket-youth-glow-duo-50ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Skincare Set",
         "tags": [
+          "50ml",
           "anti aging",
           "bpom",
           "bundling hemat",
@@ -5564,7 +5581,7 @@
       },
       {
         "id": "gid://shopify/Product/10321360421110",
-        "title": "Numa Skin Paket Clean & Glow Duo",
+        "title": "Paket Clean & Glow Duo",
         "handle": "numa-skin-paket-clean-and-glow",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -5742,7 +5759,7 @@
       },
       {
         "id": "gid://shopify/Product/10321360453878",
-        "title": "Numa Skin Paket Fresh & Hydrate Duo",
+        "title": "Paket Fresh & Hydrate Duo",
         "handle": "numa-skin-paket-fresh-and-hydrate",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -5935,7 +5952,7 @@
       },
       {
         "id": "gid://shopify/Product/10321360552182",
-        "title": "Numa Skin Paket Daily Protection Duo",
+        "title": "Paket Daily Protection Duo",
         "handle": "numa-skin-paket-daily-protection",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -6148,7 +6165,7 @@
       },
       {
         "id": "gid://shopify/Product/10321360584950",
-        "title": "Numa Skin Paket Daily Care Adenosine",
+        "title": "Paket Daily Care Adenosine",
         "handle": "numa-skin-paket-daily-care-adenosine",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -6326,7 +6343,7 @@
       },
       {
         "id": "gid://shopify/Product/10321360650486",
-        "title": "Numa Skin Paket Daily Care Gloss Gel",
+        "title": "Paket Daily Care Gloss Gel",
         "handle": "numa-skin-paket-daily-care-gloss-gel",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -6504,7 +6521,7 @@
       },
       {
         "id": "gid://shopify/Product/10321360683254",
-        "title": "Numa Skin Paket Daily Glow Duo",
+        "title": "Paket Daily Glow Duo",
         "handle": "numa-skin-paket-daily-glow",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -6682,7 +6699,7 @@
       },
       {
         "id": "gid://shopify/Product/10321360748790",
-        "title": "Numa Skin Paket Skin Protection Duo",
+        "title": "Paket Skin Protection Duo",
         "handle": "numa-skin-paket-skin-protection-duo",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -6895,12 +6912,13 @@
       },
       {
         "id": "gid://shopify/Product/10321360814326",
-        "title": "Numa Skin Paket Skin Recharge Duo 150ml",
+        "title": "Paket Skin Recharge Duo (150ml)",
         "handle": "numa-skin-paket-skin-recharge-duo-150ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Skincare Set",
         "tags": [
+          "150ml",
           "anti aging",
           "bpom",
           "bundling hemat",
@@ -7108,12 +7126,13 @@
       },
       {
         "id": "gid://shopify/Product/10321360879862",
-        "title": "Numa Skin Paket Skin Recharge Duo 50ml",
+        "title": "Paket Skin Recharge Duo (50ml)",
         "handle": "numa-skin-paket-skin-recharge-duo-50ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Skincare Set",
         "tags": [
+          "50ml",
           "anti aging",
           "bpom",
           "bundling hemat",
@@ -7321,7 +7340,7 @@
       },
       {
         "id": "gid://shopify/Product/10321360912630",
-        "title": "Numa Skin Paket Timeless Skin Set",
+        "title": "Paket Timeless Skin Set",
         "handle": "numa-skin-paket-timeless-skin-set",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -7534,7 +7553,7 @@
       },
       {
         "id": "gid://shopify/Product/10321360978166",
-        "title": "Numa Skin Paket NAD+ Youth Boost Set",
+        "title": "Paket NAD+ Youth Boost Set",
         "handle": "numa-skin-paket-nad-youth-boost-set",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -7747,7 +7766,7 @@
       },
       {
         "id": "gid://shopify/Product/10321361043702",
-        "title": "Numa Skin Paket Luminous Duo",
+        "title": "Paket Luminous Duo",
         "handle": "numa-skin-paket-luminous-duo",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -7960,7 +7979,7 @@
       },
       {
         "id": "gid://shopify/Product/10321361076470",
-        "title": "Numa Skin Paket Protection Duo PDRN",
+        "title": "Paket Protection Duo PDRN",
         "handle": "numa-skin-paket-protection-duo-pdrn",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -8173,7 +8192,7 @@
       },
       {
         "id": "gid://shopify/Product/10321361109238",
-        "title": "Numa Skin Paket Hydra Glow Duo",
+        "title": "Paket Hydra Glow Duo",
         "handle": "numa-skin-paket-hydra-glow-duo",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -8386,7 +8405,7 @@
       },
       {
         "id": "gid://shopify/Product/10321361174774",
-        "title": "Numa Skin Paket Moist Glow Duo",
+        "title": "Paket Moist Glow Duo",
         "handle": "numa-skin-paket-moist-glow-duo",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -8599,7 +8618,7 @@
       },
       {
         "id": "gid://shopify/Product/10321361273078",
-        "title": "Numa Skin Paket Sunscreen & Gloss Gel",
+        "title": "Paket Sunscreen & Gloss Gel",
         "handle": "numa-skin-paket-sunscreen-dan-gloss-gel",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -8827,12 +8846,13 @@
       },
       {
         "id": "gid://shopify/Product/10321361305846",
-        "title": "Numa Skin Paket Sunscreen & Toner 150ml",
+        "title": "Paket Sunscreen & Toner (150ml)",
         "handle": "numa-skin-paket-sunscreen-dan-toner-150ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Skincare Set",
         "tags": [
+          "150ml",
           "anti aging",
           "bpom",
           "bundling hemat",
@@ -9055,12 +9075,13 @@
       },
       {
         "id": "gid://shopify/Product/10321361371382",
-        "title": "Numa Skin Paket Sunscreen & Toner 50ml",
+        "title": "Paket Sunscreen & Toner (50ml)",
         "handle": "numa-skin-paket-sunscreen-dan-toner-50ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Skincare Set",
         "tags": [
+          "50ml",
           "anti aging",
           "bpom",
           "bundling hemat",
@@ -9283,12 +9304,13 @@
       },
       {
         "id": "gid://shopify/Product/10321361436918",
-        "title": "Numa Skin Paket Sunscreen, Adenosine & Toner 150ml",
+        "title": "Paket Sunscreen, Adenosine & Toner (150ml)",
         "handle": "numa-skin-paket-sunscreen-adenosine-toner-150ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Skincare Set",
         "tags": [
+          "150ml",
           "anti aging",
           "bpom",
           "bundling hemat",
@@ -9511,12 +9533,13 @@
       },
       {
         "id": "gid://shopify/Product/10321361469686",
-        "title": "Numa Skin Paket Sunscreen, Adenosine & Toner 50ml",
+        "title": "Paket Sunscreen, Adenosine & Toner (50ml)",
         "handle": "numa-skin-paket-sunscreen-adenosine-toner-50ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Skincare Set",
         "tags": [
+          "50ml",
           "anti aging",
           "bpom",
           "bundling hemat",
@@ -9797,7 +9820,7 @@
       },
       {
         "id": "gid://shopify/Product/10321361502454",
-        "title": "Numa Skin Paket Adenosine & Sunscreen",
+        "title": "Paket Adenosine & Sunscreen",
         "handle": "numa-skin-paket-adenosine-dan-sunscreen",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -10044,12 +10067,13 @@
       },
       {
         "id": "gid://shopify/Product/10321361567990",
-        "title": "Numa Skin Paket Adenosine & Toner 150ml",
+        "title": "Paket Adenosine & Toner (150ml)",
         "handle": "numa-skin-paket-adenosine-dan-toner-150ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Skincare Set",
         "tags": [
+          "150ml",
           "anti aging",
           "bpom",
           "bundling hemat",
@@ -10295,7 +10319,7 @@
       },
       {
         "id": "gid://shopify/Product/10321361600758",
-        "title": "Numa Skin Paket Toner 150ml & Gloss Gel",
+        "title": "Paket Toner 150ml & Gloss Gel",
         "handle": "numa-skin-paket-toner-150ml-dan-gloss-gel",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -10505,7 +10529,7 @@
       },
       {
         "id": "gid://shopify/Product/10321361666294",
-        "title": "Numa Skin Paket Toner 50ml & Gloss Gel",
+        "title": "Paket Toner 50ml & Gloss Gel",
         "handle": "numa-skin-paket-toner-50ml-dan-gloss-gel",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -10821,12 +10845,13 @@
       },
       {
         "id": "gid://shopify/Product/10321361731830",
-        "title": "Numa Skin Paket Twin Pack Toner 2x150ml",
+        "title": "Paket Twin Pack Toner (2x150ml)",
         "handle": "numa-skin-paket-twin-pack-toner-2x150ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
         "productType": "Skincare Set",
         "tags": [
+          "2x150ml",
           "anti aging",
           "bpom",
           "bundling hemat",
@@ -11027,7 +11052,7 @@
       },
       {
         "id": "gid://shopify/Product/10321361797366",
-        "title": "Numa Skin Paket Duo Toner 150ml + 50ml",
+        "title": "Paket Duo Toner (150ml+50ml)",
         "handle": "numa-skin-paket-duo-toner-150ml-50ml",
         "status": "ACTIVE",
         "vendor": "Numa Skin",
@@ -11226,7 +11251,7 @@
       },
       {
         "id": "gid://shopify/Product/10321361830134",
-        "title": "Numa Skin Paket Exclusive Lotion & Gloss Gel",
+        "title": "Paket Exclusive Lotion & Gloss Gel",
         "handle": "numa-skin-paket-exclusive-lotion-gloss-gel",
         "status": "ACTIVE",
         "vendor": "Numa Skin",

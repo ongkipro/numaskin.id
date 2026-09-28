@@ -2,13 +2,12 @@ import { useLoaderData } from 'react-router';
 import type { Route } from './+types/_index';
 import { HeroBanner } from '~/components/home/HeroBanner';
 import { TrustBadgesBar } from '~/components/home/TrustBadgesBar';
+import { ShopeeBannerSection } from '~/components/home/ShopeeBannerSection';
 import { FeaturedCollectionsShowcase } from '~/components/home/FeaturedCollectionsShowcase';
 import { RoutineStepper } from '~/components/home/RoutineStepper';
 import { ActiveIngredientsSpotlight } from '~/components/home/ActiveIngredientsSpotlight';
 import { BundleSavingsMatrix } from '~/components/home/BundleSavingsMatrix';
 import { AmbassadorSpotlight } from '~/components/home/AmbassadorSpotlight';
-import { ReviewsCarousel } from '~/components/home/ReviewsCarousel';
-import { FaqAccordion } from '~/components/home/FaqAccordion';
 import * as mockCatalog from '~/lib/mock-catalog';
 
 export const meta: Route.MetaFunction = () => [
@@ -45,7 +44,10 @@ export default function IndexPage() {
       {/* 02. Reassurance Bar */}
       <TrustBadgesBar />
 
-      {/* 03. Featured Collections Showcase (8 Core Products, Standard Shopify Grid) */}
+      {/* 03. Shopee Official Campaign Banners */}
+      <ShopeeBannerSection />
+
+      {/* 04. Featured Collections Showcase (8 Core Products, Standard Shopify Grid) */}
       <FeaturedCollectionsShowcase products={coreProducts} />
 
       {/* 04. 4-Step Rejuvenation Ritual */}
@@ -59,12 +61,6 @@ export default function IndexPage() {
 
       {/* 07. Brand Ambassador & 14-Day Evidence */}
       <AmbassadorSpotlight />
-
-      {/* 08. Verified Buyer Evidence */}
-      <ReviewsCarousel />
-
-      {/* 09. FAQ Accordion */}
-      <FaqAccordion />
     </div>
   );
 }
