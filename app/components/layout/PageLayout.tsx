@@ -141,99 +141,135 @@ export function PageLayout({ children }: PageLayoutProps) {
         onAddUpsell={handleAddUpsell}
       />
 
-      {/* Predictive Search Modal */}
+      {/* Predictive Search: Bottom Sheet on Mobile, Floating Modal on Desktop */}
       {isSearchOpen && (
-        <div className="fixed inset-0 z-50 overflow-y-auto">
+        <div className="fixed inset-0 z-50 overflow-hidden flex flex-col justify-end sm:justify-start sm:p-4">
+          {/* Backdrop Scrim */}
           <div
-            className="fixed inset-0 bg-[#002B49]/50 backdrop-blur-xs transition-opacity animate-in fade-in"
+            className="fixed inset-0 bg-[#002B49]/50 backdrop-blur-xs transition-opacity animate-in fade-in duration-300"
             onClick={() => setIsSearchOpen(false)}
+            aria-hidden="true"
           />
-          <div className="relative min-h-screen sm:min-h-0 sm:max-w-2xl sm:mx-auto sm:my-16 p-4">
-            <div className="bg-white/92 backdrop-blur-2xl rounded-sm border border-white/80 shadow-[0_16px_50px_rgba(0,43,73,0.15)] p-6 relative animate-in zoom-in-95 duration-200">
-              <div className="flex items-center justify-between pb-4 border-b border-[#E2EDF0]/70">
-                <div className="flex items-center gap-3 flex-1 bg-[#F4F9FA]/80 backdrop-blur-xs px-3.5 py-2 rounded-xs border border-white/80">
-                  <Search className="w-5 h-5 text-slate-400" />
-                  <input
-                    type="search"
-                    placeholder="Cari produk (misal: NAD+, toner, flek hitam, sunscreen)..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    autoFocus
-                    className="w-full text-sm text-slate-900 placeholder:text-slate-400 focus:outline-hidden bg-transparent"
-                  />
-                </div>
-                <button
-                  type="button"
-                  onClick={() => setIsSearchOpen(false)}
-                  className="p-2 ml-2 text-slate-400 hover:text-[#002B49] transition-colors"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
 
-              {/* Search Results */}
-              <div className="py-4 max-h-[60vh] overflow-y-auto">
-                {searchResults.length > 0 ? (
-                  <div className="space-y-2">
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-slate-400 font-semibold block mb-2">
-                      HASIL PRODUK ({searchResults.length})
-                    </span>
+          {/* Search Container: Bottom Sheet (Mobile) / Centered Floating Card (Desktop) */}
+          <div className="relative w-full sm:max-w-2xl sm:mx-auto sm:my-16 max-h-[88vh] sm:max-h-[80vh] rounded-t-[28px] sm:rounded-2xl bg-white/95 backdrop-blur-2xl border-t sm:border border-white/90 shadow-[0_-20px_60px_rgba(0,43,73,0.18)] sm:shadow-[0_20px_60px_rgba(0,43,73,0.18)] flex flex-col z-50 animate-in slide-in-from-bottom sm:slide-in-from-bottom-0 sm:zoom-in-95 duration-300 overflow-hidden">
+            
+            {/* Top Drag Indicator for Mobile */}
+            <div className="pt-3 pb-1 flex justify-center shrink-0 sm:hidden">
+              <div className="w-12 h-1.5 rounded-full bg-slate-300/80" />
+            </div>
+
+            {/* Search Header Bar */}
+            <div className="px-5 py-3 sm:p-5 border-b border-[#E2EDF0]/70 flex items-center justify-between gap-3 shrink-0">
+              <div className="flex items-center gap-3 flex-1 bg-[#EBF5F8]/70 border border-white/90 rounded-full px-4 py-2.5 shadow-inner">
+                <Search className="w-4 h-4 text-[#0B6E7D] shrink-0" />
+                <input
+                  type="text"
+                  placeholder="Cari produk (misal: NAD+, toner, flek, sunscreen)..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  autoFocus
+                  className="w-full text-base sm:text-sm text-[#002B49] placeholder:text-slate-400 focus:outline-hidden bg-transparent"
+                />
+                {searchQuery.trim().length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchQuery('')}
+                    className="p-1 text-slate-400 hover:text-[#002B49] transition-colors"
+                  >
+                    <X className="w-3.5 h-3.5" />
+                  </button>
+                )}
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsSearchOpen(false)}
+                className="w-8 h-8 rounded-full bg-[#002B49]/5 hover:bg-[#002B49]/10 text-slate-600 hover:text-[#002B49] flex items-center justify-center transition-colors shrink-0"
+                aria-label="Tutup pencarian"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Search Results Body */}
+            <div className="flex-1 overflow-y-auto px-5 py-4 space-y-4">
+              {searchResults.length > 0 ? (
+                <div>
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-[#269BA8] font-bold block mb-2 px-1">
+                    HASIL PENCARIAN ({searchResults.length})
+                  </span>
+                  <div className="space-y-1.5">
                     {searchResults.map((p) => (
                       <Link
                         key={p.id}
                         to={`/products/${p.handle}`}
                         onClick={() => setIsSearchOpen(false)}
-                        className="flex items-center gap-3.5 p-2.5 rounded-sm hover:bg-white/80 border border-transparent hover:border-white/90 hover:shadow-2xs transition-all"
+                        className="flex items-center gap-3.5 p-2.5 rounded-xl hover:bg-[#EBF5F8]/60 border border-transparent hover:border-white/90 transition-all group"
                       >
                         <img
                           src={p.featuredImage?.url}
                           alt={p.title}
-                          className="w-12 h-12 object-contain bg-white/70 backdrop-blur-xs rounded-xs border border-white/80 p-1 flex-shrink-0"
+                          className="w-12 h-12 object-contain bg-white rounded-lg border border-slate-100 p-1 flex-shrink-0 shadow-2xs group-hover:scale-105 transition-transform"
                         />
                         <div className="flex-1 min-w-0">
-                          <h4 className="text-xs font-semibold text-slate-900 truncate">
+                          <h4 className="text-xs font-semibold text-[#002B49] truncate group-hover:text-[#0B6E7D] transition-colors">
                             {p.title}
                           </h4>
                           <p className="text-[11px] text-slate-500 truncate">
                             {p.subtitle || p.productType}
                           </p>
                         </div>
-                        <span className="font-bold text-xs text-[#002B49] font-mono whitespace-nowrap">
+                        <span className="font-bold text-xs text-[#0B6E7D] font-mono whitespace-nowrap">
                           {formatRupiah(p.priceRange.minVariantPrice.amount)}
                         </span>
                       </Link>
                     ))}
                   </div>
-                ) : (
-                  searchQuery.trim().length > 0 && (
-                    <div className="py-8 text-center text-xs text-slate-500">
-                      Tidak ditemukan produk dengan kata kunci "{searchQuery}".
-                    </div>
-                  )
-                )}
-
-                {searchQuery.trim().length === 0 && (
-                  <div className="pt-2">
-                    <span className="font-mono text-[10px] uppercase tracking-wider text-slate-400 font-semibold block mb-2">
-                      PENCARIAN POPULER
-                    </span>
-                    <div className="flex flex-wrap gap-2">
-                      {['NAD+ Booster Serum', 'Treatment Lotion 150ml', 'Paket Awet Muda', 'Adenosine', 'Sunscreen'].map((tag) => (
-                        <button
-                          key={tag}
-                          type="button"
-                          onClick={() => setSearchQuery(tag)}
-                          className="px-3 py-1 rounded-xs bg-[#EBF5F8]/80 backdrop-blur-xs border border-white/80 text-[#002B49] text-xs font-medium hover:bg-[#002B49] hover:text-white transition-colors"
-                        >
-                          {tag}
-                        </button>
-                      ))}
-                    </div>
+                </div>
+              ) : (
+                searchQuery.trim().length > 0 && (
+                  <div className="py-12 text-center text-xs text-slate-500">
+                    <p className="font-medium text-slate-700 mb-1">
+                      Tidak ditemukan produk dengan kata kunci "{searchQuery}"
+                    </p>
+                    <p className="text-[11px] text-slate-400">
+                      Coba cari dengan kata kunci lain seperti: toner, serum, atau pelembap.
+                    </p>
                   </div>
-                )}
-              </div>
+                )
+              )}
 
+              {searchQuery.trim().length === 0 && (
+                <div className="pt-1">
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-[#269BA8] font-bold block mb-2.5 px-1">
+                    PENCARIAN POPULER
+                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      'NAD+ Booster Serum',
+                      'Treatment Lotion',
+                      'Paket Awet Muda',
+                      'Adenosine Moisturizer',
+                      'Oxydew Sunscreen',
+                      'PDRN Day Cream',
+                      'Deep Sea Water Facial Wash',
+                    ].map((tag) => (
+                      <button
+                        key={tag}
+                        type="button"
+                        onClick={() => setSearchQuery(tag)}
+                        className="px-3 py-1.5 rounded-full bg-[#EBF5F8]/80 border border-white/80 text-[#002B49] text-xs font-medium hover:bg-[#002B49] hover:text-white transition-colors cursor-pointer"
+                      >
+                        {tag}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
+
+            {/* Bottom Safe Area Padding for Mobile */}
+            <div className="h-4 sm:hidden pb-[env(safe-area-inset-bottom,0px)]" />
           </div>
         </div>
       )}

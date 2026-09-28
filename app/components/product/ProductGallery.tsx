@@ -112,7 +112,7 @@ export function ProductGallery({ product, discountPercent = 0 }: ProductGalleryP
       {/* 03. Mini Thumbnails Row: Tepat 5 Thumbnail Presisi di Layar, UI/UX Rapih & Edge-to-Edge */}
       {mediaItems.length > 1 && (
         <div className="w-full">
-          <div className="-mx-2 px-2 sm:-mx-2.5 sm:px-2.5 flex items-center gap-2 sm:gap-[10px] overflow-x-auto py-3 scrollbar-none snap-x snap-mandatory scroll-pl-2 sm:scroll-pl-2.5">
+          <div className="-mx-2 px-2 sm:-mx-2.5 sm:px-2.5 flex items-center gap-2 sm:gap-[10px] overflow-x-auto py-2 sm:py-3 scrollbar-none snap-x snap-mandatory scroll-pl-2 sm:scroll-pl-2.5">
             {mediaItems.map((item, idx) => {
               const isSelected = activeIndex === idx;
               const isVideo = item.type === 'video';
@@ -159,16 +159,28 @@ export function ProductGallery({ product, discountPercent = 0 }: ProductGalleryP
         </div>
       )}
 
-      {/* 04. 14-Day Clinical Guarantee Box (Card Aman & Terpercaya) */}
-      <div className="p-4 sm:p-5 rounded-2xl bg-white/90 backdrop-blur-md border border-white/95 shadow-[0_4px_20px_rgba(0,43,73,0.04)] flex items-start gap-3.5">
-        <div className="w-9 h-9 rounded-xl bg-[#EBF5F8] text-[#0B6E7D] flex items-center justify-center flex-shrink-0 mt-0.5 border border-[#269BA8]/20">
-          <ShieldCheck className="w-5 h-5 text-[#269BA8]" />
+      {/* 04. 14-Day Clinical Guarantee Box (Card Aman & Terpercaya - Ringkas & Glassy di Mobile) */}
+      <div className="px-3 py-2.5 sm:p-5 rounded-xl sm:rounded-2xl bg-white/85 sm:bg-white/90 backdrop-blur-md border border-white/90 sm:border-white/95 shadow-[0_2px_12px_rgba(0,43,73,0.03)] sm:shadow-[0_4px_20px_rgba(0,43,73,0.04)] flex items-center sm:items-start gap-2.5 sm:gap-3.5">
+        <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl bg-[#EBF5F8] text-[#0B6E7D] flex items-center justify-center flex-shrink-0 border border-[#269BA8]/20">
+          <ShieldCheck className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[#269BA8]" />
         </div>
-        <div className="text-xs text-slate-700 leading-relaxed font-sans">
-          <strong className="text-[#002B49] block font-semibold text-[13px] mb-0.5">
-            Garansi Resmi Kulit Lembap & Kencang 14 Hari
-          </strong>
-          Uji klinis membuktikan kemurnian Ulleung Island Deep Sea Water menembus lapisan pelindung kulit tanpa memicu iritasi. 100% Terdaftar BPOM RI dan Halal Indonesia.
+        <div className="flex-1 min-w-0 text-slate-700 font-sans">
+          <div className="flex items-center gap-1.5 flex-wrap">
+            <strong className="text-[#002B49] font-semibold text-xs sm:text-[13px] leading-tight">
+              Garansi Resmi 14 Hari
+            </strong>
+            <span className="inline-flex items-center text-[9.5px] sm:hidden font-medium text-[#0B6E7D] bg-[#EBF5F8] px-1.5 py-0.5 rounded-full border border-[#269BA8]/20">
+              100% BPOM &amp; Halal
+            </span>
+          </div>
+          <p className="text-[11px] sm:text-xs text-slate-600 sm:text-slate-700 leading-snug sm:leading-relaxed mt-0.5">
+            <span className="sm:hidden">
+              Formula Deep Sea Water teruji klinis melembapkan tanpa iritasi.
+            </span>
+            <span className="hidden sm:inline">
+              Uji klinis membuktikan kemurnian Ulleung Island Deep Sea Water menembus lapisan pelindung kulit tanpa memicu iritasi. 100% Terdaftar BPOM RI dan Halal Indonesia.
+            </span>
+          </p>
         </div>
       </div>
     </div>

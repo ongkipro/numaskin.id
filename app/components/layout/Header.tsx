@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router';
 import { ShoppingBag, Search, Menu, X, ChevronDown, ArrowRight, User } from 'lucide-react';
 
@@ -533,139 +534,126 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
       </div>
 
       {/* ========================================================= */}
-      {/* MOBILE NAVIGATION DRAWER (Slide-over Off-Canvas)          */}
+      {/* MOBILE NAVIGATION BOTTOM SHEET (Rendered to Body Portal)  */}
       {/* ========================================================= */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 z-50 lg:hidden">
+      {mobileMenuOpen && typeof document !== 'undefined' && createPortal(
+        <div className="fixed inset-0 z-[100] lg:hidden flex flex-col justify-end">
           {/* Backdrop Scrim */}
           <div
-            className="fixed inset-0 bg-[#002B49]/50 backdrop-blur-xs transition-opacity duration-300 animate-in fade-in"
+            className="fixed inset-0 bg-[#002B49]/60 backdrop-blur-xs transition-opacity duration-300 animate-in fade-in"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
 
-          {/* Slide-in Drawer Container */}
-          <div className="fixed inset-y-0 left-0 w-full max-w-xs sm:max-w-sm aqua-glass-panel border-r border-white/80 shadow-2xl flex flex-col z-50 animate-in slide-in-from-left duration-300">
-            {/* Drawer Header */}
-            <div className="h-16 sm:h-20 px-6 border-b border-[#E2EDF0] flex items-center justify-between shrink-0">
+          {/* Slide-up Bottom Sheet Container */}
+          <div className="relative w-full max-h-[88vh] rounded-t-[28px] bg-white/95 backdrop-blur-2xl border-t border-white/90 shadow-[0_-20px_60px_rgba(0,43,73,0.2)] flex flex-col z-[101] animate-in slide-in-from-bottom duration-300 overflow-hidden">
+            
+            {/* Top Sheet Drag Indicator Pill */}
+            <div className="pt-3 pb-1 flex justify-center shrink-0">
+              <div className="w-12 h-1.5 rounded-full bg-slate-300/80" />
+            </div>
+
+            {/* Bottom Sheet Header */}
+            <div className="px-6 py-3 border-b border-[#E2EDF0]/70 flex items-center justify-between shrink-0">
               <div className="flex flex-col">
-                <span className="font-sans font-medium text-base tracking-[0.16em] text-[#002B49] uppercase">
+                <span className="font-sans font-semibold text-base tracking-[0.16em] text-[#002B49] uppercase">
                   NUMA·SKIN
                 </span>
-                <span className="text-[10px] tracking-[0.28em] text-[#5A6E7F] -mt-0.5">
-                  ヌマスキン
+                <span className="text-[10px] tracking-[0.28em] text-[#5A6E7F] -mt-0.5 font-mono">
+                  ヌマスキン · MENU
                 </span>
               </div>
               <button
                 type="button"
                 onClick={() => setMobileMenuOpen(false)}
-                className="p-2 text-slate-500 hover:text-[#002B49] transition-colors"
+                className="w-8 h-8 rounded-full bg-[#002B49]/5 hover:bg-[#002B49]/10 text-slate-600 hover:text-[#002B49] flex items-center justify-center transition-colors"
                 aria-label="Tutup menu navigasi"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
               </button>
             </div>
 
-            {/* Drawer Body Links */}
-            <div className="flex-1 overflow-y-auto px-6 py-6 space-y-6">
-              {/* Quick Search in Drawer */}
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenSearch?.();
-                }}
-                className="w-full flex items-center gap-2.5 px-3.5 py-2.5 rounded-xs bg-white/80 border border-[#E2EDF0] text-slate-500 text-xs text-left"
-              >
-                <Search className="w-4 h-4 text-slate-400" />
-                <span>Cari produk atau bahan aktif...</span>
-              </button>
-
+            {/* Bottom Sheet Scrollable Body */}
+            <div className="flex-1 overflow-y-auto px-6 py-5 space-y-5">
+              
               {/* Dedicated Mobile Customer Account Card */}
               <Link
                 to="/account"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-between p-3 rounded-xs bg-white/75 hover:bg-white text-xs border border-white/85 transition-colors group"
+                className="w-full flex items-center justify-between p-3.5 rounded-2xl bg-gradient-to-r from-[#EBF5F8]/80 to-white/90 border border-white/90 shadow-2xs group"
               >
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-full bg-[#002B49]/8 flex items-center justify-center text-[#002B49] group-hover:bg-[#002B49] group-hover:text-white transition-colors">
-                    <User className="w-4 h-4" />
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-[#002B49] text-white flex items-center justify-center shadow-xs">
+                    <User className="w-4 h-4 text-[#38B6CD]" />
                   </div>
                   <div className="text-left">
-                    <span className="font-semibold text-slate-900 block leading-tight">Akun Saya & Pesanan</span>
-                    <span className="text-[10px] text-slate-500 font-mono">Masuk atau cek status pesanan</span>
+                    <span className="font-semibold text-xs text-[#002B49] block leading-tight">Akun Saya & Pesanan</span>
+                    <span className="text-[10px] text-slate-500 font-mono">Masuk atau pantau status kiriman</span>
                   </div>
                 </div>
-                <ArrowRight className="w-3.5 h-3.5 text-[#0B6E7D] group-hover:translate-x-0.5 transition-transform" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#0B6E7D] group-hover:translate-x-1 transition-transform" />
               </Link>
 
-              {/* Group 1: Menu Utama (Fixed at Top, Never Shifts) */}
+              {/* Group 1: Menu Navigasi Utama */}
               <div>
-                <span className="font-mono text-[10px] uppercase tracking-widest text-[#269BA8] font-bold block mb-2.5">
-                  Menu Utama
+                <span className="font-mono text-[10px] uppercase tracking-widest text-[#269BA8] font-bold block mb-2 px-1">
+                  Navigasi Utama
                 </span>
                 <nav className="flex flex-col space-y-1 text-sm">
                   <Link
                     to="/"
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`py-2 px-2.5 rounded-xs font-medium flex items-center justify-between transition-colors ${
+                    className={`py-2.5 px-3 rounded-xl font-medium flex items-center justify-between transition-colors ${
                       location.pathname === '/'
-                        ? 'bg-[#002B49]/8 text-[#002B49]'
-                        : 'hover:bg-white text-slate-800 hover:text-[#002B49]'
+                        ? 'bg-[#002B49]/8 text-[#002B49] font-semibold'
+                        : 'text-slate-800 hover:bg-slate-50'
                     }`}
                   >
                     <span>Home</span>
                     <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
                   </Link>
+
                   <Link
-                    to="/collections/all"
+                    to="/collections/all-products"
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`py-2 px-2.5 rounded-xs font-medium flex items-center justify-between transition-colors ${
-                      location.pathname === '/collections/all'
-                        ? 'bg-[#002B49]/8 text-[#002B49]'
-                        : 'hover:bg-white text-slate-800 hover:text-[#002B49]'
+                    className={`py-2.5 px-3 rounded-xl font-medium flex items-center justify-between transition-colors ${
+                      location.pathname === '/collections/all-products' || location.pathname === '/collections/all'
+                        ? 'bg-[#002B49]/8 text-[#002B49] font-semibold'
+                        : 'text-slate-800 hover:bg-slate-50'
                     }`}
                   >
                     <span>Semua Produk</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
+                    <span className="font-mono text-[10px] text-[#002B49] bg-[#EBF5F8] px-2 py-0.5 rounded-full font-semibold">
+                      49 Produk
+                    </span>
                   </Link>
+
                   <Link
                     to="/collections/paket-hemat-bundling"
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`py-2 px-2.5 rounded-xs font-medium flex items-center justify-between transition-colors ${
+                    className={`py-2.5 px-3 rounded-xl font-medium flex items-center justify-between transition-colors ${
                       location.pathname === '/collections/paket-hemat-bundling'
-                        ? 'bg-[#002B49]/8 text-[#002B49]'
-                        : 'hover:bg-white text-slate-800 hover:text-[#002B49]'
+                        ? 'bg-[#002B49]/8 text-[#002B49] font-semibold'
+                        : 'text-slate-800 hover:bg-slate-50'
                     }`}
                   >
-                    <span>Paket Bundling</span>
-                    <span className="font-mono text-[10px] text-[#002B49] bg-[#EBF5F8] px-2 py-0.5 rounded-xs font-semibold">
-                      42 Pilihan Set
+                    <span className="flex items-center gap-2">
+                      <span>Paket Bundling</span>
+                      <span className="font-mono text-[9px] uppercase tracking-wider text-[#0B6E7D] bg-[#269BA8]/10 px-1.5 py-0.5 rounded-xs font-semibold">
+                        Hemat s/d 25%
+                      </span>
                     </span>
-                  </Link>
-                  <Link
-                    to="/pages/science"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="py-2 px-2.5 rounded-xs hover:bg-white text-slate-800 hover:text-[#002B49] font-medium transition-colors"
-                  >
-                    Sains Ulleung Deep Sea Water
-                  </Link>
-                  <Link
-                    to="/pages/bpom"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="py-2 px-2.5 rounded-xs hover:bg-white text-slate-800 hover:text-[#002B49] font-medium transition-colors"
-                  >
-                    Verifikasi Izin Edar BPOM RI
+                    <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
                   </Link>
                 </nav>
               </div>
 
-              {/* Group 2: Kategori Koleksi (Collapsible Below Menu Utama) */}
-              <div className="pt-4 border-t border-[#E2EDF0]">
+              {/* Group 2: Kategori Koleksi (Interactive Cards) */}
+              <div className="pt-3 border-t border-[#E2EDF0]/70">
                 <button
                   type="button"
                   onClick={() => setMobileCategoryAccordionOpen(!mobileCategoryAccordionOpen)}
-                  className="w-full flex items-center justify-between mb-2 focus:outline-hidden"
+                  className="w-full flex items-center justify-between mb-2 px-1 focus:outline-hidden"
                 >
                   <span className="font-mono text-[10px] uppercase tracking-widest text-[#269BA8] font-bold">
                     Kategori Koleksi
@@ -678,41 +666,58 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
                 </button>
 
                 {mobileCategoryAccordionOpen && (
-                  <nav className="flex flex-col space-y-2 text-sm animate-in fade-in duration-200">
+                  <div className="grid grid-cols-2 gap-2 pt-1 animate-in fade-in duration-200">
                     {MAIN_CATEGORIES.map((cat) => (
                       <Link
                         key={cat.handle}
                         to={cat.to}
                         onClick={() => setMobileMenuOpen(false)}
-                        className="group/mcat relative aspect-[3/2] w-full overflow-hidden rounded-xs border border-slate-200 flex flex-col justify-end p-3"
+                        className="group relative aspect-[3/2] w-full overflow-hidden rounded-xl border border-white/90 shadow-2xs flex flex-col justify-end p-2.5"
                       >
                         <img
                           src={cat.image}
                           alt={cat.title}
-                          className="absolute inset-0 w-full h-full object-cover group-hover/mcat:scale-105 transition-transform"
+                          className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#002B49]/90 via-[#002B49]/30 to-transparent" />
-                        <div className="relative z-10 flex items-end justify-between">
-                          <div>
-                            <span className="font-mono text-[8px] uppercase tracking-wider text-[#38B6CD] font-bold block">
-                              {cat.badge}
-                            </span>
-                            <span className="text-xs font-semibold text-white block mt-0.5">
-                              {cat.title}
-                            </span>
-                          </div>
-                          <ArrowRight className="w-3.5 h-3.5 text-white/80" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#002B49]/90 via-[#002B49]/40 to-transparent" />
+                        <div className="relative z-10">
+                          <span className="font-mono text-[8px] uppercase tracking-wider text-[#38B6CD] font-bold block leading-none">
+                            {cat.badge}
+                          </span>
+                          <span className="text-[11px] font-semibold text-white block mt-1 leading-tight line-clamp-1">
+                            {cat.title}
+                          </span>
                         </div>
                       </Link>
                     ))}
-                  </nav>
+                  </div>
                 )}
               </div>
+
+              {/* Group 3: Legal & Sains Link */}
+              <div className="pt-2 border-t border-[#E2EDF0]/70 flex items-center justify-between text-xs text-slate-600 px-1">
+                <Link
+                  to="/pages/science"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="hover:text-[#002B49] transition-colors py-1.5"
+                >
+                  Sains Deep Sea Water
+                </Link>
+                <span className="text-slate-300">•</span>
+                <Link
+                  to="/pages/bpom"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="hover:text-[#002B49] transition-colors py-1.5"
+                >
+                  Verifikasi BPOM RI
+                </Link>
+              </div>
+
             </div>
 
-            {/* Drawer Footer: Reassurance */}
-            <div className="p-6 bg-[#F4F9FA] border-t border-[#E2EDF0] text-center shrink-0">
+            {/* Bottom Sheet Footer: Reassurance & Safe Area */}
+            <div className="pt-3 pb-[calc(1.25rem+env(safe-area-inset-bottom,0px))] px-6 bg-[#F4F9FA]/80 border-t border-[#E2EDF0]/70 text-center shrink-0">
               <span className="font-mono text-[10px] uppercase tracking-wider text-slate-500 block">
                 Terdaftar Resmi BPOM RI · Halal Indonesia
               </span>
@@ -720,8 +725,10 @@ export function Header({ cartItemCount = 0, onOpenCart, onOpenSearch }: HeaderPr
                 Official Store numaskin.id
               </span>
             </div>
+
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </header>
   );

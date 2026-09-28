@@ -155,7 +155,7 @@ export function ProductPurchaseSuite({ product, upsellProduct }: ProductPurchase
       )}
 
       {/* 07. Action Suite: Quantity + Add to Cart & Beli Sekarang (Direct Checkout) */}
-      <div className="space-y-2.5">
+      <div id="main-purchase-actions" className="space-y-2.5">
         <div className="flex items-center gap-3">
           {/* Quantity Selector */}
           <div className="flex items-center border border-slate-200/90 rounded-full bg-white/90 p-1 shadow-2xs">

@@ -3,7 +3,7 @@ import { useLoaderData, Link, useNavigate } from 'react-router';
 import type { Route } from './+types/collections.$handle';
 import * as mockCatalog from '~/lib/mock-catalog';
 import { ProductCard } from '~/components/product/ProductCard';
-import { SlidersHorizontal, ChevronDown, X, Check, Loader2, Layers, Droplets, ArrowUpDown, ShieldCheck } from 'lucide-react';
+import { SlidersHorizontal, ChevronDown, X, Check, Loader2, Layers, Droplets, ArrowUpDown } from 'lucide-react';
 
 export const meta: Route.MetaFunction = ({ data }: { data: any }) => {
   if (!data?.collection) {
@@ -320,11 +320,6 @@ export default function CollectionDetailPage() {
                 </ol>
               </nav>
 
-              {/* Maritime Kicker */}
-              <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.25em] text-[#0B6E7D] font-semibold block mb-1.5 sm:mb-2">
-                FORMULASI RESMI · ULLEUNG DEEP SEA WATER
-              </span>
-
               {/* Collection Title */}
               <h1 className="font-serif text-3xl sm:text-4xl lg:text-[44px] xl:text-5xl text-[#002B49] font-normal leading-[1.14] tracking-[-0.01em] mb-2.5 sm:mb-3">
                 {collection.title}
@@ -332,29 +327,10 @@ export default function CollectionDetailPage() {
 
               {/* Description */}
               {collection.description && (
-                <p className="text-xs sm:text-[13.5px] text-slate-600 leading-relaxed max-w-xl font-sans mb-5 sm:mb-6">
+                <p className="text-xs sm:text-[13.5px] text-slate-600 leading-relaxed max-w-xl font-sans">
                   {collection.description}
                 </p>
               )}
-
-              {/* Authentic Clinical Reassurance Badges */}
-              <div className="flex items-center gap-2 sm:gap-2.5 overflow-x-auto scrollbar-none max-w-full pb-1 pt-0.5 select-none">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/75 backdrop-blur-md border border-white/90 text-[10px] sm:text-[11px] font-mono text-[#002B49] font-medium shadow-[0_2px_8px_rgba(0,43,73,0.03)] whitespace-nowrap flex-shrink-0">
-                  <ShieldCheck className="w-3.5 h-3.5 text-[#0B6E7D] flex-shrink-0" />
-                  <span>100% BPOM Terdaftar</span>
-                </span>
-
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/75 backdrop-blur-md border border-white/90 text-[10px] sm:text-[11px] font-mono text-[#002B49] font-medium shadow-[0_2px_8px_rgba(0,43,73,0.03)] whitespace-nowrap flex-shrink-0">
-                  <Droplets className="w-3.5 h-3.5 text-[#0B6E7D] flex-shrink-0" />
-                  <span>Mineral 1.500m Laut Dalam</span>
-                </span>
-
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/75 backdrop-blur-md border border-white/90 text-[10px] sm:text-[11px] font-mono text-[#002B49] font-medium shadow-[0_2px_8px_rgba(0,43,73,0.03)] whitespace-nowrap flex-shrink-0">
-                  <Check className="w-3.5 h-3.5 text-[#0B6E7D] flex-shrink-0" />
-                  <span>Dermatologist Tested</span>
-                </span>
-              </div>
-
             </div>
 
             {/* Right Ocean Window Column (5 cols on desktop, aspect 3:2 seamlessly blended into background) */}
@@ -382,12 +358,6 @@ export default function CollectionDetailPage() {
 
                 {/* Liquid Aqua Sheen Hover Highlight */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#002B49]/10 via-transparent to-[#38B6CD]/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-                {/* Delicate Provenance Capsule Watermark */}
-                <div className="absolute bottom-3 right-3 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/80 backdrop-blur-md text-[#002B49] font-mono text-[9px] uppercase tracking-wider font-semibold shadow-xs select-none pointer-events-none border border-white/90">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#269BA8] animate-pulse" />
-                  <span>Ulleung Bioactive 1.500m</span>
-                </div>
               </div>
             </div>
 
