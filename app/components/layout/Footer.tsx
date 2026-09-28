@@ -1,13 +1,30 @@
+import { useState } from 'react';
 import { Link, useLocation } from 'react-router';
 import {
   ShieldCheck,
   Truck,
   Award,
   ArrowRight,
+  Plus,
+  Minus,
 } from 'lucide-react';
 
 export function Footer() {
   const location = useLocation();
+
+  const [openSections, setOpenSections] = useState<Record<string, boolean>>({
+    menu: false,
+    kategori: false,
+    layanan: false,
+    kebijakan: false,
+  });
+
+  const toggleSection = (key: string) => {
+    setOpenSections((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
 
   const isLinkActive = (to: string) => {
     if (to === '/') return location.pathname === '/';
@@ -43,15 +60,15 @@ export function Footer() {
   return (
     <footer className="w-full bg-[#F8FCFD] text-slate-600 relative overflow-hidden mt-auto border-none">
       {/* Seamless transition: flows naturally from preceding #F8FCFD section without harsh borders */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-14 sm:pt-16 pb-12 sm:pb-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-12 sm:pt-16 pb-12 sm:pb-16">
         
         {/* =================================================================== */}
-        {/* 4-COLUMN ARCHITECTURAL DIRECTORY (Clean Typography, Zero Boxes)     */}
+        {/* 4-COLUMN DIRECTORY (Desktop: Clean Grid / Mobile: Borderless Fold)  */}
         {/* =================================================================== */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12 border-b border-slate-200/60">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-8 pb-6 lg:pb-12 border-none">
           
           {/* Column 1: Brand Essence & Identity (Lg: 4 Cols) */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-4 pb-6 lg:pb-0 border-none">
             <Link to="/" className="inline-block mb-4 group">
               <span className="font-semibold text-xl tracking-[0.18em] text-[#002B49] block transition-colors group-hover:text-[#0B6E7D]">
                 NUMA·SKIN
@@ -78,69 +95,33 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Menu Utama / Navigasi (Lg: 2 Cols) */}
-          <div className="lg:col-span-2">
-            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#002B49] mb-4">
-              Menu Utama
-            </h4>
-            <ul className="space-y-2.5 text-xs text-slate-600">
-              {navLinks.map((item) => {
-                const active = isLinkActive(item.to);
-                return (
-                  <li key={item.to}>
-                    <Link
-                      to={item.to}
-                      className={`group flex items-center gap-1.5 transition-all duration-200 ${
-                        active
-                          ? 'text-[#002B49] font-semibold translate-x-1'
-                          : 'text-slate-600 hover:text-[#0B6E7D] hover:translate-x-1'
-                      }`}
-                    >
-                      <span
-                        className={`h-0.5 rounded-full bg-[#0B6E7D] transition-all duration-200 ${
+          {/* Column 2: Menu Utama (Lg: 2 Cols / Mobile: Primary Accordion Anchor - Agak Besar & Bold) */}
+          <div className="lg:col-span-2 border-none py-1 lg:py-0">
+            <button
+              type="button"
+              onClick={() => toggleSection('menu')}
+              className="w-full flex items-center justify-between py-2.5 lg:py-0 text-sm lg:text-xs font-bold lg:font-semibold uppercase tracking-[0.16em] lg:tracking-[0.2em] text-[#002B49] lg:mb-4 lg:cursor-default focus:outline-hidden group"
+              aria-expanded={openSections.menu}
+            >
+              <span className="group-hover:text-[#0B6E7D] transition-colors">Menu Utama</span>
+              <span className="lg:hidden w-6 h-6 rounded-full bg-[#EBF5F8] text-[#0B6E7D] flex items-center justify-center shrink-0 transition-colors group-hover:bg-[#002B49] group-hover:text-white">
+                {openSections.menu ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
+              </span>
+            </button>
+            <div className={`${openSections.menu ? 'block pt-1.5 pb-4' : 'hidden'} lg:block lg:p-0 animate-in fade-in duration-200`}>
+              <ul className="space-y-2.5 text-[13px] lg:text-xs text-slate-600">
+                {navLinks.map((item) => {
+                  const active = isLinkActive(item.to);
+                  return (
+                    <li key={item.to}>
+                      <Link
+                        to={item.to}
+                        className={`group flex items-center gap-1.5 transition-all duration-200 ${
                           active
-                            ? 'w-2.5 opacity-100'
-                            : 'w-0 opacity-0 group-hover:w-2 group-hover:opacity-100'
+                            ? 'text-[#002B49] font-semibold translate-x-1'
+                            : 'text-slate-600 hover:text-[#0B6E7D] hover:translate-x-1'
                         }`}
-                      />
-                      <span>{item.label}</span>
-                    </Link>
-                  </li>
-                );
-              })}
-              <li>
-                <a
-                  href="https://wa.me/6281234567890?text=Halo%20Numa%20Skin,%20saya%20mau%20bertanya"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex items-center gap-1.5 text-slate-600 hover:text-[#0B6E7D] hover:translate-x-1 transition-all duration-200"
-                >
-                  <span className="w-0 opacity-0 group-hover:w-2 group-hover:opacity-100 h-0.5 rounded-full bg-[#0B6E7D] transition-all duration-200" />
-                  <span>Hubungi Kami</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3: Kategori Produk (Lg: 3 Cols) */}
-          <div className="lg:col-span-3">
-            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#002B49] mb-4">
-              Kategori Produk
-            </h4>
-            <ul className="space-y-2.5 text-xs text-slate-600">
-              {categoryLinks.map((cat) => {
-                const active = isLinkActive(cat.to);
-                return (
-                  <li key={cat.to}>
-                    <Link
-                      to={cat.to}
-                      className={`group flex items-center justify-between transition-all duration-200 ${
-                        active
-                          ? 'text-[#002B49] font-semibold'
-                          : 'text-slate-600 hover:text-[#0B6E7D]'
-                      }`}
-                    >
-                      <span className="flex items-center gap-1.5 transition-transform duration-200 group-hover:translate-x-1">
+                      >
                         <span
                           className={`h-0.5 rounded-full bg-[#0B6E7D] transition-all duration-200 ${
                             active
@@ -148,72 +129,175 @@ export function Footer() {
                               : 'w-0 opacity-0 group-hover:w-2 group-hover:opacity-100'
                           }`}
                         />
-                        <span>{cat.label}</span>
-                      </span>
-                      {cat.badge && (
-                        <span
-                          className={`font-mono text-[10px] transition-colors duration-200 ${
-                            cat.badgeAqua
-                              ? 'text-[#0B6E7D] font-medium group-hover:text-[#002B49]'
-                              : 'text-slate-400 group-hover:text-slate-600'
-                          }`}
-                        >
-                          {cat.badge}
-                        </span>
-                      )}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
+                        <span>{item.label}</span>
+                      </Link>
+                    </li>
+                  );
+                })}
+                <li>
+                  <a
+                    href="https://wa.me/6281234567890?text=Halo%20Numa%20Skin,%20saya%20mau%20bertanya"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex items-center gap-1.5 text-slate-600 hover:text-[#0B6E7D] hover:translate-x-1 transition-all duration-200"
+                  >
+                    <span className="w-0 opacity-0 group-hover:w-2 group-hover:opacity-100 h-0.5 rounded-full bg-[#0B6E7D] transition-all duration-200" />
+                    <span>Hubungi Kami</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
 
-          {/* Column 4: Layanan & Konsultasi (Lg: 3 Cols - Zero Box Cards) */}
-          <div className="lg:col-span-3">
-            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#002B49] mb-4">
-              Konsultasi & Layanan
-            </h4>
-            
-            <div className="mb-5">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-xs font-semibold text-slate-900">WhatsApp Skin Advisor</span>
-              </div>
-              <span className="font-mono text-[11px] text-[#0B6E7D] block mb-2">
-                Online 09.00 – 21.00 WIB
+          {/* Column 3: Kategori Produk (Lg: 3 Cols / Mobile: Secondary Accordion) */}
+          <div className="lg:col-span-3 border-none py-1 lg:py-0">
+            <button
+              type="button"
+              onClick={() => toggleSection('kategori')}
+              className="w-full flex items-center justify-between py-2.5 lg:py-0 text-xs font-semibold uppercase tracking-[0.2em] text-[#002B49] lg:mb-4 lg:cursor-default focus:outline-hidden group"
+              aria-expanded={openSections.kategori}
+            >
+              <span className="group-hover:text-[#0B6E7D] transition-colors">Kategori Produk</span>
+              <span className="lg:hidden w-6 h-6 rounded-full bg-[#EBF5F8] text-[#0B6E7D] flex items-center justify-center shrink-0 transition-colors group-hover:bg-[#002B49] group-hover:text-white">
+                {openSections.kategori ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
               </span>
-              <p className="text-xs text-slate-500 mb-3 leading-relaxed">
-                Konsultasikan masalah flek hitam, kerutan, atau pemilihan produk yang tepat bersama skin advisor kami.
-              </p>
-              <a
-                href="https://wa.me/6281234567890?text=Halo%20Numa%20Skin,%20saya%20mau%20konsultasi%20skincare"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#002B49] hover:text-[#0B6E7D] hover:translate-x-1 transition-all duration-200 group"
-              >
-                <span>Mulai Konsultasi Gratis</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" />
-              </a>
+            </button>
+            <div className={`${openSections.kategori ? 'block pt-1.5 pb-4' : 'hidden'} lg:block lg:p-0 animate-in fade-in duration-200`}>
+              <ul className="space-y-2.5 text-xs text-slate-600">
+                {categoryLinks.map((cat) => {
+                  const active = isLinkActive(cat.to);
+                  return (
+                    <li key={cat.to}>
+                      <Link
+                        to={cat.to}
+                        className={`group flex items-center justify-between transition-all duration-200 ${
+                          active
+                            ? 'text-[#002B49] font-semibold'
+                            : 'text-slate-600 hover:text-[#0B6E7D]'
+                        }`}
+                      >
+                        <span className="flex items-center gap-1.5 transition-transform duration-200 group-hover:translate-x-1">
+                          <span
+                            className={`h-0.5 rounded-full bg-[#0B6E7D] transition-all duration-200 ${
+                              active
+                                ? 'w-2.5 opacity-100'
+                                : 'w-0 opacity-0 group-hover:w-2 group-hover:opacity-100'
+                            }`}
+                          />
+                          <span>{cat.label}</span>
+                        </span>
+                        {cat.badge && (
+                          <span
+                            className={`font-mono text-[10px] transition-colors duration-200 ${
+                              cat.badgeAqua
+                                ? 'text-[#0B6E7D] font-medium group-hover:text-[#002B49]'
+                                : 'text-slate-400 group-hover:text-slate-600'
+                            }`}
+                          >
+                            {cat.badge}
+                          </span>
+                        )}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
+          </div>
 
-            <div className="space-y-2 text-xs text-slate-500 pt-3 border-t border-slate-200/60">
-              <div className="flex items-center gap-2">
-                <Truck className="w-3.5 h-3.5 text-[#0B6E7D] shrink-0" />
-                <span>Pengiriman Cepat (JNE/SiCepat/J&T)</span>
+          {/* Column 4: Layanan & Konsultasi (Lg: 3 Cols / Mobile: Secondary Accordion) */}
+          <div className="lg:col-span-3 border-none py-1 lg:py-0">
+            <button
+              type="button"
+              onClick={() => toggleSection('layanan')}
+              className="w-full flex items-center justify-between py-2.5 lg:py-0 text-xs font-semibold uppercase tracking-[0.2em] text-[#002B49] lg:mb-4 lg:cursor-default focus:outline-hidden group"
+              aria-expanded={openSections.layanan}
+            >
+              <span className="group-hover:text-[#0B6E7D] transition-colors">Konsultasi & Layanan</span>
+              <span className="lg:hidden w-6 h-6 rounded-full bg-[#EBF5F8] text-[#0B6E7D] flex items-center justify-center shrink-0 transition-colors group-hover:bg-[#002B49] group-hover:text-white">
+                {openSections.layanan ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
+              </span>
+            </button>
+            
+            <div className={`${openSections.layanan ? 'block pt-2 pb-4' : 'hidden'} lg:block lg:p-0 animate-in fade-in duration-200`}>
+              <div className="mb-5">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                  <span className="text-xs font-semibold text-slate-900">WhatsApp Skin Advisor</span>
+                </div>
+                <span className="font-mono text-[11px] text-[#0B6E7D] block mb-2">
+                  Online 09.00 – 21.00 WIB
+                </span>
+                <p className="text-xs text-slate-500 mb-3 leading-relaxed">
+                  Konsultasikan masalah flek hitam, kerutan, atau pemilihan produk yang tepat bersama skin advisor kami.
+                </p>
+                <a
+                  href="https://wa.me/6281234567890?text=Halo%20Numa%20Skin,%20saya%20mau%20konsultasi%20skincare"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#002B49] hover:text-[#0B6E7D] hover:translate-x-1 transition-all duration-200 group"
+                >
+                  <span>Mulai Konsultasi Gratis</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-200" />
+                </a>
               </div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#0B6E7D] shrink-0" />
-                <span>Garansi 100% Produk Asli & Segel Resmi</span>
+
+              <div className="space-y-2 text-xs text-slate-500 pt-1 border-none">
+                <div className="flex items-center gap-2">
+                  <Truck className="w-3.5 h-3.5 text-[#0B6E7D] shrink-0" />
+                  <span>Pengiriman Cepat (JNE/SiCepat/J&T)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#0B6E7D] shrink-0" />
+                  <span>Garansi 100% Produk Asli & Segel Resmi</span>
+                </div>
               </div>
+            </div>
+          </div>
+
+          {/* Column Mobile Only: Kebijakan & Legalitas (Mobile Collapsible with + and -) */}
+          <div className="lg:hidden border-none py-1">
+            <button
+              type="button"
+              onClick={() => toggleSection('kebijakan')}
+              className="w-full flex items-center justify-between py-2.5 text-xs font-semibold uppercase tracking-[0.2em] text-[#002B49] focus:outline-hidden group"
+              aria-expanded={openSections.kebijakan}
+            >
+              <span className="group-hover:text-[#0B6E7D] transition-colors">Kebijakan & Legalitas</span>
+              <span className="w-6 h-6 rounded-full bg-[#EBF5F8] text-[#0B6E7D] flex items-center justify-center shrink-0 transition-colors group-hover:bg-[#002B49] group-hover:text-white">
+                {openSections.kebijakan ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
+              </span>
+            </button>
+            <div className={`${openSections.kebijakan ? 'block pt-1.5 pb-4' : 'hidden'} animate-in fade-in duration-200`}>
+              <ul className="space-y-2.5 text-xs text-slate-600">
+                {policyLinks.map((pol) => {
+                  const active = isLinkActive(pol.to);
+                  return (
+                    <li key={pol.to}>
+                      <Link
+                        to={pol.to}
+                        className={`flex items-center gap-2 transition-all duration-200 ${
+                          active
+                            ? 'text-[#002B49] font-medium underline underline-offset-4 decoration-[#0B6E7D]'
+                            : 'hover:text-[#0B6E7D]'
+                        }`}
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#0B6E7D]/60" />
+                        <span>{pol.label}</span>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           </div>
 
         </div>
 
         {/* =================================================================== */}
-        {/* POLICIES & LEGAL LINKS ROW (Kebijakan di List Bawah)                */}
+        {/* POLICIES & LEGAL LINKS ROW (Desktop Only Horizontal List)           */}
         {/* =================================================================== */}
-        <div className="py-6 border-b border-slate-200/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs">
+        <div className="py-4 border-none hidden lg:flex items-center justify-between gap-4 text-xs">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-slate-500">
             <span className="font-mono text-[10px] uppercase tracking-wider text-[#0B6E7D] font-semibold">
               Kebijakan:

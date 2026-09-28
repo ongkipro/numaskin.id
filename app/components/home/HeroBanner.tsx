@@ -43,11 +43,11 @@ export function HeroBanner() {
         {/* Top Vignette (Gradasi atas menyatu halus dengan header, desktop & mobile) */}
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-[#EBF5F8]/70 via-[#EBF5F8]/20 to-transparent pointer-events-none" />
 
-        {/* Bottom Soft Dissolve (Gradasi bawah menyatu ke section berikutnya tanpa celah/garis) */}
+        {/* Bottom Soft Dissolve (Menyatu ke section berikutnya tanpa celah) */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAFCFD] via-[#FAFCFD]/50 to-transparent pointer-events-none" />
 
-        {/* Mobile: Full Smooth Bottom-to-Top Accessibility Gradient (Menyatu tanpa garis batas) */}
-        <div className="sm:hidden absolute inset-0 bg-gradient-to-t from-[#EBF5F8]/75 via-[#EBF5F8]/25 via-45% to-transparent pointer-events-none" />
+        {/* Mobile: Gentle Natural Bottom Fade - Protects typography while keeping product tube 100% vibrant */}
+        <div className="sm:hidden absolute inset-x-0 bottom-0 h-80 bg-gradient-to-t from-[#FAFCFD] via-[#FAFCFD]/85 via-35% via-[#EBF5F8]/45 via-70% to-transparent pointer-events-none" />
       </div>
 
       {/* ========================================================= */}
@@ -67,12 +67,12 @@ export function HeroBanner() {
           </div>
 
           {/* Master Headline: Punchy, Pure & Natural */}
-          <h1 className="font-serif text-2xl xs:text-3xl sm:text-5xl lg:text-[54px] text-[#002B49] leading-[1.15] sm:leading-[1.12] font-normal mb-2 sm:mb-4 tracking-tight drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)] sm:drop-shadow-none">
+          <h1 className="font-serif text-2xl xs:text-3xl sm:text-5xl lg:text-[54px] text-[#002B49] leading-[1.15] sm:leading-[1.12] font-normal mb-2 sm:mb-4 tracking-tight">
             Kemurnian Laut Dalam untuk Kulit Awet Muda
           </h1>
 
           {/* Body Description: Concise Clinical Formulation */}
-          <p className="text-xs sm:text-base text-slate-800 leading-relaxed mb-3.5 sm:mb-7 max-w-lg font-medium drop-shadow-[0_1px_1px_rgba(255,255,255,0.6)] sm:drop-shadow-none">
+          <p className="text-xs sm:text-base text-slate-800 leading-relaxed mb-3.5 sm:mb-7 max-w-lg font-medium">
             Formula klinis 83% Ulleung Deep Sea Water dan 2% Swiss NAD+ Booster. 
             Menghidrasi hingga ke lapisan seluler dan merawat elastisitas alami kulit.
           </p>
@@ -118,7 +118,8 @@ export function HeroBanner() {
           <div className="flex items-center justify-between text-[10px] sm:text-[11px] text-slate-600 font-mono pt-2 sm:pt-2.5">
             <div className="flex items-center gap-1.5 sm:gap-2 truncate">
               <ShieldCheck className="w-3.5 h-3.5 text-[#0B6E7D] flex-shrink-0" />
-              <span className="truncate">Toko Resmi Numa Skin Indonesia · 100% Produk Asli & Halal</span>
+              <span className="sm:hidden">Official Store · 100% BPOM Resmi & Halal</span>
+              <span className="hidden sm:inline">Toko Resmi Numa Skin Indonesia · 100% Produk Asli & Halal</span>
             </div>
 
             <div className="hidden sm:flex items-center gap-1.5 text-slate-600">
