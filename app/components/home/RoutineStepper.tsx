@@ -128,6 +128,9 @@ export function RoutineStepper({ products }: RoutineStepperProps) {
                       src={imageUrl}
                       alt={matchedProduct?.title || s.handle}
                       loading="lazy"
+                      decoding="async"
+                      width={300}
+                      height={300}
                       className="w-full h-full object-contain mix-blend-multiply transform-gpu transition-transform duration-700 ease-out will-change-transform group-hover:scale-105"
                     />
                     

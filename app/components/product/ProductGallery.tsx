@@ -101,6 +101,12 @@ export function ProductGallery({ product, discountPercent = 0 }: ProductGalleryP
               key={activeMedia.url}
               src={activeMedia.url}
               alt={activeMedia.altText}
+              loading="eager"
+              // @ts-ignore
+              fetchPriority="high"
+              decoding="async"
+              width={600}
+              height={600}
               className="w-full h-full object-cover transform-gpu transition-transform duration-700 ease-out will-change-transform group-hover:scale-105"
             />
             {/* Subtle Liquid Aqua Sheen on Hover */}
@@ -133,6 +139,10 @@ export function ProductGallery({ product, discountPercent = 0 }: ProductGalleryP
                   <img
                     src={item.previewUrl}
                     alt={item.altText}
+                    loading="lazy"
+                    decoding="async"
+                    width={68}
+                    height={68}
                     className="w-full h-full object-cover transform-gpu transition-transform duration-500 ease-out will-change-transform group-hover/thumb:scale-108"
                   />
 

@@ -44,6 +44,16 @@ export default async function handleRequest(
     responseHeaders.set('X-Robots-Tag', 'noindex, nofollow');
   }
 
+  // Edge Caching for fast load on Oxygen CDN (sub-50ms TTFB for public visits)
+  if (
+    request.method === 'GET' &&
+    responseStatusCode === 200 &&
+    !responseHeaders.has('Cache-Control') &&
+    !request.headers.get('Cookie')?.includes('_session')
+  ) {
+    responseHeaders.set('Cache-Control', 'public, max-age=60, stale-while-revalidate=600');
+  }
+
   return new Response(body, {
     headers: responseHeaders,
     status: responseStatusCode,

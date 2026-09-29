@@ -16,6 +16,9 @@ export function AmbassadorSpotlight() {
               src="/images/ambassador/numa-skin-ambassador-single-hijab-aqua.webp"
               alt="Numa Skin Deep Sea Water Glowing Skin Model"
               loading="lazy"
+              decoding="async"
+              width={600}
+              height={400}
               className="w-full h-full object-cover [mask-image:radial-gradient(ellipse_at_center,black_62%,transparent_98%)] [-webkit-mask-image:radial-gradient(ellipse_at_center,black_62%,transparent_98%)] transform-gpu transition-transform duration-700 ease-out hover:scale-103"
             />
           </div>

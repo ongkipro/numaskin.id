@@ -32,6 +32,14 @@ export const meta: Route.MetaFunction = ({ data }: { data: any }) => {
     { name: 'description', content: description },
     { name: 'robots', content: 'index, follow' },
     { tagName: 'link', rel: 'canonical', href: canonicalUrl },
+    {
+      tagName: 'link',
+      rel: 'preload',
+      as: 'image',
+      href: image,
+      // @ts-ignore
+      fetchPriority: 'high',
+    },
 
     // OpenGraph (Facebook / WhatsApp / iMessage)
     { property: 'og:site_name', content: 'Numa Skin Official' },

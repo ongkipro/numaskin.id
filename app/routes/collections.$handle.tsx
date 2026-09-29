@@ -21,11 +21,25 @@ export const meta: Route.MetaFunction = ({ data }: { data: any }) => {
   const canonicalUrl = `https://numaskin.id/collections/${c.handle}`;
   const image = c.image?.url || '/images/banners/04-category-banner-kategori-paket-awet-muda-banner.jpg';
 
+  const firstProductImage = data?.products?.[0]?.featuredImage?.url;
+
   return [
     { title },
     { name: 'description', content: description },
     { name: 'robots', content: 'index, follow' },
     { tagName: 'link', rel: 'canonical', href: canonicalUrl },
+    ...(firstProductImage
+      ? [
+          {
+            tagName: 'link',
+            rel: 'preload',
+            as: 'image',
+            href: firstProductImage,
+            // @ts-ignore
+            fetchPriority: 'high',
+          },
+        ]
+      : []),
 
     // OpenGraph
     { property: 'og:site_name', content: 'Numa Skin Official' },

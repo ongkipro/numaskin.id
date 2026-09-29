@@ -145,7 +145,10 @@ export function BundleSavingsMatrix({ bundles }: BundleSavingsMatrixProps) {
                     <img
                       src={imageUrl}
                       alt={title}
+                      loading="lazy"
                       decoding="async"
+                      width={400}
+                      height={400}
                       className="w-full h-full object-cover transform-gpu transition-transform duration-700 ease-out will-change-transform group-hover:scale-105"
                     />
 

@@ -38,6 +38,9 @@ export function ShopeeBannerSection() {
                 src={banner.imageUrl}
                 alt={banner.title}
                 loading="lazy"
+                decoding="async"
+                width={1080}
+                height={1600}
                 className="w-full h-full object-cover transform-gpu transition-transform duration-500 ease-out will-change-transform group-hover:scale-102"
               />
 

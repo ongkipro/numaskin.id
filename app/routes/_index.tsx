@@ -10,6 +10,21 @@ import { BundleSavingsMatrix } from '~/components/home/BundleSavingsMatrix';
 import { AmbassadorSpotlight } from '~/components/home/AmbassadorSpotlight';
 import * as mockCatalog from '~/lib/mock-catalog';
 
+export const links: Route.LinksFunction = () => [
+  {
+    rel: 'preload',
+    as: 'image',
+    href: '/videos/numa-skin-water-splash-mobile-poster.jpg',
+    media: '(max-width: 639px)',
+  },
+  {
+    rel: 'preload',
+    as: 'image',
+    href: '/videos/numa-skin-water-splash-hero-poster.jpg',
+    media: '(min-width: 640px)',
+  },
+];
+
 export const meta: Route.MetaFunction = () => [
   { title: 'Numa Skin Official — Formula Anti-Aging & Hidrasi Deep Sea Water' },
   {
