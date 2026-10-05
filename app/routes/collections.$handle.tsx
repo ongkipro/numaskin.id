@@ -20,26 +20,32 @@ export const meta: Route.MetaFunction = ({ data }: { data: any }) => {
     `Koleksi resmi produk ${c.title} Numa Skin terdaftar BPOM RI. Formula aktif mineral laut dalam untuk hidrasi dan perawatan intensif.`;
   const canonicalUrl = `https://numaskin.id/collections/${c.handle}`;
   const image = c.image?.url || '/images/banners/04-category-banner-kategori-paket-awet-muda-banner.jpg';
-
-  const firstProductImage = data?.products?.[0]?.featuredImage?.url;
+  const mobileBanner = c.image?.url ? `${c.image.url}&width=600` : image;
+  const desktopBanner = c.image?.url ? `${c.image.url}&width=1200` : image;
 
   return [
     { title },
     { name: 'description', content: description },
     { name: 'robots', content: 'index, follow' },
     { tagName: 'link', rel: 'canonical', href: canonicalUrl },
-    ...(image
-      ? [
-          {
-            tagName: 'link',
-            rel: 'preload',
-            as: 'image',
-            href: image,
-            // @ts-ignore
-            fetchPriority: 'high',
-          },
-        ]
-      : []),
+    {
+      tagName: 'link',
+      rel: 'preload',
+      as: 'image',
+      href: mobileBanner,
+      media: '(max-width: 639px)',
+      // @ts-ignore
+      fetchPriority: 'high',
+    },
+    {
+      tagName: 'link',
+      rel: 'preload',
+      as: 'image',
+      href: desktopBanner,
+      media: '(min-width: 640px)',
+      // @ts-ignore
+      fetchPriority: 'high',
+    },
 
     // OpenGraph
     { property: 'og:site_name', content: 'Numa Skin Official' },
@@ -376,15 +382,23 @@ export default function CollectionDetailPage() {
             {/* Right Ocean Window Column (5 cols on desktop, aspect 3:2 seamlessly blended into background) */}
             <div className="lg:col-span-5 w-full flex items-center justify-center lg:justify-end">
               <div className="relative aspect-[3/2] w-full max-w-[560px] lg:max-w-none rounded-2xl overflow-hidden group select-none shadow-[0_20px_50px_-20px_rgba(38,155,168,0.15)]">
-                {/* 3:2 Master Collection Photography */}
-                <img
-                  src={collection.image?.url || '/images/collections/collection-semua-produk-banner.webp'}
-                  alt={collection.image?.altText || collection.title}
-                  loading="eager"
-                  fetchPriority="high"
-                  decoding="async"
-                  className="w-full h-full object-cover transform-gpu transition-transform duration-700 ease-out group-hover:scale-105"
-                />
+                {/* 3:2 Master Collection Photography (Responsive Picture with 72% lighter mobile payload) */}
+                <picture className="w-full h-full block">
+                  <source
+                    media="(max-width: 639px)"
+                    srcSet={collection.image?.url ? `${collection.image.url}&width=600` : '/images/collections/collection-semua-produk-banner.webp'}
+                  />
+                  <img
+                    src={collection.image?.url ? `${collection.image.url}&width=1200` : '/images/collections/collection-semua-produk-banner.webp'}
+                    alt={collection.image?.altText || collection.title}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    width={1200}
+                    height={800}
+                    className="w-full h-full object-cover transform-gpu transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                </picture>
                 
                 {/* Seamless Edge Blending Overlays (Melt edges into #F4F9FA page canvas) */}
                 {/* Left Edge Dissolve */}

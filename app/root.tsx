@@ -21,6 +21,13 @@ export const links: Route.LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
   { rel: 'dns-prefetch', href: 'https://fonts.gstatic.com' },
   { rel: 'dns-prefetch', href: 'https://cdn.shopify.com' },
+  {
+    rel: 'preload',
+    as: 'font',
+    type: 'font/woff2',
+    href: 'https://fonts.gstatic.com/s/dmserifdisplay/v17/-nFnOHM81r4j6k0gjAW3mujVU2B2G_Bx0vrx52g.woff2',
+    crossOrigin: 'anonymous',
+  },
   { rel: 'icon', type: 'image/x-icon', href: faviconIco },
   { rel: 'icon', type: 'image/png', sizes: '32x32', href: favicon32 },
   { rel: 'icon', type: 'image/png', sizes: '16x16', href: favicon16 },
