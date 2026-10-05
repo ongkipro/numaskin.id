@@ -11,30 +11,49 @@ export function HeroBanner() {
       {/* 1. BACKGROUND VIDEO (Numa Skin Water Splash - Optimized)  */}
       {/* ========================================================= */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden transform-gpu">
-        {/* Mobile Portrait Video (9:16 - Optimized for Mobile Screen) */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster="/videos/numa-skin-water-splash-mobile-poster.jpg"
-          className="w-full h-full object-cover object-center sm:hidden transform-gpu will-change-transform"
-        >
-          <source src="/videos/numa-skin-water-splash-mobile.webm" type="video/webm" />
-          <source src="/videos/numa-skin-water-splash-mobile.mp4" type="video/mp4" />
-        </video>
+        {/* Instant SSR Responsive Poster (Guarantees sub-second FCP & LCP) */}
+        <picture className="absolute inset-0 w-full h-full">
+          <source media="(max-width: 639px)" srcSet="/videos/numa-skin-water-splash-mobile-poster.jpg" />
+          <img
+            src="/videos/numa-skin-water-splash-hero-poster.jpg"
+            alt="Numa Skin Deep Sea Water"
+            className="w-full h-full object-cover object-center"
+            fetchPriority="high"
+            decoding="async"
+            width={1280}
+            height={720}
+          />
+        </picture>
 
-        {/* Desktop Landscape Video (16:9 - Optimized for Wide Screen) */}
+        {/* Responsive Background Video (Single element with media queries, preload none) */}
         <video
           autoPlay
           loop
           muted
           playsInline
-          poster="/videos/numa-skin-water-splash-hero-poster.jpg"
-          className="w-full h-full object-cover object-center hidden sm:block"
+          preload="none"
+          className="w-full h-full object-cover object-center transform-gpu will-change-transform relative z-10"
         >
-          <source src="/videos/numa-skin-water-splash-hero.webm" type="video/webm" />
-          <source src="/videos/numa-skin-water-splash-hero.mp4" type="video/mp4" />
+          <source
+            media="(max-width: 639px)"
+            src="/videos/numa-skin-water-splash-mobile.webm"
+            type="video/webm"
+          />
+          <source
+            media="(max-width: 639px)"
+            src="/videos/numa-skin-water-splash-mobile.mp4"
+            type="video/mp4"
+          />
+          <source
+            media="(min-width: 640px)"
+            src="/videos/numa-skin-water-splash-hero.webm"
+            type="video/webm"
+          />
+          <source
+            media="(min-width: 640px)"
+            src="/videos/numa-skin-water-splash-hero.mp4"
+            type="video/mp4"
+          />
         </video>
 
         {/* Desktop: Natural Left Diffusion Gradient (Feathered Sea Mist) */}

@@ -37,6 +37,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
           decoding="async"
           width={400}
           height={400}
+          sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
           className="w-full h-full object-cover transform-gpu transition-all duration-700 ease-out will-change-transform group-hover:scale-105"
         />
 

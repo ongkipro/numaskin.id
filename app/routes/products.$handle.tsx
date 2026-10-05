@@ -154,28 +154,36 @@ export default function ProductDetailPage() {
       {/* 01. FIXED AMBIENT WATER VIDEO (Fixed down to footer)       */}
       {/* ========================================================= */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden transform-gpu z-0">
-        {/* Mobile Pure Water Ritual Video (9:16) */}
+        {/* Pure Water Ritual Ambient Video (Single responsive element, preload none) */}
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="w-full h-full object-cover object-center sm:hidden opacity-45 transform-gpu will-change-transform"
+          preload="none"
+          poster="/images/videos/numa-skin-deep-sea-water-ritual-desktop-poster.webp"
+          className="w-full h-full object-cover object-center opacity-45 transform-gpu will-change-transform"
         >
-          <source src="/videos/numa-skin-deep-sea-water-ritual-mobile.webm" type="video/webm" />
-          <source src="/videos/numa-skin-deep-sea-water-ritual-mobile.mp4" type="video/mp4" />
-        </video>
-
-        {/* Desktop Pure Water Ritual Video (16:9) */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover object-center hidden sm:block opacity-45 transform-gpu"
-        >
-          <source src="/videos/numa-skin-deep-sea-water-ritual-desktop.webm" type="video/webm" />
-          <source src="/videos/numa-skin-deep-sea-water-ritual-desktop.mp4" type="video/mp4" />
+          <source
+            media="(max-width: 639px)"
+            src="/videos/numa-skin-deep-sea-water-ritual-mobile.webm"
+            type="video/webm"
+          />
+          <source
+            media="(max-width: 639px)"
+            src="/videos/numa-skin-deep-sea-water-ritual-mobile.mp4"
+            type="video/mp4"
+          />
+          <source
+            media="(min-width: 640px)"
+            src="/videos/numa-skin-deep-sea-water-ritual-desktop.webm"
+            type="video/webm"
+          />
+          <source
+            media="(min-width: 640px)"
+            src="/videos/numa-skin-deep-sea-water-ritual-desktop.mp4"
+            type="video/mp4"
+          />
         </video>
 
         {/* Soft Editorial Diffusion Gradients for High-Contrast Readability */}

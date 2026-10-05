@@ -28,13 +28,13 @@ export const meta: Route.MetaFunction = ({ data }: { data: any }) => {
     { name: 'description', content: description },
     { name: 'robots', content: 'index, follow' },
     { tagName: 'link', rel: 'canonical', href: canonicalUrl },
-    ...(firstProductImage
+    ...(image
       ? [
           {
             tagName: 'link',
             rel: 'preload',
             as: 'image',
-            href: firstProductImage,
+            href: image,
             // @ts-ignore
             fetchPriority: 'high',
           },
