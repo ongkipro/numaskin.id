@@ -5,7 +5,14 @@ import { ProductCard } from '~/components/product/ProductCard';
 import { Search } from 'lucide-react';
 
 export const meta: Route.MetaFunction = () => [
-  { title: 'Pencarian Produk — Numa Skin Official' },
+  { title: 'Pencarian Produk Skincare Resmi BPOM - Numa Skin Official' },
+  {
+    name: 'description',
+    content:
+      'Cari formula perawatan kulit Numa Skin sesuai kebutuhan Anda: pembersih gentle, hydrating toner, serum NAD+, pelembap, hingga paket hemat.',
+  },
+  { name: 'robots', content: 'noindex, follow' },
+  { tagName: 'link', rel: 'canonical', href: 'https://numaskin.id/search' },
 ];
 
 export async function loader({ request }: Route.LoaderArgs) {

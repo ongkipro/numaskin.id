@@ -47,56 +47,57 @@ def run_gql(query, retries=5):
     raise RuntimeError(f"GraphQL failed after {retries} retries.")
 
 # Core Singles Specific SEO & Handles
+# Core Singles Specific SEO & Handles (Strict 55-70 title, 120-155 description)
 SINGLES_CONFIG = {
     "numa-skin-deep-sea-water-facial-wash-100ml": {
         "new_handle": "deep-sea-water-facial-wash-gel",
-        "seo_title": "Deep Sea Water Facial Wash Gel - Sabun Cuci Muka Kulit Sensitif - Numa Skin",
-        "seo_desc": "Pembersih wajah gentle dengan Ulleung Deep Sea Water & Niacinamide. Bersihkan kotoran hingga ke pori, lindungi skin barrier, dan jaga kelembapan alami kulit wajah. Terdaftar resmi BPOM."
+        "seo_title": "Deep Sea Water Facial Wash Gel - Sabun Cuci Muka - Numa Skin",
+        "seo_desc": "Pembersih wajah lembut dengan Deep Sea Water & 5% Niacinamide. Bersihkan pori mendalam, rawat skin barrier tanpa rasa kering tertarik. Resmi BPOM."
     },
     "numa-skin-deep-sea-water-treatment-lotion": {
         "new_handle": "deep-sea-water-treatment-lotion",
         "seo_title": "Treatment Lotion - Hydrating Essence Toner Kulit Lembap - Numa Skin",
-        "seo_desc": "Hydrating essence toner dengan kemurnian Ulleung Deep Sea Water. Mengembalikan kelembapan mendalam, menyeimbangkan pH kulit wajah, dan merawat skin barrier. Resmi BPOM."
+        "seo_desc": "Hydrating essence toner dengan Ulleung Deep Sea Water. Mengembalikan kelembapan mendalam, menyeimbangkan pH kulit, dan merawat skin barrier. BPOM RI."
     },
     "numa-skin-calming-barrier-gloss-gel-moisturizer-30ml": {
         "new_handle": "calming-barrier-gloss-gel-moisturizer",
         "seo_title": "Gloss Gel Moisturizer - Pelembap Calming Skin Barrier - Numa Skin",
-        "seo_desc": "Pelembap gel sejuk untuk menenangkan iritasi, kemerahan, dan memperbaiki skin barrier. Ringan cepat meresap dengan hidrasi mineral air laut dalam. Resmi BPOM."
+        "seo_desc": "Pelembap gel sejuk untuk menenangkan iritasi dan perbaiki skin barrier. Tekstur ringan cepat meresap dengan mineral air laut dalam. Resmi BPOM RI."
     },
     "numa-skin-adenosine-deep-sea-water-moisturizer-30g": {
         "new_handle": "adenosine-deep-sea-water-moisturizer",
         "seo_title": "Adenosine Moisturizer - Krim Pelembap Pengencang Wajah - Numa Skin",
-        "seo_desc": "Krim pelembap anti-aging dengan Adenosine & Phytosqualane. Kunci hidrasi intensif, samarkan garis halus, dan rawat elastisitas kulit agar kencang kenyal. Resmi BPOM."
+        "seo_desc": "Krim pelembap anti-aging dengan Adenosine dan Phytosqualane. Kunci hidrasi, samarkan garis halus, serta rawat elastisitas kulit kencang kenyal. BPOM."
     },
     "numa-skin-pdrn-alpha-arbutin-tone-up-day-cream-30g": {
         "new_handle": "pdrn-alpha-arbutin-tone-up-day-cream",
         "seo_title": "PDRN Tone-Up Day Cream - Krim Pagi Pencerah Flek Hitam - Numa Skin",
-        "seo_desc": "Krim pagi pencerah instan dengan formula PDRN Salmon & Alpha Arbutin. Samarkan flek hitam, ratakan warna kulit, dan berikan kilau glowing natural seharian. BPOM."
+        "seo_desc": "Krim pagi pencerah instan dengan formula Salmon PDRN & Alpha Arbutin. Samarkan flek hitam, ratakan warna kulit, dan berikan kilau glowing natural. BPOM."
     },
     "numa-skin-oxydew-sunscreen-luceane-spf50-30ml": {
         "new_handle": "oxydew-sunscreen-luceane-spf50-pa",
         "seo_title": "Oxydew Sunscreen SPF 50+ - Tabir Surya Non-Comedogenic - Numa Skin",
-        "seo_desc": "Sunscreen tabir surya ringan dengan SPF 50+ PA++++ dan teknologi Luceane. Perlindungan maksimal sinar UVA/UVB dan polusi tanpa rasa lengket atau white cast. BPOM."
+        "seo_desc": "Sunscreen tabir surya ringan SPF 50+ PA++++ berteknologi Luceane. Lindungi kulit dari sinar UVA/UVB dan polusi tanpa rasa lengket atau white cast. BPOM."
     },
     "numa-skin-nad-booster-anti-aging-serum-20ml": {
         "new_handle": "nad-booster-anti-aging-serum",
         "seo_title": "NAD+ Booster Serum - Serum Anti-Aging Samarkan Kerutan - Numa Skin",
-        "seo_desc": "Serum anti-aging mutakhir dengan 2% NAD+ & 4X Peptide. Tingkatkan regenerasi sel, rawat elastisitas kulit, dan samarkan kerutan garis halus secara klinis. BPOM."
+        "seo_desc": "Serum anti-aging mutakhir dengan 2% NAD+ dan 4X Peptide. Tingkatkan regenerasi seluler, rawat elastisitas, dan samarkan kerutan secara klinis. BPOM."
     }
 }
 
 COLLECTIONS_CONFIG = {
     "all-products": {
         "seo_title": "Semua Produk - Katalog Skincare Alami Deep Sea Water - Numa Skin",
-        "seo_desc": "Koleksi lengkap skincare resmi Numa Skin dengan khasiat mineral Deep Sea Water, formula anti-aging, pencerah alami, dan pelindung skin barrier berizin resmi BPOM RI."
+        "seo_desc": "Katalog lengkap skincare resmi Numa Skin. Perawatan anti-aging, pencerah alami, dan skin barrier berbahan mineral Deep Sea Water berizin BPOM RI."
     },
     "cleanser-toner": {
         "seo_title": "Pembersih & Toner - Sabun Muka & Hydrating Essence - Numa Skin",
-        "seo_desc": "Pembersih wajah gentle dan hydrating toner essence Numa Skin dengan mineral laut dalam untuk membersihkan pori serta menjaga hidrasi kulit tanpa rasa kering."
+        "seo_desc": "Pembersih wajah gentle dan hydrating toner essence Numa Skin dengan mineral laut dalam untuk membersihkan pori serta menjaga hidrasi kulit wajah."
     },
     "serum-treatment": {
         "seo_title": "Serum & Perawatan Intensif - Serum Anti-Aging & Flek - Numa Skin",
-        "seo_desc": "Serum konsentrat anti-aging NAD+ Booster Numa Skin terbukti klinis menyamarkan kerutan, meningkatkan elastisitas seluler, dan mencerahkan warna kulit kusam."
+        "seo_desc": "Serum konsentrat anti-aging NAD+ Booster Numa Skin teruji klinis menyamarkan kerutan, menjaga elastisitas kulit, dan mencerahkan wajah kusam."
     },
     "moisturizer-day-cream": {
         "seo_title": "Pelembap & Krim Pagi - Moisturizer Barrier & Day Cream - Numa Skin",
@@ -108,45 +109,75 @@ COLLECTIONS_CONFIG = {
     },
     "paket-hemat-bundling": {
         "seo_title": "Paket Hemat & Bundling - Paket Skincare Anti-Aging Hemat - Numa Skin",
-        "seo_desc": "Pilihan paket bundling hemat skincare Numa Skin: Duo, Trio, Routine 4-in-1, dan Set Lengkap 6-in-1 untuk perawatan kulit wajah optimal yang terbukti efektif."
+        "seo_desc": "Pilihan paket bundling skincare Numa Skin: Duo, Trio, Routine 4-in-1, dan Set 6-in-1 untuk perawatan wajah optimal yang teruji klinis resmi BPOM RI."
     },
     "anti-aging-series": {
         "seo_title": "Anti-Aging Series - Rangkaian Awet Muda Deep Sea Water - Numa Skin",
-        "seo_desc": "Formulasi khusus anti-aging Numa Skin memadukan Deep Sea Water, Adenosine, dan NAD+ untuk menjaga kekencangan kulit, elastisitas, dan kilau awet muda alami."
+        "seo_desc": "Formulasi anti-aging Numa Skin memadukan Deep Sea Water, Adenosine, dan NAD+ untuk menjaga kekencangan kulit, elastisitas, dan kilau awet muda alami."
     },
     "frontpage": {
-        "seo_title": "Numa Skin Official Store - Perawatan Kulit Deep Sea Water Alami",
-        "seo_desc": "Toko resmi Numa Skin Indonesia. Inovasi skincare alami berbahan mineral Ulleung Island Deep Sea Water untuk hidrasi, skin barrier, dan anti-aging teruji klinis."
+        "seo_title": "Numa Skin Official Store - Skincare Anti-Aging Deep Sea Water",
+        "seo_desc": "Toko resmi Numa Skin Indonesia. Inovasi skincare alami berbahan mineral Ulleung Island Deep Sea Water untuk hidrasi, skin barrier, dan anti-aging BPOM."
     }
 }
 
 def generate_bundle_seo(title, handle):
-    clean_t = title.replace("(", "").replace(")", "").replace("+", " ").strip()
+    clean_t = re.sub(r"\s*\(\d+ml\)", "", title, flags=re.I)
+    clean_t = re.sub(r"\s*\(\d+x\d+ml\)", "", clean_t, flags=re.I)
+    clean_t = clean_t.replace("+", " ").strip()
     t_low = title.lower()
-    
-    if any(k in t_low for k in ["lengkap", "ultimate", "complete", "trio", "repair", "defense", "rejuvenating", "timeless", "nad"]):
-        kw = "Skincare Anti-Aging Komplit" if "lengkap" in t_low or "complete" in t_low else "Perawatan Kerutan Wajah"
-        benefit = "merawat elastisitas kulit, menyamarkan kerutan dan garis halus, serta mengembalikan kekencangan wajah"
+
+    kw = "Skincare Anti-Aging"
+    benefit = "merawat elastisitas kulit dan samarkan kerutan"
+
+    if any(k in t_low for k in ["lengkap", "ultimate", "complete"]):
+        kw = "Paket Skincare Anti-Aging"
+        benefit = "merawat elastisitas kulit dan cegah kerutan"
+    elif any(k in t_low for k in ["trio", "repair", "defense", "rejuvenat"]):
+        kw = "Paket Rawat Kerutan Wajah"
+        benefit = "menyamarkan garis halus dan menutrisi seluler"
     elif any(k in t_low for k in ["glow", "brightening", "luminous"]):
         kw = "Paket Kulit Glowing Alami"
-        benefit = "mencerahkan kulit kusam, meratakan warna wajah, dan memberi kilau sehat bercahaya"
+        benefit = "mencerahkan kulit kusam dan berikan kilau sehat"
     elif any(k in t_low for k in ["sunscreen", "protection"]):
         kw = "Paket Proteksi Sinar UV"
-        benefit = "melindungi kulit dari paparan sinar UV matahari serta penuaan dini dengan hidrasi mineral laut"
-    elif any(k in t_low for k in ["twin", "duo toner", "fresh", "hydrate", "recharge"]):
-        kw = "Paket Toner Kulit Lembap"
-        benefit = "mengunci hidrasi mendalam, menyegarkan kulit, dan menjaga kekuatan skin barrier harian"
-    else:
-        kw = "Paket Skincare Anti-Aging"
-        benefit = "menutrisi lapisan kulit wajah, menjaga kelembapan intensif, dan merawat keremajaan kulit"
-        
-    seo_title = f"{clean_t} - {kw} - Numa Skin"
-    if len(seo_title) > 70:
-        short_t = clean_t.replace("Paket ", "")
-        seo_title = f"{short_t} - {kw} - Numa Skin"
-        
-    seo_desc = f"{title} dari Numa Skin: formulasi Deep Sea Water mineral untuk {benefit}. Teruji klinis dan resmi BPOM RI."
-    return seo_title, seo_desc
+        benefit = "melindungi kulit dari paparan sinar UV dan polusi"
+    elif any(k in t_low for k in ["toner", "hydrate", "fresh", "twin", "duo"]):
+        kw = "Paket Toner Hidrasi Kulit"
+        benefit = "mengunci kelembapan mendalam dan rawat skin barrier"
+
+    candidates_title = [
+        f"{title} - {kw} - Numa Skin",
+        f"{clean_t} - {kw} - Numa Skin",
+        f"{title} - Skincare Anti-Aging - Numa Skin",
+        f"{clean_t} - Anti-Aging - Numa Skin",
+        f"{clean_t} - Perawatan Wajah - Numa Skin",
+        f"{title} - Skincare Resmi BPOM - Numa Skin",
+        f"{title} - Paket Skincare BPOM - Numa Skin",
+        f"{title} - Rangkaian Skincare BPOM - Numa Skin",
+    ]
+
+    selected_title = next((t for t in candidates_title if 55 <= len(t) <= 70), None)
+    if not selected_title:
+        for t in candidates_title:
+            if len(t) > 70:
+                sub = t[:68]
+                selected_title = sub[:sub.rfind(" ")] + " - Numa Skin"
+                if 55 <= len(selected_title) <= 70:
+                    break
+
+    candidate_descs = [
+        f"{title} resmi Numa Skin: formula Deep Sea Water untuk {benefit}. Teruji klinis resmi BPOM RI.",
+        f"{clean_t} dari Numa Skin: formula Deep Sea Water untuk {benefit}. Teruji klinis berizin BPOM RI.",
+        f"{title} Numa Skin: nutrisi mineral Deep Sea Water untuk {benefit}. Teruji klinis resmi BPOM RI.",
+        f"{clean_t} Numa Skin: nutrisi mineral Deep Sea Water untuk {benefit}. Terdaftar resmi BPOM RI.",
+        f"{title} dari Numa Skin: mineral laut dalam untuk {benefit}. Teruji resmi BPOM RI.",
+        f"{clean_t} Numa Skin: formulasi laut dalam untuk {benefit}. Resmi BPOM RI.",
+        f"Paket perawatan {clean_t} dari Numa Skin dengan mineral Deep Sea Water untuk {benefit}. Teruji klinis resmi BPOM RI."
+    ]
+
+    selected_desc = next((d for d in candidate_descs if 120 <= len(d) <= 155 and d.endswith(".")), candidate_descs[0])
+    return selected_title, selected_desc
 
 def update_single_product(p):
     pid = p["id"]

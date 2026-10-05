@@ -275,28 +275,54 @@ export default function CollectionDetailPage() {
 
   return (
     <div className="w-full bg-[#F4F9FA] bg-ocean-ambient min-h-screen pb-24">
-      {/* Schema.org CollectionPage Structured Data */}
+      {/* Schema.org CollectionPage & Breadcrumb Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'CollectionPage',
-            name: collection.title,
-            description: collection.seoDescription || collection.description,
-            url: `https://numaskin.id/collections/${collection.handle}`,
-            mainEntity: {
-              '@type': 'ItemList',
-              numberOfItems: products.length,
-              itemListElement: products.slice(0, 12).map((p, idx) => ({
-                '@type': 'ListItem',
-                position: idx + 1,
-                name: p.title,
-                url: `https://numaskin.id/products/${p.handle}`,
-                image: p.featuredImage?.url,
-              })),
+          __html: JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'CollectionPage',
+              name: collection.title,
+              description: collection.seoDescription || collection.description,
+              url: `https://numaskin.id/collections/${collection.handle}`,
+              mainEntity: {
+                '@type': 'ItemList',
+                numberOfItems: products.length,
+                itemListElement: products.slice(0, 12).map((p, idx) => ({
+                  '@type': 'ListItem',
+                  position: idx + 1,
+                  name: p.title,
+                  url: `https://numaskin.id/products/${p.handle}`,
+                  image: p.featuredImage?.url,
+                })),
+              },
             },
-          }),
+            {
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'Beranda',
+                  item: 'https://numaskin.id',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: 'Koleksi',
+                  item: 'https://numaskin.id/collections',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 3,
+                  name: collection.title,
+                  item: `https://numaskin.id/collections/${collection.handle}`,
+                },
+              ],
+            },
+          ]),
         }}
       />
       

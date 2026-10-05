@@ -4,7 +4,14 @@ import { ShoppingBag, ArrowRight, ShieldCheck } from 'lucide-react';
 import { formatRupiah } from '~/lib/utils';
 
 export const meta: Route.MetaFunction = () => [
-  { title: 'Keranjang Belanja — Numa Skin Official' },
+  { title: 'Keranjang Belanja Anda - Pesanan Skincare Resmi - Numa Skin' },
+  {
+    name: 'description',
+    content:
+      'Lihat ringkasan keranjang belanja produk Numa Skin. Dapatkan promo gratis ongkir ke seluruh Indonesia untuk belanja minimal Rp 200.000.',
+  },
+  { name: 'robots', content: 'noindex, follow' },
+  { tagName: 'link', rel: 'canonical', href: 'https://numaskin.id/cart' },
 ];
 
 export default function CartPage() {

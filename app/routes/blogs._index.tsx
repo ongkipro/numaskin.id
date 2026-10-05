@@ -4,13 +4,31 @@ import type { Route } from './+types/blogs._index';
 import { BookOpen, Clock, ArrowRight, Droplets, ShieldCheck, ChevronRight } from 'lucide-react';
 
 export const meta: Route.MetaFunction = () => {
+  const title = 'Jurnal & Edukasi Kulit Wajah - Sains Skincare - Numa Skin';
+  const description =
+    'Artikel edukasi sains kulit dari Numa Skin: manfaat Ulleung Deep Sea Water, panduan serum 2% NAD+, serta tips rutinitas perawatan skin barrier.';
+  const canonicalUrl = 'https://numaskin.id/blogs';
+  const image = 'https://cdn.shopify.com/s/files/1/0826/9368/5494/collections/collection-anti-aging-series-banner.webp?v=1790485361';
+
   return [
-    { title: 'Jurnal & Edukasi Kulit — Numa Skin Official Store' },
-    {
-      name: 'description',
-      content:
-        'Pelajari rahasia sains Ulleung Deep Sea Water, panduan penggunaan 2% NAD+, serta tips rutinitas perawatan skin barrier dari pakar dermatologi Numa Skin.',
-    },
+    { title },
+    { name: 'description', content: description },
+    { name: 'robots', content: 'index, follow' },
+    { tagName: 'link', rel: 'canonical', href: canonicalUrl },
+
+    // OpenGraph
+    { property: 'og:site_name', content: 'Numa Skin Official' },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:title', content: title },
+    { property: 'og:description', content: description },
+    { property: 'og:url', content: canonicalUrl },
+    { property: 'og:image', content: image },
+
+    // Twitter Card
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: title },
+    { name: 'twitter:description', content: description },
+    { name: 'twitter:image', content: image },
   ];
 };
 
@@ -115,6 +133,32 @@ export default function BlogIndex() {
 
   return (
     <div className="w-full bg-[#F4F9FA] bg-ocean-ambient min-h-screen pb-24">
+      {/* Schema.org Blog & BlogPosting Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Blog',
+            name: 'Jurnal & Edukasi Kulit Wajah Numa Skin',
+            description:
+              'Artikel edukasi sains kulit dari Numa Skin: manfaat Ulleung Deep Sea Water, panduan serum 2% NAD+, serta tips rutinitas perawatan skin barrier.',
+            url: 'https://numaskin.id/blogs',
+            blogPost: BLOG_POSTS.map((p) => ({
+              '@type': 'BlogPosting',
+              headline: p.title,
+              description: p.excerpt,
+              datePublished: '2026-09-24',
+              author: {
+                '@type': 'Person',
+                name: p.author,
+              },
+              image: p.image.startsWith('http') ? p.image : `https://numaskin.id${p.image}`,
+              url: `https://numaskin.id/blogs#${p.slug}`,
+            })),
+          }),
+        }}
+      />
       {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4">
         <nav className="flex items-center gap-2 text-xs text-slate-500">

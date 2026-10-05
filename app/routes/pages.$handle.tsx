@@ -3,8 +3,35 @@ import type { Route } from './+types/pages.$handle';
 import { ShieldCheck, Droplets, CheckCircle2, MessageCircle } from 'lucide-react';
 
 export const meta: Route.MetaFunction = ({ data }: { data: any }) => {
+  if (!data) {
+    return [{ title: 'Halaman Tidak Ditemukan - Numa Skin Official' }];
+  }
+  const title = data.seoTitle || `${data.title} - Numa Skin Official`;
+  const description =
+    data.seoDescription ||
+    `${data.subtitle}. Informasi resmi produk perawatan kulit dan transparansi layanan toko Numa Skin Indonesia berizin BPOM RI.`;
+  const canonicalUrl = `https://numaskin.id/pages/${data.handle}`;
+  const image = data.image || '/images/banners/02-shop-avatar-shopee-shop-profile-avatar.jpg';
+
   return [
-    { title: `${data?.title || 'Halaman Informasi'} — Numa Skin Official` },
+    { title },
+    { name: 'description', content: description },
+    { name: 'robots', content: 'index, follow' },
+    { tagName: 'link', rel: 'canonical', href: canonicalUrl },
+
+    // OpenGraph
+    { property: 'og:site_name', content: 'Numa Skin Official' },
+    { property: 'og:type', content: 'article' },
+    { property: 'og:title', content: title },
+    { property: 'og:description', content: description },
+    { property: 'og:url', content: canonicalUrl },
+    { property: 'og:image', content: image },
+
+    // Twitter Card
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: title },
+    { name: 'twitter:description', content: description },
+    { name: 'twitter:image', content: image },
   ];
 };
 
@@ -12,28 +39,49 @@ export async function loader({ params }: Route.LoaderArgs) {
   const { handle } = params;
   if (!handle) throw new Response('Not Found', { status: 404 });
 
-  const pagesMap: Record<string, { title: string; subtitle: string }> = {
+  const pagesMap: Record<
+    string,
+    { title: string; subtitle: string; seoTitle: string; seoDescription: string; image?: string }
+  > = {
     about: {
       title: 'Kisah & Filosofi Numa Skin',
       subtitle: 'Harmoni Tradisi Mindful J-Beauty & Eksplorasi Sains Mineral Laut Dalam',
+      seoTitle: 'Kisah & Filosofi Brand Numa Skin - Japanese Marine Skincare',
+      seoDescription:
+        'Mengenal kisah Numa Skin: perpaduan filosofi mindful J-Beauty dan kemurnian mineral Ulleung Deep Sea Water untuk kesehatan seluler kulit wajah.',
+      image: '/images/banners/02-shop-avatar-shopee-shop-profile-avatar.jpg',
     },
     science: {
       title: 'The Science: Ulleung Deep Sea Water & 2% NAD+',
       subtitle: 'Formulasi Klinis untuk Peremajaan DNA Seluler Kulit Wajah',
+      seoTitle: 'Sains Deep Sea Water & 2% NAD+ Booster - Numa Skin Science',
+      seoDescription:
+        'Pelajari sains klinis Ulleung Deep Sea Water, 2% NAD+, dan Salmon PDRN dalam menstimulasi regenerasi seluler serta memperbaiki skin barrier alami.',
+      image: '/images/collections/collection-anti-aging-series-banner.webp',
     },
     bpom: {
       title: 'Direktori Izin Edar Resmi BPOM RI',
       subtitle: 'Transparansi Legalitas & Jaminan Keamanan Formula 100% Terverifikasi',
+      seoTitle: 'Direktori Izin Edar Resmi BPOM RI - Legalitas Produk Numa Skin',
+      seoDescription:
+        'Daftar lengkap nomor notifikasi BPOM RI seluruh produk resmi Numa Skin. Jaminan produk 100% legal, aman, bebas paraben, dan teruji dermatologi.',
+      image: '/images/banners/02-shop-avatar-shopee-shop-profile-avatar.jpg',
     },
     faq: {
       title: 'Pusat Bantuan & FAQ',
       subtitle: 'Jawaban Lengkap Mengenai Keamanan, Pengiriman, dan Panduan Pemakaian',
+      seoTitle: 'Pusat Bantuan & FAQ - Panduan Pemakaian & Belanja - Numa Skin',
+      seoDescription:
+        'Pertanyaan umum seputar produk Numa Skin, panduan urutan pemakaian, keamanan bumil dan busui, estimasi pengiriman, serta klaim garansi 14 hari.',
+      image: '/images/banners/02-shop-avatar-shopee-shop-profile-avatar.jpg',
     },
   };
 
   const page = pagesMap[handle] || {
     title: handle.charAt(0).toUpperCase() + handle.slice(1).replace(/-/g, ' '),
     subtitle: 'Informasi Resmi Numa Skin Indonesia',
+    seoTitle: `${handle.charAt(0).toUpperCase() + handle.slice(1).replace(/-/g, ' ')} - Informasi Resmi Numa Skin`,
+    seoDescription: `Halaman informasi resmi ${handle.replace(/-/g, ' ')} toko Numa Skin Indonesia. Layanan produk perawatan kulit terdaftar resmi BPOM RI.`,
   };
 
   return { handle, ...page };
@@ -42,8 +90,73 @@ export async function loader({ params }: Route.LoaderArgs) {
 export default function GenericPage() {
   const { handle, title, subtitle } = useLoaderData<typeof loader>();
 
+  let pageSchema: Record<string, any> = {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: title,
+    description: subtitle,
+    url: `https://numaskin.id/pages/${handle}`,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Numa Skin Official',
+      url: 'https://numaskin.id',
+    },
+  };
+
+  if (handle === 'about') {
+    pageSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'AboutPage',
+      name: 'Kisah & Filosofi Numa Skin',
+      description: 'Harmoni Tradisi Mindful J-Beauty & Eksplorasi Sains Mineral Laut Dalam',
+      url: 'https://numaskin.id/pages/about',
+      mainEntity: {
+        '@type': 'Organization',
+        name: 'Numa Skin',
+        url: 'https://numaskin.id',
+        logo: 'https://numaskin.id/images/banners/02-shop-avatar-shopee-shop-profile-avatar.jpg',
+      },
+    };
+  } else if (handle === 'faq') {
+    pageSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Apakah seluruh produk Numa Skin sudah terdaftar resmi di BPOM?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Ya, seluruh formula produk Numa Skin 100% telah memiliki izin edar resmi dan nomor notifikasi aktif dari Badan Pengawas Obat dan Makanan (BPOM) Republik Indonesia.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Apakah produk Numa Skin aman untuk ibu hamil dan menyusui (bumil & busui friendly)?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Formula Numa Skin bebas dari paraben, alkohol agresif, dan bahan kimia berbahaya sehingga ramah untuk kulit sensitif, ibu hamil, maupun ibu menyusui.',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Berapa lama estimasi pengiriman dan bagaimana syarat Gratis Ongkir?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Pesanan diproses dalam 1x24 jam hari kerja. Gratis Ongkir berlaku ke seluruh Indonesia dengan minimum belanja Rp 200.000.',
+          },
+        },
+      ],
+    };
+  }
+
   return (
     <div className="w-full bg-[#F4F9FA] bg-ocean-ambient min-h-screen pb-20">
+      {/* Schema.org Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+      />
       
       {/* Page Header */}
       <section className="w-full py-12 sm:py-16 text-center">

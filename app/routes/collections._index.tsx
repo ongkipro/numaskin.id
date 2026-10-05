@@ -4,9 +4,9 @@ import * as mockCatalog from '~/lib/mock-catalog';
 import { ArrowRight } from 'lucide-react';
 
 export const meta: Route.MetaFunction = () => {
-  const title = 'Katalog Koleksi Skincare Lengkap - Perawatan Kulit Alami - Numa Skin';
+  const title = 'Koleksi Skincare Lengkap - Perawatan Kulit Alami - Numa Skin';
   const description =
-    'Jelajahi seluruh kategori perawatan kulit Numa Skin dari pembersih, hydrating toner, serum NAD+, pelembap hingga 42 paket hemat berizin BPOM.';
+    'Koleksi lengkap perawatan kulit Numa Skin dari pembersih wajah, hydrating toner, serum NAD+, pelembap, hingga 42 paket hemat resmi BPOM RI.';
   const canonicalUrl = 'https://numaskin.id/collections';
   const image = 'https://cdn.shopify.com/s/files/1/0826/9368/5494/collections/collection-semua-produk-banner.webp?v=1790485361';
 
@@ -44,6 +44,31 @@ export default function CollectionsIndexPage() {
 
   return (
     <div className="w-full bg-[#F4F9FA] bg-ocean-ambient min-h-screen pb-24">
+      {/* Schema.org CollectionPage & ItemList Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            name: 'Koleksi Skincare Lengkap Numa Skin',
+            description:
+              'Koleksi lengkap perawatan kulit Numa Skin dari pembersih wajah, hydrating toner, serum NAD+, pelembap, hingga 42 paket hemat resmi BPOM RI.',
+            url: 'https://numaskin.id/collections',
+            mainEntity: {
+              '@type': 'ItemList',
+              numberOfItems: collections.length,
+              itemListElement: collections.map((c, idx) => ({
+                '@type': 'ListItem',
+                position: idx + 1,
+                name: c.title,
+                url: `https://numaskin.id/collections/${c.handle}`,
+                image: c.image?.url,
+              })),
+            },
+          }),
+        }}
+      />
       
       {/* Directory Header (Frameless Editorial) */}
       <section className="w-full pt-28 sm:pt-36 pb-8 sm:pb-12 text-center">

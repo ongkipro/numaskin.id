@@ -21,10 +21,11 @@ export const links: Route.LinksFunction = () => [
 ];
 
 export const meta: Route.MetaFunction = () => [
-  { title: 'Numa Skin Official — Perawatan Kulit dengan Air Laut Dalam' },
+  { title: 'Numa Skin Official - Skincare Anti-Aging Deep Sea Water' },
   {
     name: 'description',
-    content: 'Toko resmi Numa Skin Indonesia. Perawatan kulit alami berbahan air laut dalam untuk menjaga hidrasi dan keremajaan kulit Anda. Terdaftar resmi BPOM.',
+    content:
+      'Toko resmi Numa Skin Indonesia. Formula peremajaan seluler berbahan Ulleung Deep Sea Water, 2% NAD+, dan Salmon PDRN berizin resmi BPOM RI.',
   },
   { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
   { property: 'og:site_name', content: 'Numa Skin Official' },
@@ -71,7 +72,7 @@ export function ErrorBoundary() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
-        <title>{errorStatus} — Numa Skin</title>
+        <title>{`${errorStatus} - Numa Skin`}</title>
       </head>
       <body className="min-h-screen flex items-center justify-center bg-[#F4F9FA] bg-ocean-ambient p-6 text-center">
         <div className="max-w-md glass-panel rounded-2xl p-8 sm:p-10 shadow-xs">

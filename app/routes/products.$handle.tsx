@@ -94,33 +94,59 @@ export default function ProductDetailPage() {
 
   return (
     <div className="w-full bg-transparent pb-24 sm:pb-0 min-h-screen relative">
-      {/* Schema.org Product Structured Data (Google Rich Results / Merchant) */}
+      {/* Schema.org Product & Breadcrumb Structured Data (Google Rich Results / Merchant) */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Product',
-            name: product.title,
-            description: product.seoDescription || product.description,
-            image: [product.featuredImage?.url],
-            sku: product.variants?.nodes?.[0]?.sku || `NUMA-${product.handle.toUpperCase()}`,
-            brand: {
-              '@type': 'Brand',
-              name: 'Numa Skin',
-            },
-            offers: {
-              '@type': 'Offer',
-              priceCurrency: 'IDR',
-              price: product.priceRange.minVariantPrice.amount,
-              availability: 'https://schema.org/InStock',
-              url: `https://numaskin.id/products/${product.handle}`,
-              seller: {
-                '@type': 'Organization',
-                name: 'Numa Skin Official',
+          __html: JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'Product',
+              name: product.title,
+              description: product.seoDescription || product.description,
+              image: [product.featuredImage?.url],
+              sku: product.variants?.nodes?.[0]?.sku || `NUMA-${product.handle.toUpperCase()}`,
+              brand: {
+                '@type': 'Brand',
+                name: 'Numa Skin',
+              },
+              offers: {
+                '@type': 'Offer',
+                priceCurrency: 'IDR',
+                price: product.priceRange.minVariantPrice.amount,
+                availability: 'https://schema.org/InStock',
+                url: `https://numaskin.id/products/${product.handle}`,
+                seller: {
+                  '@type': 'Organization',
+                  name: 'Numa Skin Official',
+                },
               },
             },
-          }),
+            {
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'Beranda',
+                  item: 'https://numaskin.id',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: 'Katalog Koleksi',
+                  item: 'https://numaskin.id/collections',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 3,
+                  name: product.title,
+                  item: `https://numaskin.id/products/${product.handle}`,
+                },
+              ],
+            },
+          ]),
         }}
       />
       

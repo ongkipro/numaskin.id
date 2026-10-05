@@ -1,5 +1,25 @@
 import { Link } from 'react-router';
+import type { Route } from './+types/policies._index';
 import { ArrowRight, ShieldCheck } from 'lucide-react';
+
+export const meta: Route.MetaFunction = () => {
+  const title = 'Kebijakan Resmi Toko - Layanan Konsumen - Numa Skin Official';
+  const description =
+    'Informasi kebijakan resmi toko Numa Skin Indonesia mencakup pengiriman gratis ongkir, garansi 14 hari, privasi data, dan syarat ketentuan belanja.';
+  const canonicalUrl = 'https://numaskin.id/policies';
+
+  return [
+    { title },
+    { name: 'description', content: description },
+    { name: 'robots', content: 'index, follow' },
+    { tagName: 'link', rel: 'canonical', href: canonicalUrl },
+    { property: 'og:site_name', content: 'Numa Skin Official' },
+    { property: 'og:type', content: 'website' },
+    { property: 'og:title', content: title },
+    { property: 'og:description', content: description },
+    { property: 'og:url', content: canonicalUrl },
+  ];
+};
 
 export default function PoliciesIndexPage() {
   const policies = [
@@ -11,6 +31,25 @@ export default function PoliciesIndexPage() {
 
   return (
     <div className="w-full bg-[#F4F9FA] bg-ocean-ambient min-h-screen pb-20">
+      {/* Schema.org WebPage Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            name: 'Kebijakan Resmi Toko Numa Skin',
+            description:
+              'Informasi kebijakan resmi toko Numa Skin Indonesia mencakup pengiriman gratis ongkir, garansi 14 hari, privasi data, dan syarat ketentuan belanja.',
+            url: 'https://numaskin.id/policies',
+            publisher: {
+              '@type': 'Organization',
+              name: 'Numa Skin Official',
+              url: 'https://numaskin.id',
+            },
+          }),
+        }}
+      />
       <section className="w-full py-12 sm:py-16 text-center">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="glass-panel p-8 sm:p-12 rounded-2xl shadow-xs">
