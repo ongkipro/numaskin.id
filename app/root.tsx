@@ -17,7 +17,11 @@ export const links: Route.LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
   { rel: 'dns-prefetch', href: 'https://fonts.gstatic.com' },
   { rel: 'dns-prefetch', href: 'https://cdn.shopify.com' },
-  { rel: 'icon', type: 'image/jpeg', href: '/images/banners/02-shop-avatar-shopee-shop-profile-avatar.jpg' },
+  { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+  { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
+  { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
+  { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+  { rel: 'manifest', href: '/site.webmanifest' },
 ];
 
 export const meta: Route.MetaFunction = () => [
@@ -27,6 +31,7 @@ export const meta: Route.MetaFunction = () => [
     content:
       'Toko resmi Numa Skin Indonesia. Formula peremajaan seluler berbahan Ulleung Deep Sea Water, 2% NAD+, dan Salmon PDRN berizin resmi BPOM RI.',
   },
+  { name: 'theme-color', content: '#132A5C' },
   { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
   { property: 'og:site_name', content: 'Numa Skin Official' },
   { property: 'og:locale', content: 'id_ID' },
