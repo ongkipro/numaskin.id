@@ -37,7 +37,7 @@ export async function loader({ context }: { context: any }) {
     changefreq: 'daily',
   }));
 
-  const now = new Date().toISOString();
+  const now = new Date().toISOString().split('T')[0];
   const allUrls = [
     ...staticPages.map((item) => ({ ...item, lastmod: now })),
     ...collectionUrls.map((item) => ({ ...item, lastmod: now })),
