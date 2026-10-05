@@ -11,16 +11,20 @@ import {
 import type { Route } from './+types/root';
 import { PageLayout } from '~/components/layout/PageLayout';
 import appStyles from '~/styles/app.css?url';
+import faviconIco from '~/assets/icons/favicon.ico';
+import favicon32 from '~/assets/icons/favicon-32x32.png';
+import favicon16 from '~/assets/icons/favicon-16x16.png';
+import appleTouchIcon from '~/assets/icons/apple-touch-icon.png';
 
 export const links: Route.LinksFunction = () => [
   { rel: 'stylesheet', href: appStyles },
   { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
   { rel: 'dns-prefetch', href: 'https://fonts.gstatic.com' },
   { rel: 'dns-prefetch', href: 'https://cdn.shopify.com' },
-  { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-  { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
-  { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
-  { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+  { rel: 'icon', type: 'image/x-icon', href: faviconIco },
+  { rel: 'icon', type: 'image/png', sizes: '32x32', href: favicon32 },
+  { rel: 'icon', type: 'image/png', sizes: '16x16', href: favicon16 },
+  { rel: 'apple-touch-icon', sizes: '180x180', href: appleTouchIcon },
   { rel: 'manifest', href: '/site.webmanifest' },
 ];
 
